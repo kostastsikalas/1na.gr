@@ -1,0 +1,357 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  GraduationCap,
+  Target,
+  Eye,
+  Users,
+  Award,
+  BookOpen,
+  TrendingUp,
+  CalendarDays,
+} from "lucide-react";
+
+/* ─── Animation Helpers ─── */
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.1 },
+  }),
+};
+
+/* ─── Data ─── */
+const stats = [
+  { icon: CalendarDays, value: "20+", label: "Χρόνια Εμπειρίας" },
+  { icon: Users, value: "5.000+", label: "Απόφοιτοι" },
+  { icon: Award, value: "95%", label: "Ποσοστό Επιτυχίας" },
+  { icon: BookOpen, value: "3", label: "Παραρτήματα" },
+];
+
+const timeline = [
+  {
+    year: "2005",
+    title: "Η Αρχή",
+    description:
+      "Ίδρυση του πρώτου φροντιστηρίου ΕΝΑ στο κέντρο του Ηρακλείου, με στόχο την ποιοτική εκπαίδευση και την ανθρωποκεντρική προσέγγιση.",
+  },
+  {
+    year: "2010",
+    title: "Επέκταση στην Ανατολική Κρήτη",
+    description:
+      "Δημιουργία του δεύτερου παραρτήματος στο Ηράκλειο (Ανατολικά), εξυπηρετώντας μαθητές από ευρύτερη περιοχή.",
+  },
+  {
+    year: "2015",
+    title: "Πρώτες Εκδόσεις",
+    description:
+      "Κυκλοφορία των πρώτων ιδιόκτητων βοηθημάτων — σημειώσεις, ασκήσεις, προσομοιωτικά, ειδικά σχεδιασμένα για τις Πανελλαδικές.",
+  },
+  {
+    year: "2019",
+    title: "Άνοιγμα στην Αθήνα",
+    description:
+      "Λειτουργία του τρίτου παραρτήματος στην Αθήνα, φέρνοντας την τεχνογνωσία μας στην πρωτεύουσα.",
+  },
+  {
+    year: "2023",
+    title: "Ψηφιακός Μετασχηματισμός",
+    description:
+      "Εισαγωγή e-learning πλατφόρμας, online mock exams, και ψηφιακού υπολογιστή μορίων — μαθαίνεις από παντού.",
+  },
+  {
+    year: "2026",
+    title: "Σήμερα",
+    description:
+      "20+ χρόνια αριστείας, 5.000+ επιτυχόντες, και μια ομάδα που συνεχίζει να εξελίσσεται δίπλα στον κάθε μαθητή.",
+  },
+];
+
+/* ─── Page Component ─── */
+export default function AboutPage() {
+  return (
+    <div className="bg-white">
+      {/* ══════ Hero Section ══════ */}
+      <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-gradient-to-br from-[#f4fbff] via-white to-[#eef5ff] overflow-hidden">
+        {/* Background blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40" />
+          <div className="absolute top-40 right-0 w-[400px] h-[400px] bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30" />
+          <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30" />
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#213576]/8 text-[#213576] text-[13px] font-semibold rounded-full mb-6">
+              <GraduationCap size={15} />
+              Το ΕΝΑ
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#002B5B] leading-[1.1] mb-6 tracking-tight"
+          >
+            Η Ιστορία μας
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
+          >
+            Από το 2005, ο Φροντιστηριακός Όμιλος ΕΝΑ οδηγεί χιλιάδες μαθητές 
+            στις σπουδές που ονειρεύονται. Μάθε πώς ξεκίνησε όλο αυτό.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ══════ Stats Bar ══════ */}
+      <section className="relative -mt-10 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100/80 p-6 md:p-8"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {stats.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  custom={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="flex justify-center mb-3">
+                    <div className="w-11 h-11 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576]">
+                      <Icon size={20} />
+                    </div>
+                  </div>
+                  <div className="text-2xl md:text-3xl font-extrabold text-[#002B5B] mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-[13px] text-gray-500 font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ══════ Mission & Vision ══════ */}
+      <section className="py-20 md:py-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Mission */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative bg-gradient-to-br from-[#213576] to-[#1a2d66] rounded-2xl p-8 md:p-10 text-white overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+
+            <div className="relative z-10">
+              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                <Target size={24} />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Η Αποστολή μας</h3>
+              <p className="text-blue-100/80 leading-relaxed text-[15px]">
+                Να προσφέρουμε ποιοτική, προσωποποιημένη εκπαίδευση σε κάθε μαθητή, 
+                ανεξαρτήτως αφετηρίας. Πιστεύουμε ότι η γνώση δεν είναι προνόμιο αλλά 
+                δικαίωμα — και η σωστή καθοδήγηση μπορεί να ανοίξει πόρτες που μοιάζουν κλειστές.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Vision */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative bg-gradient-to-br from-[#f8f9fa] to-white rounded-2xl p-8 md:p-10 border border-gray-100 overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#213576]/[0.02] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#213576]/[0.02] rounded-full translate-y-1/2 -translate-x-1/2" />
+
+            <div className="relative z-10">
+              <div className="w-12 h-12 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576] mb-6">
+                <Eye size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#002B5B] mb-4">Το Όραμά μας</h3>
+              <p className="text-gray-600 leading-relaxed text-[15px]">
+                Να γίνουμε ο εκπαιδευτικός οργανισμός-αναφορά στην Ελλάδα — 
+                ένας χώρος όπου η τεχνολογία συναντά την παράδοση, 
+                ο μαθητής βρίσκεται πάντα στο κέντρο, και η επιτυχία είναι αναπόσπαστο μέρος 
+                της καθημερινότητας.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════ Timeline ══════ */}
+      <section className="py-16 md:py-24 bg-[#f8fafe]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#002B5B] mb-4">
+              Η Πορεία μας
+            </h2>
+            <p className="text-gray-500 max-w-lg mx-auto">
+              Κάθε σταθμός μια νέα αρχή — δύο δεκαετίες αφοσίωσης στην εκπαίδευση.
+            </p>
+          </motion.div>
+
+          {/* Timeline Items */}
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#213576]/20 via-[#213576]/10 to-transparent md:-translate-x-px" />
+
+            <div className="space-y-10 md:space-y-0">
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={item.year}
+                  custom={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 ${
+                    i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  } md:mb-12`}
+                >
+                  {/* Content */}
+                  <div
+                    className={`ml-16 md:ml-0 md:w-[calc(50%-32px)] ${
+                      i % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"
+                    }`}
+                  >
+                    <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="text-lg font-bold text-[#002B5B] mb-1.5">
+                        {item.title}
+                      </h3>
+                      <p className="text-[14px] text-gray-500 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Dot */}
+                  <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white border-[3px] border-[#213576] flex items-center justify-center shadow-md">
+                      <span className="text-[11px] font-extrabold text-[#213576]">
+                        {item.year}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Spacer for other side */}
+                  <div className="hidden md:block md:w-[calc(50%-32px)]" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════ Values / Why ΕΝΑ ══════ */}
+      <section className="py-20 md:py-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#002B5B] mb-4">
+            Γιατί ΕΝΑ;
+          </h2>
+          <p className="text-gray-500 max-w-lg mx-auto">
+            Αυτά που μας ξεχωρίζουν — και μας κάνουν την πρώτη σας επιλογή.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            {
+              icon: Users,
+              title: "Μικρά Τμήματα",
+              desc: "Μέγιστο 12 μαθητές ανά τμήμα για εξατομικευμένη προσοχή και μέγιστη αλληλεπίδραση.",
+            },
+            {
+              icon: TrendingUp,
+              title: "Αποδεδειγμένα Αποτελέσματα",
+              desc: "95% ποσοστό εισαγωγής, με εκατοντάδες μαθητές σε κορυφαίες σχολές κάθε χρόνο.",
+            },
+            {
+              icon: BookOpen,
+              title: "Ιδιόκτητο Υλικό",
+              desc: "Αποκλειστικές εκδόσεις, σημειώσεις & ασκήσεις σχεδιασμένα ειδικά για τις Πανελλαδικές.",
+            },
+            {
+              icon: Award,
+              title: "Έμπειροι Καθηγητές",
+              desc: "Διδακτικό προσωπικό με πάνω από 10 χρόνια εμπειρία και εξειδίκευση στον τομέα του.",
+            },
+            {
+              icon: Target,
+              title: "Εξατομικευμένη Φροντίδα",
+              desc: "Παρακολούθηση προόδου, σύμβουλοι σταδιοδρομίας, και τακτική ενημέρωση γονέων.",
+            },
+            {
+              icon: GraduationCap,
+              title: "Σύγχρονες Εγκαταστάσεις",
+              desc: "Κλιματιζόμενες αίθουσες, εξοπλισμένα εργαστήρια, και e-learning πλατφόρμα.",
+            },
+          ].map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                custom={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#213576]/15 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-11 h-11 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576] mb-4 group-hover:bg-[#213576] group-hover:text-white transition-colors duration-300">
+                  <Icon size={20} />
+                </div>
+                <h3 className="text-[16px] font-bold text-[#002B5B] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-[14px] text-gray-500 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
+}
