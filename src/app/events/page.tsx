@@ -1,69 +1,118 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, Lightbulb, PartyPopper, Users, X, ChevronLeft, ChevronRight, Cake, Star, Loader2 } from "lucide-react";
-import { createClient } from "@/utils/supabase/client";
+import { Calendar, MapPin, Lightbulb, PartyPopper, Users, X, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-// Define the type for our event items from Supabase
-type EventItem = {
-  id: string;
-  title: string;
-  category?: string;
-  date_string?: string;
-  description?: string;
-  created_at: string;
-  images: string[];
-};
-
-// Helper function to dynamically map categories to icons and colors
-const getCategoryStyle = (category: string | undefined) => {
-  const cat = category?.toLowerCase() || "";
-  if (cat.includes("εκδρομή") || cat.includes("cern")) {
-    return { icon: MapPin, color: "bg-emerald-500 text-white" };
+// Hardcoded Event Data utilizing the local images
+const eventsData = [
+  {
+    id: "cern",
+    title: "Εκδρομή στο CERN",
+    description: "Εκπαιδευτική εκδρομή στο Ευρωπαϊκό Κέντρο Πυρηνικών Ερευνών (CERN) στη Γενεύη.",
+    date: "2009",
+    category: "Εκδρομή",
+    icon: MapPin,
+    color: "bg-emerald-500",
+    images: [
+      "/images/cern/05.jpg",
+      "/images/cern/12.jpg",
+      "/images/cern/2009_cern_13.JPG",
+      "/images/cern/2009_cern_6.JPG",
+      "/images/cern/26.jpg",
+      "/images/cern/58.jpg"
+    ]
+  },
+  {
+    id: "eppagelmatikos",
+    title: "Ημερίδες Επαγγελματικού Προσανατολισμού",
+    description: "Ενημερωτικές εκδηλώσεις για μαθητές και γονείς σχετικά με την επιλογή σπουδών και επαγγέλματος.",
+    date: "2018 - 2019",
+    category: "Ημερίδα",
+    icon: Lightbulb,
+    color: "bg-amber-500",
+    images: [
+      "/images/eppagelmatikos/20.JPG",
+      "/images/eppagelmatikos/20180422_113207.jpg",
+      "/images/eppagelmatikos/20190203_110336.jpg",
+      "/images/eppagelmatikos/20190203_112907.jpg",
+      "/images/eppagelmatikos/DSC00108.JPG",
+      "/images/eppagelmatikos/DSC00651.JPG",
+      "/images/eppagelmatikos/DSC01057.JPG",
+      "/images/eppagelmatikos/DSC01645.JPG",
+      "/images/eppagelmatikos/DSC02697.JPG",
+      "/images/eppagelmatikos/DSC03245.JPG",
+      "/images/eppagelmatikos/DSC03248.JPG",
+      "/images/eppagelmatikos/DSC04147.JPG"
+    ]
+  },
+  {
+    id: "fusiki",
+    title: "Ημέρες Φυσικής",
+    description: "Πειράματα και διαδραστικές παρουσιάσεις φυσικής στο χώρο του φροντιστηρίου.",
+    date: "Διάφορα Έτη",
+    category: "Εκπαιδευτική Δράση",
+    icon: Star,
+    color: "bg-purple-500",
+    images: [
+      "/images/fusiki/DSC01439.JPG",
+      "/images/fusiki/DSC01449.JPG",
+      "/images/fusiki/DSC01450.JPG",
+      "/images/fusiki/DSC01452.JPG",
+      "/images/fusiki/DSC01459.JPG",
+      "/images/fusiki/DSC01463.JPG",
+      "/images/fusiki/DSC01467.JPG"
+    ]
+  },
+  {
+    id: "tsiknopempti",
+    title: "Τσικνοπέμπτη",
+    description: "Γιορτάζουμε μαζί με τους μαθητές μας σε μια ζεστή και διασκεδαστική ατμόσφαιρα.",
+    date: "Διάφορα Έτη",
+    category: "Γιορτή",
+    icon: PartyPopper,
+    color: "bg-rose-500",
+    images: [
+      "/images/tsiknopempti/DSC00077.JPG",
+      "/images/tsiknopempti/DSC00096.JPG",
+      "/images/tsiknopempti/DSC00100.JPG",
+      "/images/tsiknopempti/DSC00133.JPG",
+      "/images/tsiknopempti/DSC01074.JPG",
+      "/images/tsiknopempti/DSC01129.JPG",
+      "/images/tsiknopempti/DSC01140.JPG",
+      "/images/tsiknopempti/DSC03059.JPG",
+      "/images/tsiknopempti/DSC04079.JPG",
+      "/images/tsiknopempti/DSC04088.JPG"
+    ]
+  },
+  {
+    id: "athlitikes",
+    title: "Αθλητικές Εκδηλώσεις",
+    description: "Συμμετοχή σε αθλητικές δραστηριότητες και τουρνουά.",
+    date: "Διάφορα Έτη",
+    category: "Αθλητισμός",
+    icon: Users,
+    color: "bg-indigo-500",
+    images: [
+      "/images/athlitikes ekdilwseis/DSC00009.JPG",
+      "/images/athlitikes ekdilwseis/DSC00010.JPG",
+      "/images/athlitikes ekdilwseis/DSC00022.JPG",
+      "/images/athlitikes ekdilwseis/DSC01256.JPG",
+      "/images/athlitikes ekdilwseis/DSC01259.JPG",
+      "/images/athlitikes ekdilwseis/DSC01272.JPG",
+      "/images/athlitikes ekdilwseis/P1.JPG",
+      "/images/athlitikes ekdilwseis/P1030561_resize.JPG",
+      "/images/athlitikes ekdilwseis/P1070629.JPG"
+    ]
   }
-  if (cat.includes("σεμινάριο") || cat.includes("ημερίδα") || cat.includes("φυσική")) {
-    return { icon: Lightbulb, color: "bg-amber-500 text-white" };
-  }
-  if (cat.includes("γιορτή") || cat.includes("τσικνοπέμπτη")) {
-    return { icon: PartyPopper, color: "bg-rose-500 text-white" };
-  }
-  if (cat.includes("αθλητισμός") || cat.includes("αθλητικές")) {
-    return { icon: Users, color: "bg-indigo-500 text-white" };
-  }
-  if (cat.includes("κοπή") || cat.includes("πίτα")) {
-    return { icon: Cake, color: "bg-blue-500 text-white" };
-  }
-  return { icon: Star, color: "bg-[#213576] text-white" }; // Default
-};
+];
 
 export default function EventsPage() {
-  const [events, setEvents] = useState<EventItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  
-  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<typeof eventsData[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const supabase = createClient();
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
-  const fetchEvents = async () => {
-    setIsLoading(true);
-    const { data, error } = await supabase
-      .from("news")
-      .select("*")
-      .order("created_at", { ascending: false });
-    
-    if (!error && data) {
-      setEvents(data);
-    }
-    setIsLoading(false);
-  };
-
-  const openGallery = (event: EventItem) => {
+  const openGallery = (event: typeof eventsData[0]) => {
     if (!event.images || event.images.length === 0) return;
     setSelectedEvent(event);
     setCurrentImageIndex(0);
@@ -112,85 +161,75 @@ export default function EventsPage() {
 
       {/* ──── Events Grid ──── */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        {isLoading ? (
-          <div className="flex justify-center py-20">
-            <Loader2 className="w-10 h-10 animate-spin text-[#213576]" />
-          </div>
-        ) : events.length === 0 ? (
-          <div className="text-center py-20 text-gray-500 text-lg">
-            Δεν βρέθηκαν εκδηλώσεις.
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.map((event, index) => {
-              const { icon: Icon, color } = getCategoryStyle(event.category);
-              const coverImage = event.images && event.images.length > 0 ? event.images[0] : null;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {eventsData.map((event, index) => {
+            const Icon = event.icon;
+            const coverImage = event.images[0];
 
-              return (
-                <motion.div
-                  key={event.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group border border-slate-100 flex flex-col cursor-pointer"
-                  onClick={() => openGallery(event)}
-                >
-                  {/* Cover Image */}
-                  <div className="relative w-full h-56 bg-gray-100 overflow-hidden">
-                    {coverImage ? (
-                      <Image
-                        src={coverImage}
-                        alt={event.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    ) : (
-                      <div className={`w-full h-full flex items-center justify-center ${color}`}>
-                        <Icon size={48} className="opacity-50" />
-                      </div>
-                    )}
-                    {/* Floating Icon */}
-                    <div className={`absolute top-4 right-4 p-3 rounded-2xl ${color} shadow-lg`}>
-                      <Icon size={20} />
+            return (
+              <motion.div
+                key={event.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group border border-slate-100 flex flex-col cursor-pointer"
+                onClick={() => openGallery(event)}
+              >
+                {/* Cover Image */}
+                <div className="relative w-full h-56 bg-gray-100 overflow-hidden">
+                  {coverImage ? (
+                    <Image
+                      src={coverImage}
+                      alt={event.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className={`w-full h-full flex items-center justify-center text-white ${event.color}`}>
+                      <Icon size={48} className="opacity-50" />
                     </div>
+                  )}
+                  {/* Floating Icon */}
+                  <div className={`absolute top-4 right-4 p-3 rounded-2xl text-white shadow-lg ${event.color}`}>
+                    <Icon size={20} />
                   </div>
+                </div>
 
-                  {/* Content */}
-                  <div className="p-8 flex-1 flex flex-col">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-3 py-1 rounded-full w-fit mb-4">
-                      {event.category || "ΕΚΔΗΛΩΣΗ"}
-                    </span>
-                    
-                    <h3 className="text-2xl font-bold text-[#213576] mb-3 group-hover:text-blue-600 transition-colors">
-                      {event.title}
-                    </h3>
-                    
-                    <div className="flex items-center gap-2 text-slate-500 text-sm mb-4 font-medium">
-                      <Calendar size={16} />
-                      {event.date_string || new Date(event.created_at).toLocaleDateString('el-GR')}
-                    </div>
-                    
-                    <p className="text-slate-600 leading-relaxed text-sm flex-1 line-clamp-3">
-                      {event.description || "Πατήστε για να δείτε φωτογραφικό υλικό από την εκδήλωση."}
-                    </p>
+                {/* Content */}
+                <div className="p-8 flex-1 flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-3 py-1 rounded-full w-fit mb-4">
+                    {event.category}
+                  </span>
+                  
+                  <h3 className="text-2xl font-bold text-[#213576] mb-3 group-hover:text-blue-600 transition-colors">
+                    {event.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-2 text-slate-500 text-sm mb-4 font-medium">
+                    <Calendar size={16} />
+                    {event.date}
                   </div>
                   
-                  {/* Footer Action */}
-                  <div 
-                    className="px-8 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center group-hover:bg-blue-50 transition-colors"
-                  >
-                    <span className="text-sm text-slate-500 font-medium group-hover:text-blue-600 transition-colors">
-                      {event.images?.length || 0} φωτογραφίες
-                    </span>
-                    <button className="text-sm font-semibold text-blue-600 group-hover:text-blue-800 transition-colors flex items-center gap-1">
-                      Άνοιγμα Gallery &rarr;
-                    </button>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        )}
+                  <p className="text-slate-600 leading-relaxed text-sm flex-1">
+                    {event.description}
+                  </p>
+                </div>
+                
+                {/* Footer Action */}
+                <div 
+                  className="px-8 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center group-hover:bg-blue-50 transition-colors"
+                >
+                  <span className="text-sm text-slate-500 font-medium group-hover:text-blue-600 transition-colors">
+                    {event.images.length} φωτογραφίες
+                  </span>
+                  <button className="text-sm font-semibold text-blue-600 group-hover:text-blue-800 transition-colors flex items-center gap-1">
+                    Άνοιγμα Gallery &rarr;
+                  </button>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </section>
 
       {/* ──── Lightbox / Gallery Modal ──── */}
