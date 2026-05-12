@@ -6,14 +6,21 @@ import {
   Briefcase,
   GraduationCap,
   BookOpen,
-  Monitor,
-  Users,
-  BarChart3,
   ClipboardList,
+  BarChart3,
   Headphones,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
+  Wrench,
+  Users,
+  CalendarCheck,
+  Swords,
+  Pencil,
+  MessagesSquare,
+  Handshake,
+  Clock,
+  Ear,
+  Target,
 } from "lucide-react";
 
 /* ─── Animation ─── */
@@ -39,6 +46,20 @@ type Service = {
 
 const services: Service[] = [
   {
+    icon: BookOpen,
+    title: "Τμήματα Γυμνασίου",
+    description:
+      "Δημιουργούμε στέρεο γνωστικό υπόβαθρο, χωρίς κενά, σε ένα ευχάριστο περιβάλλον μάθησης και εξέλιξης. Η καλύτερη επένδυση για το Λύκειο.",
+    features: [
+      "Μαθηματικά",
+      "Φυσική",
+      "Χημεία",
+      "Φιλολογικά Μαθήματα",
+    ],
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+  },
+  {
     icon: GraduationCap,
     title: "Τμήματα Λυκείου",
     description:
@@ -53,18 +74,18 @@ const services: Service[] = [
     bg: "bg-blue-50",
   },
   {
-    icon: BookOpen,
-    title: "Τμήματα Γυμνασίου",
+    icon: Wrench,
+    title: "Τμήματα Λυκείου – ΕΠΑΛ",
     description:
-      "Στέρεο ακαδημαϊκό υπόβαθρο και σωστές βάσεις — η καλύτερη επένδυση για το Λύκειο.",
+      "Τμήματα ΕΠΑΛ για όλες τις ειδικότητες.",
     features: [
-      "Μαθηματικά & Φυσική",
-      "Φιλολογικά Μαθήματα",
-      "Ξένες Γλώσσες",
+      "Μηχανολογία",
+      "Ηλεκτρολογία",
       "Πληροφορική",
+      "Υγεία & Πρόνοια",
     ],
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
+    color: "text-cyan-600",
+    bg: "bg-cyan-50",
   },
   {
     icon: ClipboardList,
@@ -80,20 +101,6 @@ const services: Service[] = [
     color: "text-violet-600",
     bg: "bg-violet-50",
     link: "/archive",
-  },
-  {
-    icon: Monitor,
-    title: "E-Learning",
-    description:
-      "Online πλατφόρμα για μάθηση από παντού — video μαθήματα, ασκήσεις, live sessions.",
-    features: [
-      "Video μαθήματα on-demand",
-      "Live online sessions",
-      "Ψηφιακές ασκήσεις & tests",
-      "Πρόσβαση 24/7",
-    ],
-    color: "text-cyan-600",
-    bg: "bg-cyan-50",
   },
   {
     icon: BarChart3,
@@ -126,13 +133,52 @@ const services: Service[] = [
   },
 ];
 
-const highlights = [
-  "Μικρά τμήματα (max 12 μαθητές)",
-  "Ιδιόκτητο εκπαιδευτικό υλικό",
-  "Προσομοιωτικές εξετάσεις κάθε μήνα",
-  "Τακτική επικοινωνία με γονείς",
-  "Σύγχρονες κλιματιζόμενες αίθουσες",
-  "E-learning πλατφόρμα",
+const whyEna = [
+  {
+    icon: Users,
+    title: "Ομαδικό περιβάλλον μάθησης",
+    desc: "Η παρουσία άλλων μαθητών βοηθά στον συναγωνισμό αλλά και στην ανταλλαγή αποριών και ιδεών.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Πιο οργανωμένο πρόγραμμα",
+    desc: "Τα φροντιστήρια έχουν συγκεκριμένη ύλη, πρόγραμμα, τεστ και επαναλήψεις, κάτι που βοηθά στη συνέπεια.",
+  },
+  {
+    icon: Swords,
+    title: "Πολλαπλοί καθηγητές / εξειδίκευση",
+    desc: "Κάθε μάθημα διδάσκεται από καθηγητή που ειδικεύεται αποκλειστικά σε αυτό.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Συχνές εξετάσεις και αξιολόγηση",
+    desc: "Διαγωνίσματα και προσομοιώσεις βοηθούν τον μαθητή να συνηθίζει την πίεση των εξετάσεων.",
+  },
+  {
+    icon: Pencil,
+    title: "Εκπαιδευτικό υλικό",
+    desc: "Παρέχονται βοηθήματα γραμμένα από τους ίδιους καθηγητές που διδάσκουν τα παιδιά σας.",
+  },
+  {
+    icon: Handshake,
+    title: "Ανάπτυξη κοινωνικών δεξιοτήτων",
+    desc: "Ο μαθητής μαθαίνει να συνεργάζεται, να συζητά και να λειτουργεί μέσα σε ομάδα.",
+  },
+  {
+    icon: Clock,
+    title: "Περισσότερη πειθαρχία",
+    desc: "Το σταθερό ωράριο και οι υποχρεώσεις βοηθούν στην καλύτερη οργάνωση του διαβάσματος.",
+  },
+  {
+    icon: Ear,
+    title: "Εναλλακτικές εξηγήσεις",
+    desc: "Ακούγοντας απορίες άλλων μαθητών, συχνά καταλαβαίνει καλύτερα έννοιες που ίσως δεν είχε σκεφτεί.",
+  },
+  {
+    icon: Target,
+    title: "Προετοιμασία για πραγματικές εξεταστικές συνθήκες",
+    desc: "Το περιβάλλον θυμίζει περισσότερο σχολική ή πανελλαδική εξέταση, άρα μειώνεται το άγχος αργότερα.",
+  },
 ];
 
 /* ─── Page Component ─── */
@@ -241,7 +287,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ══════ Highlights Bar ══════ */}
+      {/* ══════ Γιατί φροντιστηριακό όμιλο ΕΝΑ και όχι ιδιαίτερα μαθήματα; ══════ */}
       <section className="py-16 md:py-24 bg-[#f8fafe]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -251,38 +297,42 @@ export default function ServicesPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#002B5B] mb-4">
-              Τι περιλαμβάνει η εμπειρία ΕΝΑ
+              Γιατί φροντιστηριακό όμιλο ΕΝΑ και όχι ιδιαίτερα μαθήματα;
             </h2>
             <p className="text-gray-500 max-w-lg mx-auto">
-              Πέρα από τη διδασκαλία — μια ολοκληρωμένη εκπαιδευτική εμπειρία.
+              9 λόγοι που κάνουν τη διαφορά στην πορεία κάθε μαθητή.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10"
-          >
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {highlights.map((h, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {whyEna.map((item, i) => {
+              const Icon = item.icon;
+              return (
                 <motion.div
-                  key={h}
+                  key={item.title}
                   custom={i}
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#213576]/[0.03] transition-colors"
+                  className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#213576]/15 shadow-sm hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#213576]/8 flex items-center justify-center text-[#213576] shrink-0">
-                    <Sparkles size={16} />
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-lg bg-[#213576]/8 flex items-center justify-center text-[#213576] shrink-0">
+                      <Icon size={18} />
+                    </div>
+                    <span className="text-[12px] font-bold text-[#213576]/60">{i + 1}.</span>
                   </div>
-                  <span className="text-[14px] font-medium text-gray-700">{h}</span>
+                  <h3 className="text-[15px] font-bold text-[#002B5B] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-[13px] text-gray-500 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

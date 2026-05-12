@@ -18,13 +18,6 @@ const branches = [
     phone: "2810 654321",
     image: "/images/branch_east.png",
   },
-  {
-    id: "athens",
-    title: "ΑΘΗΝΑ (Σύνταγμα)",
-    address: "Οδός Ερμού 5",
-    phone: "210 9876543",
-    image: "/images/branch_athens.png",
-  },
 ];
 
 export default function Branches() {
@@ -35,7 +28,7 @@ export default function Branches() {
           ΤΑ ΠΑΡΑΡΤΗΜΑΤΑ ΜΑΣ
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
           {branches.map((branch) => (
             <div 
               key={branch.id} 

@@ -9,7 +9,6 @@ import {
   Award,
   BookOpen,
   TrendingUp,
-  CalendarDays,
 } from "lucide-react";
 
 /* ─── Animation Helpers ─── */
@@ -23,49 +22,72 @@ const fadeUp = {
 };
 
 /* ─── Data ─── */
-const stats = [
-  { icon: CalendarDays, value: "20+", label: "Χρόνια Εμπειρίας" },
-  { icon: Users, value: "5.000+", label: "Απόφοιτοι" },
-  { icon: Award, value: "95%", label: "Ποσοστό Επιτυχίας" },
-  { icon: BookOpen, value: "3", label: "Παραρτήματα" },
-];
-
 const timeline = [
   {
-    year: "2005",
+    year: "1999",
     title: "Η Αρχή",
     description:
       "Ίδρυση του πρώτου φροντιστηρίου ΕΝΑ στο κέντρο του Ηρακλείου, με στόχο την ποιοτική εκπαίδευση και την ανθρωποκεντρική προσέγγιση.",
   },
   {
-    year: "2010",
-    title: "Επέκταση στην Ανατολική Κρήτη",
+    year: "2002",
+    title: "Συνεργασία με την Ελευθεροτυπία",
     description:
-      "Δημιουργία του δεύτερου παραρτήματος στο Ηράκλειο (Ανατολικά), εξυπηρετώντας μαθητές από ευρύτερη περιοχή.",
+      "Εβδομαδιαία συνεργασία με την εφημερίδα Ελευθεροτυπία με το ένθετο «Εξετάσεις».",
+  },
+  {
+    year: "2003",
+    title: "Πρώτες Εκδόσεις",
+    description:
+      "Κυκλοφορία βοηθημάτων για τα εξεταζόμενα πανελλαδικά μαθήματα σε συνεργασία με τον εκδοτικό όμιλο Μιανιατέα.",
+  },
+  {
+    year: "2009",
+    title: "Πλατφόρμα Ενημέρωσης Γονέων",
+    description:
+      "Δημιουργία της πρώτης πανελλαδικά ειδικής πλατφόρμας ενημέρωσης γονέων.",
+  },
+  {
+    year: "2010",
+    title: "Συνεργασία με Ράδιο Κρήτη",
+    description:
+      "Αποκλειστικοί συνεργάτες του Ράδιο Κρήτη σε θέματα εκπαίδευσης και Πανελλαδικών εξετάσεων.",
+  },
+  {
+    year: "2013",
+    title: "Δημιουργία Νέου Φροντιστηρίου",
+    description:
+      "Δημιουργία νέου φροντιστηρίου στην περιοχή Αγίου Ιωάννη Κνωσού, εξυπηρετώντας μαθητές από ευρύτερη περιοχή.",
+  },
+  {
+    year: "2014",
+    title: "Συνεργασία με Ένωση Ελλήνων Φυσικών",
+    description:
+      "Έκδοση των πρώτων Πανελλαδικά βιβλίων με τις λύσεις της Τράπεζας θεμάτων.",
   },
   {
     year: "2015",
-    title: "Πρώτες Εκδόσεις",
+    title: "ΟΕΦΕ",
     description:
-      "Κυκλοφορία των πρώτων ιδιόκτητων βοηθημάτων — σημειώσεις, ασκήσεις, προσομοιωτικά, ειδικά σχεδιασμένα για τις Πανελλαδικές.",
+      "Αποκλειστικοί συγγραφείς του πρώτου Πανελλαδικά βιβλίου ρευστομηχανικής.",
   },
   {
     year: "2019",
-    title: "Άνοιγμα στην Αθήνα",
+    title: "Klett – National Geographic",
     description:
-      "Λειτουργία του τρίτου παραρτήματος στην Αθήνα, φέρνοντας την τεχνογνωσία μας στην πρωτεύουσα.",
+      "Δημιουργία σειράς βιβλίων Γυμνασίου Φυσικής τα οποία βραβεύτηκαν στην διεθνή Έκθεση βιβλίων Φρανκφούρτης 2020.",
   },
   {
     year: "2023",
-    title: "Ψηφιακός Μετασχηματισμός",
+    title: "Klett – National Geographic",
     description:
-      "Εισαγωγή e-learning πλατφόρμας, online mock exams, και ψηφιακού υπολογιστή μορίων — μαθαίνεις από παντού.",
+      "Συγγραφή βιβλίου Γ΄ Λυκείου κβαντομηχανικής το οποίο βραβεύτηκε στην διεθνή Έκθεση βιβλίων Φρανκφούρτης.",
   },
   {
-    year: "2026",
-    title: "Σήμερα",
+    year: "Σήμερα",
+    title: "25+ Χρόνια Αριστείας",
     description:
-      "20+ χρόνια αριστείας, 5.000+ επιτυχόντες, και μια ομάδα που συνεχίζει να εξελίσσεται δίπλα στον κάθε μαθητή.",
+      "25+ χρόνια αριστείας, 5.000+ επιτυχόντες, και μια ομάδα που συνεχίζει να εξελίσσεται δίπλα στον κάθε μαθητή.",
   },
 ];
 
@@ -90,7 +112,7 @@ export default function AboutPage() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#213576]/8 text-[#213576] text-[13px] font-semibold rounded-full mb-6">
               <GraduationCap size={15} />
-              Το ΕΝΑ
+              Σχετικά με εμάς
             </span>
           </motion.div>
 
@@ -109,50 +131,10 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
-            Από το 2005, ο Φροντιστηριακός Όμιλος ΕΝΑ οδηγεί χιλιάδες μαθητές 
+            Από το 1999, ο Φροντιστηριακός Όμιλος ΕΝΑ οδηγεί χιλιάδες μαθητές 
             στις σπουδές που ονειρεύονται. Μάθε πώς ξεκίνησε όλο αυτό.
           </motion.p>
         </div>
-      </section>
-
-      {/* ══════ Stats Bar ══════ */}
-      <section className="relative -mt-10 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100/80 p-6 md:p-8"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {stats.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="flex justify-center mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576]">
-                      <Icon size={20} />
-                    </div>
-                  </div>
-                  <div className="text-2xl md:text-3xl font-extrabold text-[#002B5B] mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-[13px] text-gray-500 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
       </section>
 
       {/* ══════ Mission & Vision ══════ */}
@@ -222,7 +204,7 @@ export default function AboutPage() {
               Η Πορεία μας
             </h2>
             <p className="text-gray-500 max-w-lg mx-auto">
-              Κάθε σταθμός μια νέα αρχή — δύο δεκαετίες αφοσίωσης στην εκπαίδευση.
+              Κάθε σταθμός μια νέα αρχή — τρεις δεκαετίες αφοσίωσης στην εκπαίδευση.
             </p>
           </motion.div>
 
@@ -278,7 +260,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══════ Values / Why ΕΝΑ ══════ */}
+      {/* ══════ Σήμερα / Why ΕΝΑ ══════ */}
       <section className="py-20 md:py-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -298,23 +280,23 @@ export default function AboutPage() {
           {[
             {
               icon: Users,
-              title: "Μικρά Τμήματα",
-              desc: "Μέγιστο 12 μαθητές ανά τμήμα για εξατομικευμένη προσοχή και μέγιστη αλληλεπίδραση.",
+              title: "Μικρές Ομοιογενείς Ομάδες",
+              desc: "Μικρές ομοιογενείς ομάδες για εξατομικευμένη προσοχή και μέγιστη αλληλεπίδραση.",
             },
             {
               icon: TrendingUp,
               title: "Αποδεδειγμένα Αποτελέσματα",
-              desc: "95% ποσοστό εισαγωγής, με εκατοντάδες μαθητές σε κορυφαίες σχολές κάθε χρόνο.",
+              desc: "25+ χρόνια αριστείας, 5.000+ επιτυχόντες, και μια ομάδα που συνεχίζει να εξελίσσεται δίπλα στον κάθε μαθητή.",
             },
             {
               icon: BookOpen,
-              title: "Ιδιόκτητο Υλικό",
-              desc: "Αποκλειστικές εκδόσεις, σημειώσεις & ασκήσεις σχεδιασμένα ειδικά για τις Πανελλαδικές.",
+              title: "Εκπαιδευτικό Υλικό",
+              desc: "Βοηθήματα για όλες τις τάξεις Γυμνασίου και Λυκείου για όλες τις κατευθύνσεις.",
             },
             {
               icon: Award,
               title: "Έμπειροι Καθηγητές",
-              desc: "Διδακτικό προσωπικό με πάνω από 10 χρόνια εμπειρία και εξειδίκευση στον τομέα του.",
+              desc: "Μόνιμο διδακτικό προσωπικό με πάνω από 10 χρόνια εμπειρία και εξειδίκευση στον τομέα του.",
             },
             {
               icon: Target,
@@ -324,7 +306,7 @@ export default function AboutPage() {
             {
               icon: GraduationCap,
               title: "Σύγχρονες Εγκαταστάσεις",
-              desc: "Κλιματιζόμενες αίθουσες, εξοπλισμένα εργαστήρια, και e-learning πλατφόρμα.",
+              desc: "Κλιματιζόμενες αίθουσες, εξοπλισμένα εργαστήρια, και σύγχρονα μέσα διδασκαλίας.",
             },
           ].map((item, i) => {
             const Icon = item.icon;

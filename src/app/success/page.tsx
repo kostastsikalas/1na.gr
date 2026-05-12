@@ -7,8 +7,6 @@ import {
   Loader2,
   Trophy,
   GraduationCap,
-  Users,
-  TrendingUp,
   Filter,
 } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
@@ -31,13 +29,6 @@ const fadeUp = {
   }),
 };
 
-/* ─── Stats ─── */
-const stats = [
-  { icon: Trophy, value: "2500+", label: "Επιτυχόντες" },
-  { icon: GraduationCap, value: "95%", label: "Ποσοστό Εισαγωγής" },
-  { icon: Users, value: "20+", label: "Χρόνια Εμπειρίας" },
-  { icon: TrendingUp, value: "#1", label: "Στην Κρήτη" },
-];
 
 /* ─── Page Component ─── */
 export default function SuccessPage() {
@@ -120,48 +111,8 @@ export default function SuccessPage() {
         </div>
       </section>
 
-      {/* ══════ Stats Bar ══════ */}
-      <section className="relative -mt-10 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100/80 p-6 md:p-8"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {stats.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="flex justify-center mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576]">
-                      <Icon size={20} />
-                    </div>
-                  </div>
-                  <div className="text-2xl md:text-3xl font-extrabold text-[#002B5B] mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-[13px] text-gray-500 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-      </section>
-
       {/* ══════ Search & Filter Bar ══════ */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 mt-8">
         <div className="bg-[#f8fafe] p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col sm:flex-row gap-3">
           {/* Search */}
           <div className="relative flex-1">

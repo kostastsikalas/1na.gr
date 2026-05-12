@@ -2,18 +2,12 @@
 
 import { motion } from "framer-motion";
 import {
-  GraduationCap,
-  BookOpen,
-  Atom,
-  PenTool,
-  Languages,
-  Monitor,
-  Calculator,
-  Brain,
-  Lightbulb,
   Users,
-  HeartHandshake,
+  Award,
+  BookOpen,
   ShieldCheck,
+  HeartHandshake,
+  CheckCircle2,
 } from "lucide-react";
 
 /* ─── Animation ─── */
@@ -27,80 +21,11 @@ const fadeUp = {
 };
 
 /* ─── Data ─── */
-type TeamMember = {
-  name: string;
-  role: string;
-  subject: string;
-  icon: React.ElementType;
-  color: string;
-  bg: string;
-};
-
-const teamMembers: TeamMember[] = [
-  {
-    name: "Γιάννης Παπαδόπουλος",
-    role: "Διευθυντής Σπουδών",
-    subject: "Μαθηματικά",
-    icon: Calculator,
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-  },
-  {
-    name: "Μαρία Κωνσταντίνου",
-    role: "Καθηγήτρια",
-    subject: "Φυσική",
-    icon: Atom,
-    color: "text-violet-600",
-    bg: "bg-violet-50",
-  },
-  {
-    name: "Νίκος Αλεξίου",
-    role: "Καθηγητής",
-    subject: "Χημεία",
-    icon: Lightbulb,
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-  },
-  {
-    name: "Ελένη Δημητρίου",
-    role: "Καθηγήτρια",
-    subject: "Φιλολογικά",
-    icon: PenTool,
-    color: "text-rose-600",
-    bg: "bg-rose-50",
-  },
-  {
-    name: "Δημήτρης Αντωνίου",
-    role: "Καθηγητής",
-    subject: "Αγγλικά",
-    icon: Languages,
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-  },
-  {
-    name: "Σοφία Μιχαλάκη",
-    role: "Καθηγήτρια",
-    subject: "Πληροφορική",
-    icon: Monitor,
-    color: "text-cyan-600",
-    bg: "bg-cyan-50",
-  },
-  {
-    name: "Κώστας Βλαχάκης",
-    role: "Καθηγητής",
-    subject: "Βιολογία",
-    icon: Brain,
-    color: "text-teal-600",
-    bg: "bg-teal-50",
-  },
-  {
-    name: "Αναστασία Γεωργίου",
-    role: "Καθηγήτρια",
-    subject: "Ιστορία",
-    icon: BookOpen,
-    color: "text-orange-600",
-    bg: "bg-orange-50",
-  },
+const qualities = [
+  "την ειδίκευση ανά τομέα και επιστημονικό αντικείμενο",
+  "τη συμμετοχή στη συγγραφή, έκδοση και επικαιροποίηση επιμελημένων πρωτότυπων φροντιστηριακών εγχειριδίων",
+  "τη διδακτική ικανότητα, τη μεθοδικότητα και τις επικοινωνιακές δεξιότητες",
+  "την ικανότητα προσέγγισης του μαθητή, την έγκαιρη επισήμανση και διόρθωση των αδυναμιών του, την επιστημονική αλλά και ψυχολογική στήριξη στον απαιτητικό δρόμο για την επίτευξη των στόχων του",
 ];
 
 const values = [
@@ -165,53 +90,65 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ══════ Team Grid ══════ */}
-      <section className="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {teamMembers.map((member, i) => {
-            const Icon = member.icon;
-            return (
+      {/* ══════ Team Description ══════ */}
+      <section className="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-br from-[#f8f9fa] to-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm"
+        >
+          {/* Intro */}
+          <div className="flex items-start gap-4 mb-8">
+            <div className="w-12 h-12 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576] shrink-0 mt-1">
+              <Award size={24} />
+            </div>
+            <p className="text-[15px] text-gray-600 leading-relaxed">
+              Οι εκπαιδευτικοί του φροντιστηριακού ομίλου ΕΝΑ, μόνιμοι και αποκλειστικοί
+              συνεργάτες του εκπαιδευτηρίου, έχουν επιλεγεί από τη διεύθυνση βάσει απαιτητικών
+              κριτηρίων που περιλαμβάνουν όχι μόνο την επάρκεια τυπικών προσόντων που
+              ορίζεται από την κείμενη νομοθεσία αλλά ταυτόχρονα τη μακρόχρονη εμπειρία τους
+              και διακρίνονται για:
+            </p>
+          </div>
+
+          {/* Qualities list */}
+          <div className="space-y-3 mb-10 ml-4 md:ml-16">
+            {qualities.map((q, i) => (
               <motion.div
-                key={member.name}
+                key={i}
                 custom={i}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group relative bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-[#213576]/15 shadow-sm hover:shadow-xl transition-all duration-300"
+                className="flex items-start gap-3"
               >
-                {/* Top colored bar */}
-                <div className={`h-1.5 w-full ${member.bg}`}>
-                  <div
-                    className={`h-full w-0 group-hover:w-full transition-all duration-500 ${member.color.replace("text-", "bg-")}`}
-                  />
-                </div>
-
-                <div className="p-6">
-                  {/* Avatar with Icon */}
-                  <div
-                    className={`w-16 h-16 rounded-2xl ${member.bg} flex items-center justify-center ${member.color} mb-5 group-hover:scale-105 transition-transform duration-300`}
-                  >
-                    <Icon size={28} />
-                  </div>
-
-                  <h3 className="text-[15px] font-bold text-[#002B5B] mb-1 leading-tight">
-                    {member.name}
-                  </h3>
-                  <p className="text-[13px] text-gray-400 mb-3">{member.role}</p>
-
-                  {/* Subject tag */}
-                  <span
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-medium ${member.bg} ${member.color}`}
-                  >
-                    <GraduationCap size={12} />
-                    {member.subject}
-                  </span>
-                </div>
+                <CheckCircle2 size={18} className="text-[#213576] shrink-0 mt-0.5" />
+                <span className="text-[14px] text-gray-600 leading-relaxed">{q}</span>
               </motion.div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+
+          {/* Continuing education paragraph */}
+          <div className="space-y-5 ml-0 md:ml-16">
+            <p className="text-[15px] text-gray-600 leading-relaxed">
+              Ταυτόχρονα το εκπαιδευτικό προσωπικό συμμετέχει ανά τακτά χρονικά διαστήματα
+              σε προγράμματα επιμόρφωσης και εξειδικευμένων διδακτικών πρακτικών, σε μια
+              προσπάθεια δυναμικής και άμεσης προσαρμογής στο απαιτητικό και διαρκώς
+              μεταβαλλόμενο εκπαιδευτικό τοπίο. Τα προγράμματα αυτά συντελούνται τόσο από
+              τον ίδιο τον εκπαιδευτικό οργανισμό όσο και από πιστοποιημένους εκπαιδευτικούς
+              φορείς και ινστιτούτα κατάρτισης.
+            </p>
+
+            <p className="text-[15px] text-gray-600 leading-relaxed">
+              Στόχος του φροντιστηριακού οργανισμού είναι η παροχή ποιοτικών εκπαιδευτικών
+              υπηρεσιών μέσα από την επένδυση στη συνεχή εξέλιξη και αναβάθμιση των
+              ικανοτήτων του διδακτικού δυναμικού, με αίσθημα ευθύνης απέναντι στο μαθητή,
+              τους γονείς αλλά και την Παιδεία.
+            </p>
+          </div>
+        </motion.div>
       </section>
 
       {/* ══════ Our Values ══════ */}
