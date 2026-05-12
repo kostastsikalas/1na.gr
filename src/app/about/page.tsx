@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   GraduationCap,
   Target,
-  Eye,
   Users,
   Award,
   BookOpen,
@@ -137,59 +136,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══════ Mission & Vision ══════ */}
-      <section className="py-20 md:py-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Mission */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative bg-gradient-to-br from-[#213576] to-[#1a2d66] rounded-2xl p-8 md:p-10 text-white overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-
-            <div className="relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                <Target size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Η Αποστολή μας</h3>
-              <p className="text-blue-100/80 leading-relaxed text-[15px]">
-                Να προσφέρουμε ποιοτική, προσωποποιημένη εκπαίδευση σε κάθε μαθητή, 
-                ανεξαρτήτως αφετηρίας. Πιστεύουμε ότι η γνώση δεν είναι προνόμιο αλλά 
-                δικαίωμα — και η σωστή καθοδήγηση μπορεί να ανοίξει πόρτες που μοιάζουν κλειστές.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Vision */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative bg-gradient-to-br from-[#f8f9fa] to-white rounded-2xl p-8 md:p-10 border border-gray-100 overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#213576]/[0.02] rounded-full -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#213576]/[0.02] rounded-full translate-y-1/2 -translate-x-1/2" />
-
-            <div className="relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-[#213576]/8 flex items-center justify-center text-[#213576] mb-6">
-                <Eye size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-[#002B5B] mb-4">Το Όραμά μας</h3>
-              <p className="text-gray-600 leading-relaxed text-[15px]">
-                Να γίνουμε ο εκπαιδευτικός οργανισμός-αναφορά στην Ελλάδα — 
-                ένας χώρος όπου η τεχνολογία συναντά την παράδοση, 
-                ο μαθητής βρίσκεται πάντα στο κέντρο, και η επιτυχία είναι αναπόσπαστο μέρος 
-                της καθημερινότητας.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ══════ Timeline ══════ */}
       <section className="py-16 md:py-24 bg-[#f8fafe]">
