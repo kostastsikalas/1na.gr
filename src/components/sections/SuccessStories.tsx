@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Loader2 } from "lucide-react";
+import { Search, Loader2, FileText, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { createClient } from "@/utils/supabase/client";
 
 type Student = {
   id: string;
-  name: string;
-  school: string;
+  name: string; // The title e.g. Λίστα Επιτυχόντων 2024
+  school: string; // The PDF URL
   year?: string;
 };
 
@@ -36,7 +36,6 @@ export default function SuccessStories() {
   }, [supabase]);
 
   const filteredStudents = students.filter((student) =>
-    student.school.toLowerCase().includes(searchQuery.toLowerCase()) ||
     student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     (student.year && student.year.includes(searchQuery))
   );
@@ -60,7 +59,7 @@ export default function SuccessStories() {
           <input
             type="text"
             className="w-full bg-white border-2 border-[#213576] rounded-full py-3 pl-8 pr-16 text-lg text-gray-800 placeholder-gray-700 focus:outline-none focus:ring-4 focus:ring-[#df6060]/20 shadow-sm transition-all font-medium"
-            placeholder="Αναζήτηση Ονόματος ή Σχολής..."
+            placeholder="Αναζήτηση με Έτος..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -86,23 +85,28 @@ export default function SuccessStories() {
                   transition={{ delay: (index % 10) * 0.1 }}
                   className="bg-white rounded-xl border-2 border-[#213576] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow flex flex-col items-center p-8 pt-10"
                 >
-                  {/* Profile Avatar Placeholder */}
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-b from-gray-200 to-gray-300 shadow-inner flex flex-col items-center justify-end mb-6 overflow-hidden relative border-[6px] border-white ring-1 ring-gray-100">
-                     {/* CSS Silhouette */}
-                     <div className="absolute top-5 w-12 h-12 bg-[#8c9bab] rounded-full"></div>
-                     <div className="absolute -bottom-2 w-24 h-14 bg-[#8c9bab] rounded-t-[3rem]"></div>
+                  {/* PDF Icon Avatar */}
+                  <div className="w-32 h-32 rounded-full bg-gradient-to-b from-red-50 to-red-100 shadow-inner flex items-center justify-center mb-6 overflow-hidden relative border-[6px] border-white ring-1 ring-red-100">
+                     <FileText className="w-16 h-16 text-[#df6060]" />
                   </div>
                   
-                  {/* Student Info */}
-                  <h3 className="text-xl font-bold text-[#213576] text-center mb-1 leading-snug">
-                    {student.name.split(' ').map((n, i) => <span key={i} className="block">{n}</span>)}
+                  {/* PDF Info */}
+                  <h3 className="text-xl font-bold text-[#213576] text-center mb-2 leading-snug">
+                    {student.name}
                   </h3>
-                  <p className="text-lg font-semibold text-[#df6060] text-center mt-2">
-                    {student.school.split(' ').map((n, i) => <span key={i} className={i === 0 ? "block" : ""}>{n}{i !== 0 && " "}</span>)}
-                  </p>
                   {student.year && (
-                    <p className="text-sm font-medium text-gray-400 mt-2">Έτος: {student.year}</p>
+                    <p className="text-md font-medium text-gray-500 mt-1 mb-4">Ακαδημαϊκό Έτος: {student.year}</p>
                   )}
+                  
+                  <a 
+                    href={student.school} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-auto w-full flex items-center justify-center gap-2 bg-[#df6060] hover:bg-[#c95353] text-white py-3 px-6 rounded-xl font-bold transition-colors shadow-sm"
+                  >
+                    <Download className="w-5 h-5" />
+                    Προβολή Λίστας (PDF)
+                  </a>
                 </motion.div>
               ))}
             </div>

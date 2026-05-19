@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { createClient } from "@/utils/supabase/client";
 import {
   Calculator as CalcIcon,
   CheckCircle2,
@@ -21,6 +22,7 @@ const FIELDS: Field[] = [
   "Θετικών Σπουδών",
   "Ανθρωπιστικών Σπουδών",
   "Σπουδών Οικονομίας & Πληροφορικής",
+  "ΕΠΑΛ",
 ];
 
 const FIELD_COLOR: Record<Field, string> = {
@@ -28,6 +30,7 @@ const FIELD_COLOR: Record<Field, string> = {
   "Θετικών Σπουδών": "from-blue-500 to-indigo-600",
   "Ανθρωπιστικών Σπουδών": "from-violet-500 to-purple-600",
   "Σπουδών Οικονομίας & Πληροφορικής": "from-amber-500 to-orange-600",
+  "ΕΠΑΛ": "from-rose-500 to-pink-600",
 };
 
 const FIELD_ACCENT: Record<Field, string> = {
@@ -35,6 +38,7 @@ const FIELD_ACCENT: Record<Field, string> = {
   "Θετικών Σπουδών": "text-blue-600",
   "Ανθρωπιστικών Σπουδών": "text-violet-600",
   "Σπουδών Οικονομίας & Πληροφορικής": "text-amber-600",
+  "ΕΠΑΛ": "text-rose-600",
 };
 
 export default function CalculatorPage() {
@@ -42,12 +46,34 @@ export default function CalculatorPage() {
   const [grades, setGrades] = useState<number[]>([15, 15, 15, 15]);
   const [showInfo, setShowInfo] = useState(false);
   const [filterPassing, setFilterPassing] = useState<"all" | "pass" | "fail">("all");
+  const [loadedSchools, setLoadedSchools] = useState(schools);
+
+  useEffect(() => {
+    const fetchDynamicSchools = async () => {
+      try {
+        const supabase = createClient();
+        const { data } = supabase.storage.from("uploads").getPublicUrl("calculator_bases.json");
+        if (data.publicUrl) {
+          const res = await fetch(data.publicUrl + "?t=" + new Date().getTime());
+          if (res.ok) {
+            const dynamicSchools = await res.json();
+            if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
+              setLoadedSchools(dynamicSchools);
+            }
+          }
+        }
+      } catch (_) {
+        console.log("Χρήση στατικών βάσεων.");
+      }
+    };
+    fetchDynamicSchools();
+  }, []);
 
   const subjects = fieldSubjects[field];
 
   const fieldSchools = useMemo(
-    () => schools.filter((s) => s.field === field),
-    [field]
+    () => loadedSchools.filter((s) => s.field === field),
+    [field, loadedSchools]
   );
 
   /** Κάθε σχολή παίρνει τα δικά της μόρια */

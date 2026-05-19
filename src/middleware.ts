@@ -31,7 +31,10 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  if (request.nextUrl.pathname.startsWith('/admin') && !request.nextUrl.pathname.startsWith('/admin/login')) {
+  const isAdminRoute = request.nextUrl.pathname.startsWith('/admin');
+  const isAuthRoute = request.nextUrl.pathname.startsWith('/admin/login') || request.nextUrl.pathname.startsWith('/admin/update-password');
+
+  if (isAdminRoute && !isAuthRoute) {
     if (!user) {
       return NextResponse.redirect(new URL('/admin/login', request.url))
     }

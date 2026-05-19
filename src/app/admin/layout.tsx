@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { LayoutDashboard, Newspaper, GraduationCap, FileText, LogOut } from "lucide-react";
+import { LayoutDashboard, Newspaper, GraduationCap, FileText, LogOut, Calculator } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
 
@@ -26,6 +26,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: "Νέα & Εκδηλώσεις", href: "/admin/news", icon: Newspaper },
     { name: "Επιτυχόντες", href: "/admin/success-stories", icon: GraduationCap },
     { name: "Αρχείο Θεμάτων", href: "/admin/exams", icon: FileText },
+    { name: "Βάσεις Σχολών", href: "/admin/calculator", icon: Calculator },
   ];
 
   return (

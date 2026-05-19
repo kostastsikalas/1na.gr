@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { Plus, Trash2, Loader2 } from "lucide-react";
 
 type SuccessStory = {
   id: string;
   name: string;
-  school: string;
+  school: string; // Used as PDF URL
   year: string;
 };
 
@@ -18,15 +18,10 @@ export default function AdminSuccessStories() {
   const supabase = createClient();
 
   // Form states
-  const [name, setName] = useState("");
-  const [school, setSchool] = useState("");
   const [year, setYear] = useState(new Date().getFullYear().toString());
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
 
-  useEffect(() => {
-    fetchStories();
-  }, []);
-
-  const fetchStories = async () => {
+  const fetchStories = useCallback(async () => {
     setIsLoading(true);
     const { data, error } = await supabase
       .from("success_stories")
@@ -37,20 +32,49 @@ export default function AdminSuccessStories() {
       setStories(data);
     }
     setIsLoading(false);
-  };
+  }, [supabase]);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchStories();
+  }, [fetchStories]);
 
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !school) return;
+    if (!year || !pdfFile) return;
     
     setIsSubmitting(true);
+
+    // 1. Upload PDF
+    const fileExt = pdfFile.name.split('.').pop();
+    const fileName = `success_stories_${year}_${new Date().getTime()}.${fileExt}`;
+    const { error: uploadError } = await supabase.storage
+      .from("uploads")
+      .upload(fileName, pdfFile);
+
+    if (uploadError) {
+      alert("Σφάλμα κατά το ανέβασμα του PDF: " + uploadError.message);
+      setIsSubmitting(false);
+      return;
+    }
+
+    const { data: publicUrlData } = supabase.storage
+      .from("uploads")
+      .getPublicUrl(fileName);
+
+    const pdfUrl = publicUrlData.publicUrl;
+
+    // 2. Insert record
     const { error } = await supabase
       .from("success_stories")
-      .insert([{ name, school, year }]);
+      .insert([{ 
+        name: `Λίστα Επιτυχόντων ${year}`, 
+        school: pdfUrl, 
+        year 
+      }]);
 
     if (!error) {
-      setName("");
-      setSchool("");
+      setPdfFile(null);
       fetchStories(); // Refresh list
     } else {
       alert("Σφάλμα κατά την προσθήκη: " + error.message);
@@ -89,25 +113,12 @@ export default function AdminSuccessStories() {
             
             <form onSubmit={handleAdd} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Ονοματεπώνυμο</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Αρχείο PDF Επιτυχόντων</label>
                 <input 
-                  type="text" 
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  type="file" 
+                  accept="application/pdf"
+                  onChange={(e) => setPdfFile(e.target.files?.[0] || null)}
                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576]"
-                  placeholder="π.χ. Γεώργιος Παπαδόπουλος"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Σχολή Επιτυχίας</label>
-                <input 
-                  type="text" 
-                  value={school}
-                  onChange={(e) => setSchool(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576]"
-                  placeholder="π.χ. Ιατρική Αθηνών"
                   required
                 />
               </div>
@@ -157,7 +168,7 @@ export default function AdminSuccessStories() {
                     <li key={story.id} className="p-4 sm:px-6 hover:bg-gray-50 transition-colors flex items-center justify-between group">
                       <div>
                         <h3 className="text-lg font-bold text-gray-800">{story.name}</h3>
-                        <p className="text-sm text-[#df6060] font-semibold">{story.school}</p>
+                        <a href={story.school} target="_blank" rel="noopener noreferrer" className="text-sm text-[#213576] font-semibold hover:underline">Προβολή PDF</a>
                         {story.year && <span className="text-xs text-gray-500 mt-1 block">Έτος: {story.year}</span>}
                       </div>
                       <button 
