@@ -7,9 +7,25 @@ import Link from "next/link";
 
 export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (typeof window !== 'undefined') {
+      // Trigger hover only if mouse is in the left half of the screen
+      setIsHovered(e.clientX < window.innerWidth / 2);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
-    <section className="group relative min-h-[90vh] flex items-center overflow-hidden pt-24 pb-12 lg:pt-32">
+    <section 
+      className="relative min-h-[90vh] flex items-center overflow-hidden pt-24 pb-12 lg:pt-32"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       {/* Full-screen Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -24,8 +40,8 @@ export default function Hero() {
           Your browser does not support the video tag.
         </video>
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-[#002B5B]/30 mix-blend-multiply opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 ease-in-out" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/60 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 ease-in-out" />
+        <div className={`absolute inset-0 bg-[#002B5B]/30 mix-blend-multiply transition-opacity duration-700 ease-in-out ${isHovered ? 'opacity-100 md:opacity-100' : 'opacity-100 md:opacity-0'}`} />
+        <div className={`absolute inset-0 bg-gradient-to-r from-[#002B5B]/60 to-transparent transition-opacity duration-700 ease-in-out ${isHovered ? 'opacity-100 md:opacity-100' : 'opacity-100 md:opacity-0'}`} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-end">
@@ -33,7 +49,7 @@ export default function Hero() {
           
           {/* Left Content Column - Glassmorphism Card */}
           <div 
-            className="w-full max-w-2xl text-left p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl opacity-100 md:opacity-0 md:-translate-x-8 md:group-hover:opacity-100 md:group-hover:translate-x-0 transition-all duration-700 ease-out"
+            className={`w-full max-w-2xl text-left p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-700 ease-out ${isHovered ? 'opacity-100 md:opacity-100 md:translate-x-0' : 'opacity-100 md:opacity-0 md:-translate-x-8'}`}
           >
             <h1 className="text-[2.75rem] md:text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight drop-shadow-sm">
               Η Σίγουρη Επιλογή<br />
