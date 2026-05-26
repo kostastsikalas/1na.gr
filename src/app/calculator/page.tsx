@@ -8,6 +8,7 @@ import {
   XCircle,
   ChevronDown,
   Info,
+  Minus,
 } from "lucide-react";
 import {
   schools,
@@ -80,8 +81,8 @@ export default function CalculatorPage() {
     [fieldSchools, grades]
   );
 
-  const passing = schoolResults.filter((s) => s.points >= s.base2025);
-  const failing = schoolResults.filter((s) => s.points < s.base2025);
+  const passing = schoolResults.filter((s) => s.base2025 > 0 && s.points >= s.base2025);
+  const failing = schoolResults.filter((s) => s.base2025 > 0 && s.points < s.base2025);
 
   const displayed = filterPassing === "pass"
     ? passing
@@ -320,7 +321,8 @@ export default function CalculatorPage() {
 
         <div className="space-y-2.5">
           {displayed.map((s, i) => {
-            const passes = s.points >= s.base2025;
+            const hasBase = s.base2025 > 0;
+            const passes = hasBase && s.points >= s.base2025;
             const diff = s.points - s.base2025;
             return (
               <motion.div
@@ -337,9 +339,9 @@ export default function CalculatorPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                   {/* Status icon */}
                   <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                    passes ? "bg-emerald-100 text-emerald-600" : "bg-gray-100 text-gray-400"
+                    !hasBase ? "bg-gray-50 text-gray-300" : passes ? "bg-emerald-100 text-emerald-600" : "bg-gray-100 text-gray-400"
                   }`}>
-                    {passes ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
+                    {!hasBase ? <Minus size={18} /> : passes ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
                   </div>
 
                   {/* School info + coefficients */}
@@ -349,8 +351,9 @@ export default function CalculatorPage() {
                         {s.name}
                       </h3>
                       <span className="text-[12px] text-gray-400">·</span>
-                      <span className="text-[13px] text-gray-400">{s.institution}</span>
-                      <span className="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full">{s.city}</span>
+                      <span className="text-[13px] text-gray-400">
+                        {s.institution}{s.city && ` - ${s.city}`}
+                      </span>
                     </div>
                     {/* Coefficients breakdown */}
                     <div className="flex flex-wrap gap-1.5 mt-1.5">
@@ -373,13 +376,13 @@ export default function CalculatorPage() {
                     <div className="text-right">
                       <div className="text-[11px] text-gray-400 mb-0.5">Βάση 2025</div>
                       <div className="text-[15px] font-bold text-gray-600">
-                        {s.base2025.toLocaleString("el-GR")}
+                        {hasBase ? s.base2025.toLocaleString("el-GR") : "-"}
                       </div>
                     </div>
                     <div className={`min-w-[64px] text-center px-2.5 py-1.5 rounded-lg text-[13px] font-bold ${
-                      passes ? "bg-emerald-100 text-emerald-700" : "bg-rose-50 text-rose-600"
+                      !hasBase ? "bg-gray-100 text-gray-500" : passes ? "bg-emerald-100 text-emerald-700" : "bg-rose-50 text-rose-600"
                     }`}>
-                      {diff >= 0 ? `+${diff.toLocaleString("el-GR")}` : diff.toLocaleString("el-GR")}
+                      {!hasBase ? "-" : diff >= 0 ? `+${diff.toLocaleString("el-GR")}` : diff.toLocaleString("el-GR")}
                     </div>
                   </div>
                 </div>

@@ -99,8 +99,24 @@ export default function BasesPage() {
   const [selectedField, setSelectedField] = useState("Όλα τα Πεδία");
   const [sortBy, setSortBy] = useState<"name" | "points">("points");
 
+  const deduplicateSchools = (schools: SchoolBase[]) => {
+    const grouped = new Map<string, SchoolBase>();
+    schools.forEach(s => {
+      const key = `${s.name}-${s.institution}`;
+      if (grouped.has(key)) {
+        const existing = grouped.get(key)!;
+        if (!existing.field.includes(s.field)) {
+          existing.field += `, ${s.field}`;
+        }
+      } else {
+        grouped.set(key, { ...s });
+      }
+    });
+    return Array.from(grouped.values());
+  };
+
   const [loadedSchools, setLoadedSchools] = useState<SchoolBase[]>(() => {
-    return fallbackSchools.map((s, i) => {
+    const initialMapped = fallbackSchools.map((s, i) => {
       const historical = schoolBases.find(h => h.name === s.name && h.institution === s.institution);
       return {
         id: String(i),
@@ -112,6 +128,7 @@ export default function BasesPage() {
         year2023: historical?.year2023,
       };
     });
+    return deduplicateSchools(initialMapped);
   });
 
   useEffect(() => {
@@ -133,7 +150,7 @@ export default function BasesPage() {
                 year2023: historical?.year2023 || s.year2023,
               };
             });
-            setLoadedSchools(mapped);
+            setLoadedSchools(deduplicateSchools(mapped));
           }
         }
       } catch (_) {
@@ -149,9 +166,9 @@ export default function BasesPage() {
         s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         s.institution.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesField =
-        selectedField === "Όλα τα Πεδία" || s.field === selectedField ||
-        (selectedField === "Οικονομίας & Πληροφορικής" && s.field === "Σπουδών Οικονομίας & Πληροφορικής") ||
-        (selectedField === "Σπουδών Οικονομίας & Πληροφορικής" && s.field === "Οικονομίας & Πληροφορικής");
+        selectedField === "Όλα τα Πεδία" || s.field.includes(selectedField) ||
+        (selectedField === "Οικονομίας & Πληροφορικής" && s.field.includes("Σπουδών Οικονομίας & Πληροφορικής")) ||
+        (selectedField === "Σπουδών Οικονομίας & Πληροφορικής" && s.field.includes("Οικονομίας & Πληροφορικής"));
       return matchesSearch && matchesField;
     });
 
@@ -257,17 +274,17 @@ export default function BasesPage() {
               <tr className="bg-[#f8fafe] border-b border-gray-100">
                 <th className="text-left px-6 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">Σχολή</th>
                 <th className="text-left px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">Πεδίο</th>
-                <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">2023</th>
-                <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">2024</th>
+                {/* <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">2023</th> */}
+                {/* <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">2024</th> */}
                 <th className="text-center px-4 py-4 text-[12px] font-semibold text-[#213576] uppercase tracking-wider font-bold">2025</th>
-                <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">Τάση</th>
+                {/* <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">Τάση</th> */}
               </tr>
             </thead>
             <tbody>
               {filtered.map((school, i) => {
                 const trend = getTrend(school.year2025, school.year2024);
                 const TrendIcon = trend.icon;
-                const color = fieldColors[school.field] || { text: "text-gray-600", bg: "bg-gray-50" };
+                const color = fieldColors[school.field.split(', ')[0]] || { text: "text-gray-600", bg: "bg-gray-50" };
                 return (
                   <motion.tr key={school.id} custom={i % 20} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
                     className="border-b border-gray-50 hover:bg-[#f8fafe]/50 transition-colors">
@@ -280,15 +297,15 @@ export default function BasesPage() {
                         {school.field}
                       </span>
                     </td>
-                    <td className="text-center px-4 py-4 text-[13px] text-gray-400 font-medium">{school.year2023 ? school.year2023.toLocaleString("el-GR") : "-"}</td>
-                    <td className="text-center px-4 py-4 text-[13px] text-gray-500 font-medium">{school.year2024 ? school.year2024.toLocaleString("el-GR") : "-"}</td>
+                    {/* <td className="text-center px-4 py-4 text-[13px] text-gray-400 font-medium">{school.year2023 ? school.year2023.toLocaleString("el-GR") : "-"}</td> */}
+                    {/* <td className="text-center px-4 py-4 text-[13px] text-gray-500 font-medium">{school.year2024 ? school.year2024.toLocaleString("el-GR") : "-"}</td> */}
                     <td className="text-center px-4 py-4 text-[15px] text-[#002B5B] font-bold">{school.year2025 ? school.year2025.toLocaleString("el-GR") : "-"}</td>
-                    <td className="text-center px-4 py-4">
+                    {/* <td className="text-center px-4 py-4">
                       <span className={`inline-flex items-center gap-1 text-[12px] font-semibold ${trend.color}`}>
                         <TrendIcon size={14} />
                         {trend.label}
                       </span>
-                    </td>
+                    </td> */}
                   </motion.tr>
                 );
               })}
@@ -301,7 +318,7 @@ export default function BasesPage() {
           {filtered.map((school, i) => {
             const trend = getTrend(school.year2025, school.year2024);
             const TrendIcon = trend.icon;
-            const color = fieldColors[school.field] || { text: "text-gray-600", bg: "bg-gray-50" };
+            const color = fieldColors[school.field.split(', ')[0]] || { text: "text-gray-600", bg: "bg-gray-50" };
             return (
               <motion.div key={school.id} custom={i % 10} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
                 className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
@@ -310,23 +327,15 @@ export default function BasesPage() {
                     <h3 className="text-[15px] font-bold text-[#002B5B]">{school.name}</h3>
                     <p className="text-[12px] text-gray-400">{school.institution}</p>
                   </div>
-                  <span className={`inline-flex items-center gap-1 text-[12px] font-semibold ${trend.color}`}>
+                  {/* <span className={`inline-flex items-center gap-1 text-[12px] font-semibold ${trend.color}`}>
                     <TrendIcon size={14} />
                     {trend.label}
-                  </span>
+                  </span> */}
                 </div>
                 <span className={`inline-flex px-2.5 py-1 rounded-lg text-[11px] font-semibold ${color.bg} ${color.text} mb-3`}>
                   {school.field}
                 </span>
-                <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-gray-50">
-                  <div className="text-center">
-                    <div className="text-[11px] text-gray-400">2023</div>
-                    <div className="text-[13px] font-medium text-gray-500">{school.year2023 ? school.year2023.toLocaleString("el-GR") : "-"}</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-[11px] text-gray-400">2024</div>
-                    <div className="text-[13px] font-medium text-gray-500">{school.year2024 ? school.year2024.toLocaleString("el-GR") : "-"}</div>
-                  </div>
+                <div className="mt-3 pt-3 border-t border-gray-50">
                   <div className="text-center">
                     <div className="text-[11px] text-[#213576] font-semibold">2025</div>
                     <div className="text-[15px] font-bold text-[#002B5B]">{school.year2025 ? school.year2025.toLocaleString("el-GR") : "-"}</div>
