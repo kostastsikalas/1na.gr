@@ -51,15 +51,11 @@ export default function CalculatorPage() {
   useEffect(() => {
     const fetchDynamicSchools = async () => {
       try {
-        const supabase = createClient();
-        const { data } = supabase.storage.from("uploads").getPublicUrl("calculator_bases.json");
-        if (data.publicUrl) {
-          const res = await fetch(data.publicUrl + "?t=" + new Date().getTime());
-          if (res.ok) {
-            const dynamicSchools = await res.json();
-            if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
-              setLoadedSchools(dynamicSchools);
-            }
+        const res = await fetch("/calculator_bases.json?t=" + new Date().getTime());
+        if (res.ok) {
+          const dynamicSchools = await res.json();
+          if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
+            setLoadedSchools(dynamicSchools);
           }
         }
       } catch (_) {

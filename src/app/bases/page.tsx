@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   BarChart3,
@@ -13,6 +13,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { createClient } from "@/utils/supabase/client";
+import { schools as fallbackSchools } from "@/lib/schools2026";
 
 /* ─── Animation ─── */
 const fadeUp = {
@@ -31,8 +33,8 @@ type SchoolBase = {
   institution: string;
   field: string;
   year2025: number;
-  year2024: number;
-  year2023: number;
+  year2024?: number;
+  year2023?: number;
 };
 
 /*
@@ -79,7 +81,8 @@ const fields = [
   "Θετικών Σπουδών",
   "Σπουδών Υγείας",
   "Ανθρωπιστικών Σπουδών",
-  "Οικονομίας & Πληροφορικής",
+  "Σπουδών Οικονομίας & Πληροφορικής",
+  "ΕΠΑΛ",
 ];
 
 const fieldColors: Record<string, { text: string; bg: string }> = {
@@ -87,6 +90,8 @@ const fieldColors: Record<string, { text: string; bg: string }> = {
   "Σπουδών Υγείας": { text: "text-emerald-600", bg: "bg-emerald-50" },
   "Ανθρωπιστικών Σπουδών": { text: "text-rose-600", bg: "bg-rose-50" },
   "Οικονομίας & Πληροφορικής": { text: "text-violet-600", bg: "bg-violet-50" },
+  "Σπουδών Οικονομίας & Πληροφορικής": { text: "text-violet-600", bg: "bg-violet-50" },
+  "ΕΠΑΛ": { text: "text-pink-600", bg: "bg-pink-50" },
 };
 
 /* ─── Page Component ─── */
@@ -95,13 +100,59 @@ export default function BasesPage() {
   const [selectedField, setSelectedField] = useState("Όλα τα Πεδία");
   const [sortBy, setSortBy] = useState<"name" | "points">("points");
 
+  const [loadedSchools, setLoadedSchools] = useState<SchoolBase[]>(() => {
+    return fallbackSchools.map((s, i) => {
+      const historical = schoolBases.find(h => h.name === s.name && h.institution === s.institution);
+      return {
+        id: String(i),
+        name: s.name,
+        institution: s.institution,
+        field: s.field,
+        year2025: s.base2025,
+        year2024: historical?.year2024,
+        year2023: historical?.year2023,
+      };
+    });
+  });
+
+  useEffect(() => {
+    const fetchDynamicSchools = async () => {
+      try {
+        const res = await fetch("/calculator_bases.json?t=" + new Date().getTime());
+        if (res.ok) {
+          const dynamicSchools = await res.json();
+          if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
+            const mapped = dynamicSchools.map((s: any, i: number) => {
+              const historical = schoolBases.find(h => h.name === s.name && h.institution === s.institution);
+              return {
+                id: String(i),
+                name: s.name,
+                institution: s.institution,
+                field: s.field,
+                year2025: s.base2025 || s.year2025,
+                year2024: historical?.year2024 || s.year2024,
+                year2023: historical?.year2023 || s.year2023,
+              };
+            });
+            setLoadedSchools(mapped);
+          }
+        }
+      } catch (_) {
+        console.log("Χρήση στατικών βάσεων.");
+      }
+    };
+    fetchDynamicSchools();
+  }, []);
+
   const filtered = useMemo(() => {
-    let result = schoolBases.filter((s) => {
+    let result = loadedSchools.filter((s) => {
       const matchesSearch =
         s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         s.institution.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesField =
-        selectedField === "Όλα τα Πεδία" || s.field === selectedField;
+        selectedField === "Όλα τα Πεδία" || s.field === selectedField ||
+        (selectedField === "Οικονομίας & Πληροφορικής" && s.field === "Σπουδών Οικονομίας & Πληροφορικής") ||
+        (selectedField === "Σπουδών Οικονομίας & Πληροφορικής" && s.field === "Οικονομίας & Πληροφορικής");
       return matchesSearch && matchesField;
     });
 
@@ -112,9 +163,10 @@ export default function BasesPage() {
     }
 
     return result;
-  }, [searchQuery, selectedField, sortBy]);
+  }, [searchQuery, selectedField, sortBy, loadedSchools]);
 
-  const getTrend = (current: number, previous: number) => {
+  const getTrend = (current: number, previous?: number) => {
+    if (previous === undefined || previous === 0) return { icon: Minus, color: "text-gray-300", label: "-" };
     const diff = current - previous;
     if (diff > 0) return { icon: TrendingUp, color: "text-emerald-500", label: `+${diff}` };
     if (diff < 0) return { icon: TrendingDown, color: "text-rose-500", label: `${diff}` };
@@ -218,7 +270,7 @@ export default function BasesPage() {
                 const TrendIcon = trend.icon;
                 const color = fieldColors[school.field] || { text: "text-gray-600", bg: "bg-gray-50" };
                 return (
-                  <motion.tr key={school.id} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+                  <motion.tr key={school.id} custom={i % 20} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
                     className="border-b border-gray-50 hover:bg-[#f8fafe]/50 transition-colors">
                     <td className="px-6 py-4">
                       <div className="text-[14px] font-bold text-[#002B5B]">{school.name}</div>
@@ -229,9 +281,9 @@ export default function BasesPage() {
                         {school.field}
                       </span>
                     </td>
-                    <td className="text-center px-4 py-4 text-[13px] text-gray-400 font-medium">{school.year2023.toLocaleString("el-GR")}</td>
-                    <td className="text-center px-4 py-4 text-[13px] text-gray-500 font-medium">{school.year2024.toLocaleString("el-GR")}</td>
-                    <td className="text-center px-4 py-4 text-[15px] text-[#002B5B] font-bold">{school.year2025.toLocaleString("el-GR")}</td>
+                    <td className="text-center px-4 py-4 text-[13px] text-gray-400 font-medium">{school.year2023 ? school.year2023.toLocaleString("el-GR") : "-"}</td>
+                    <td className="text-center px-4 py-4 text-[13px] text-gray-500 font-medium">{school.year2024 ? school.year2024.toLocaleString("el-GR") : "-"}</td>
+                    <td className="text-center px-4 py-4 text-[15px] text-[#002B5B] font-bold">{school.year2025 ? school.year2025.toLocaleString("el-GR") : "-"}</td>
                     <td className="text-center px-4 py-4">
                       <span className={`inline-flex items-center gap-1 text-[12px] font-semibold ${trend.color}`}>
                         <TrendIcon size={14} />
@@ -270,15 +322,15 @@ export default function BasesPage() {
                 <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-gray-50">
                   <div className="text-center">
                     <div className="text-[11px] text-gray-400">2023</div>
-                    <div className="text-[13px] font-medium text-gray-500">{school.year2023.toLocaleString("el-GR")}</div>
+                    <div className="text-[13px] font-medium text-gray-500">{school.year2023 ? school.year2023.toLocaleString("el-GR") : "-"}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-[11px] text-gray-400">2024</div>
-                    <div className="text-[13px] font-medium text-gray-500">{school.year2024.toLocaleString("el-GR")}</div>
+                    <div className="text-[13px] font-medium text-gray-500">{school.year2024 ? school.year2024.toLocaleString("el-GR") : "-"}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-[11px] text-[#213576] font-semibold">2025</div>
-                    <div className="text-[15px] font-bold text-[#002B5B]">{school.year2025.toLocaleString("el-GR")}</div>
+                    <div className="text-[15px] font-bold text-[#002B5B]">{school.year2025 ? school.year2025.toLocaleString("el-GR") : "-"}</div>
                   </div>
                 </div>
               </motion.div>
