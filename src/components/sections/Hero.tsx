@@ -17,26 +17,26 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        {/* Gradient Overlay to ensure text readability (Darker on the left) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/95 via-[#002B5B]/70 to-[#002B5B]/30" />
+        {/* Subtle Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/40 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-start">
           
-          {/* Left Content Column */}
+          {/* Left Content Column - Glassmorphism Card */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="w-full max-w-2xl text-left"
+            className="w-full max-w-2xl text-left p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
           >
             <h1 className="text-[2.75rem] md:text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight drop-shadow-sm">
               Η Σίγουρη Επιλογή<br />
               προς την Επιτυχία
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed font-medium drop-shadow-sm">
+            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed font-medium drop-shadow-sm max-w-xl">
               Ο Φροντιστηριακός Όμιλος ΕΝΑ σας οδηγεί στην αριστεία με έμπειρο διδακτικό προσωπικό και σύγχρονα προγράμματα σπουδών για Γυμνάσιο, Λύκειο & ΕΠΑΛ.
             </p>
             
@@ -51,7 +51,7 @@ export default function Hero() {
               
               <Link
                 href="#success"
-                className="flex items-center justify-center px-7 py-3.5 bg-transparent text-white border-2 border-white text-[15px] font-bold rounded-full hover:bg-white/10 transition-all shadow-sm"
+                className="flex items-center justify-center px-7 py-3.5 bg-transparent text-white border-2 border-white/80 text-[15px] font-bold rounded-full hover:bg-white/10 transition-all shadow-sm"
               >
                 Δείτε τους Επιτυχόντες
               </Link>
