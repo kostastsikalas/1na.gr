@@ -21,6 +21,7 @@ const FIELDS: Field[] = [
   "Σπουδών Υγείας",
   "Θετικών Σπουδών",
   "Ανθρωπιστικών Σπουδών",
+  "Κοινωνικών Επιστημών",
   "Σπουδών Οικονομίας & Πληροφορικής",
   "ΕΠΑΛ",
 ];
@@ -29,6 +30,7 @@ const FIELD_COLOR: Record<Field, string> = {
   "Σπουδών Υγείας": "from-emerald-500 to-teal-600",
   "Θετικών Σπουδών": "from-blue-500 to-indigo-600",
   "Ανθρωπιστικών Σπουδών": "from-violet-500 to-purple-600",
+  "Κοινωνικών Επιστημών": "from-fuchsia-500 to-pink-600",
   "Σπουδών Οικονομίας & Πληροφορικής": "from-amber-500 to-orange-600",
   "ΕΠΑΛ": "from-rose-500 to-pink-600",
 };
@@ -37,6 +39,7 @@ const FIELD_ACCENT: Record<Field, string> = {
   "Σπουδών Υγείας": "text-emerald-600",
   "Θετικών Σπουδών": "text-blue-600",
   "Ανθρωπιστικών Σπουδών": "text-violet-600",
+  "Κοινωνικών Επιστημών": "text-fuchsia-600",
   "Σπουδών Οικονομίας & Πληροφορικής": "text-amber-600",
   "ΕΠΑΛ": "text-rose-600",
 };
