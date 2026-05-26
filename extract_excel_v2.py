@@ -145,10 +145,19 @@ def main():
             'year2024': base_val
         })
 
+    # Remove duplicates based on (name, institution, field)
+    unique_data = []
+    seen = set()
+    for d in all_data:
+        key = (d['name'], d['institution'], d['field'])
+        if key not in seen:
+            seen.add(key)
+            unique_data.append(d)
+
     with open('public/calculator_bases.json', 'w', encoding='utf-8') as f:
-        json.dump(all_data, f, ensure_ascii=False, indent=2)
+        json.dump(unique_data, f, ensure_ascii=False, indent=2)
         
-    print(f"Extracted {len(all_data)} records to public/calculator_bases.json")
+    print(f"Extracted {len(unique_data)} unique records to public/calculator_bases.json")
 
 if __name__ == '__main__':
     main()
