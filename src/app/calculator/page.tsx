@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { createClient } from "@/utils/supabase/client";
 import {
   Calculator as CalcIcon,
   CheckCircle2,

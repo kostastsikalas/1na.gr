@@ -13,7 +13,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
-import { createClient } from "@/utils/supabase/client";
 import { schools as fallbackSchools } from "@/lib/schools2026";
 
 /* ─── Animation ─── */
