@@ -1,28 +1,36 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FileText } from "lucide-react";
+import { FileText, Volume2, VolumeX } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
+  const [isMuted, setIsMuted] = useState(true);
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-24 pb-12 lg:pt-32">
-      {/* Full-screen Background Image */}
+      {/* Full-screen Background Video */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/arxiki.jpg" 
-          alt="Φροντιστήριο ΕΝΑ Αρχική" 
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          poster="/images/arxiki.jpg"
+          className="object-cover w-full h-full"
+        >
+          <source src="/download.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/40 to-transparent" />
+        <div className="absolute inset-0 bg-[#002B5B]/30 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/60 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex items-center justify-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-end">
+        <div className="flex items-center justify-start flex-1">
           
           {/* Left Content Column - Glassmorphism Card */}
           <motion.div 
@@ -50,7 +58,7 @@ export default function Hero() {
               </Link>
               
               <Link
-                href="#success"
+                href="/success"
                 className="flex items-center justify-center px-7 py-3.5 bg-transparent text-white border-2 border-white/80 text-[15px] font-bold rounded-full hover:bg-white/10 transition-all shadow-sm"
               >
                 Δείτε τους Επιτυχόντες
@@ -59,7 +67,31 @@ export default function Hero() {
           </motion.div>
 
         </div>
+
+        {/* Video Controls Desktop */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          onClick={() => setIsMuted(!isMuted)}
+          className="hidden md:flex ml-4 mb-4 p-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 hover:scale-105 transition-all shadow-lg items-center justify-center group"
+          aria-label={isMuted ? "Ενεργοποίηση ήχου" : "Απενεργοποίηση ήχου"}
+        >
+          {isMuted ? <VolumeX size={24} className="opacity-80 group-hover:opacity-100" /> : <Volume2 size={24} className="opacity-80 group-hover:opacity-100" />}
+        </motion.button>
       </div>
+
+      {/* Video Controls Mobile */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        onClick={() => setIsMuted(!isMuted)}
+        className="md:hidden absolute bottom-6 right-6 p-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 transition-all shadow-lg z-20 flex items-center justify-center"
+        aria-label={isMuted ? "Ενεργοποίηση ήχου" : "Απενεργοποίηση ήχου"}
+      >
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </motion.button>
     </section>
   );
 }
