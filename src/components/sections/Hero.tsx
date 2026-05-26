@@ -9,7 +9,7 @@ export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-24 pb-12 lg:pt-32">
+    <section className="group relative min-h-[90vh] flex items-center overflow-hidden pt-24 pb-12 lg:pt-32">
       {/* Full-screen Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -24,19 +24,16 @@ export default function Hero() {
           Your browser does not support the video tag.
         </video>
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-[#002B5B]/30 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/60 to-transparent" />
+        <div className="absolute inset-0 bg-[#002B5B]/30 mix-blend-multiply opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 ease-in-out" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/60 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 ease-in-out" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-end">
         <div className="flex items-center justify-start flex-1">
           
           {/* Left Content Column - Glassmorphism Card */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="w-full max-w-2xl text-left p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
+          <div 
+            className="w-full max-w-2xl text-left p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl opacity-100 md:opacity-0 md:-translate-x-8 md:group-hover:opacity-100 md:group-hover:translate-x-0 transition-all duration-700 ease-out"
           >
             <h1 className="text-[2.75rem] md:text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight drop-shadow-sm">
               Η Σίγουρη Επιλογή<br />
@@ -50,7 +47,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/calculator"
-                className="group flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-[#002B5B] text-[15px] font-bold rounded-full hover:bg-gray-100 hover:scale-105 transition-all shadow-lg"
+                className="flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-[#002B5B] text-[15px] font-bold rounded-full hover:bg-gray-100 hover:scale-105 transition-all shadow-lg"
               >
                 <span>Υπολογισμός Μορίων</span>
                 <FileText size={18} className="text-[#e74c3c]" />
@@ -63,7 +60,7 @@ export default function Hero() {
                 Δείτε τους Επιτυχόντες
               </Link>
             </div>
-          </motion.div>
+          </div>
 
         </div>
 
@@ -73,10 +70,10 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
           onClick={() => setIsMuted(!isMuted)}
-          className="hidden md:flex ml-4 mb-4 p-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 hover:scale-105 transition-all shadow-lg items-center justify-center group"
+          className="hidden md:flex ml-4 mb-4 p-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 hover:scale-105 transition-all shadow-lg items-center justify-center group/mute"
           aria-label={isMuted ? "Ενεργοποίηση ήχου" : "Απενεργοποίηση ήχου"}
         >
-          {isMuted ? <VolumeX size={24} className="opacity-80 group-hover:opacity-100" /> : <Volume2 size={24} className="opacity-80 group-hover:opacity-100" />}
+          {isMuted ? <VolumeX size={24} className="opacity-80 group-hover/mute:opacity-100" /> : <Volume2 size={24} className="opacity-80 group-hover/mute:opacity-100" />}
         </motion.button>
       </div>
 
