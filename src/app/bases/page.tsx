@@ -80,7 +80,6 @@ const fields = [
   "Θετικών Σπουδών",
   "Σπουδών Υγείας",
   "Ανθρωπιστικών Σπουδών",
-  "Κοινωνικών Επιστημών",
   "Σπουδών Οικονομίας & Πληροφορικής",
   "ΕΠΑΛ",
 ];
@@ -89,7 +88,6 @@ const fieldColors: Record<string, { text: string; bg: string }> = {
   "Θετικών Σπουδών": { text: "text-blue-600", bg: "bg-blue-50" },
   "Σπουδών Υγείας": { text: "text-emerald-600", bg: "bg-emerald-50" },
   "Ανθρωπιστικών Σπουδών": { text: "text-rose-600", bg: "bg-rose-50" },
-  "Κοινωνικών Επιστημών": { text: "text-fuchsia-600", bg: "bg-fuchsia-50" },
   "Οικονομίας & Πληροφορικής": { text: "text-violet-600", bg: "bg-violet-50" },
   "Σπουδών Οικονομίας & Πληροφορικής": { text: "text-violet-600", bg: "bg-violet-50" },
   "ΕΠΑΛ": { text: "text-pink-600", bg: "bg-pink-50" },
