@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FileText, Volume2, VolumeX } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
