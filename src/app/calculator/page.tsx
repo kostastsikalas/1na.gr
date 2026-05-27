@@ -57,6 +57,7 @@ export default function CalculatorPage() {
   const [field, setField] = useState<Field>("Ανθρωπιστικών Σπουδών");
   const [grades, setGrades] = useState<number[]>([15, 15, 15, 15]);
   const [showInfo, setShowInfo] = useState(false);
+  const [showSpecialSubjects, setShowSpecialSubjects] = useState(false);
   const [filterPassing, setFilterPassing] = useState<"all" | "pass" | "fail">("all");
   const [loadedSchools, setLoadedSchools] = useState(schools);
   
@@ -275,15 +276,31 @@ export default function CalculatorPage() {
               {/* ── Special Subjects ── */}
               {hasSpecialSubjects && (
                 <div className="mt-8 pt-6 border-t border-gray-100">
-                  <h3 className="text-[15px] font-bold text-[#002B5B] mb-1 flex items-center gap-2">
-                    <Languages size={16} className="text-[#213576]" />
-                    Ειδικά Μαθήματα
-                  </h3>
-                  <p className="text-[12px] text-gray-400 mb-5">
-                    Συμπληρώστε μόνο αν η σχολή που σας ενδιαφέρει απαιτεί ειδικό μάθημα
-                  </p>
-                  <div className="space-y-4">
-                    {/* Ξένη Γλώσσα */}
+                  <button 
+                    onClick={() => setShowSpecialSubjects(!showSpecialSubjects)}
+                    className="w-full flex flex-col text-left group outline-none"
+                  >
+                    <div className="w-full flex items-center justify-between mb-1">
+                      <h3 className="text-[15px] font-bold text-[#002B5B] flex items-center gap-2 group-hover:text-[#213576] transition-colors">
+                        <Languages size={16} className="text-[#213576]" />
+                        Ειδικά Μαθήματα
+                      </h3>
+                      <ChevronDown size={18} className={`text-gray-400 transition-transform duration-300 ${showSpecialSubjects ? "rotate-180" : ""}`} />
+                    </div>
+                    <p className="text-[12px] text-gray-400 mb-2">
+                      Συμπληρώστε μόνο αν η σχολή που σας ενδιαφέρει απαιτεί ειδικό μάθημα
+                    </p>
+                  </button>
+                  <AnimatePresence>
+                    {showSpecialSubjects && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="space-y-4 pt-3 pb-1">
+                          {/* Ξένη Γλώσσα */}
                     <div>
                       <div className="flex justify-between items-center mb-1.5">
                         <label className="text-[14px] font-semibold text-gray-700 flex items-center gap-1.5">
@@ -363,7 +380,10 @@ export default function CalculatorPage() {
                         />
                       </div>
                     </div>
-                  </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               )}
 
