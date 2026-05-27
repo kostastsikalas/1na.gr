@@ -49,8 +49,9 @@ const FIELD_ACCENT: Record<Field, string> = {
 // Η ΕΒΕ υπολογίζεται ως: μέσος όρος 4 μαθημάτων × 0.80 × 1000
 // Αν ο μαθητής δεν πιάνει ΕΒΕ, δεν μπορεί να δηλώσει τη σχολή
 function calcEBE(grades: number[]): number {
+  if (grades.length === 0) return 0;
   const avg = grades.reduce((a, b) => a + b, 0) / grades.length;
-  return Math.round(avg * 0.8 * 1000);
+  return Number(avg.toFixed(2));
 }
 
 export default function CalculatorPage() {
@@ -127,8 +128,10 @@ export default function CalculatorPage() {
             school.specialSubjectPct
           );
           
-          // ΕΒΕ check: schools require EBE to be met
-          const meetsEBE = ebe >= (school.base2025 > 0 ? Math.min(ebe, school.base2025) : 0);
+          // ΕΒΕ check
+          // Ο μαθητής δεν ξέρει την ακριβή ΕΒΕ της σχολής. Ο μέσος όρος του είναι μια ένδειξη.
+          // Ένας αυθαίρετος "κόφτης" θα μπορούσε να είναι 8.0, αλλά ας το αφήσουμε ενδεικτικό:
+          const meetsEBE = true; 
           
           return { ...school, points, meetsEBE, hasSpecSubj: !!school.specialSubjectPct };
         })
@@ -392,9 +395,9 @@ export default function CalculatorPage() {
                 <div className="flex items-start gap-2">
                   <AlertTriangle size={15} className="text-amber-600 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-[13px] font-semibold text-amber-800">ΕΒΕ: {ebe.toLocaleString("el-GR")} μόρια</p>
+                    <p className="text-[13px] font-semibold text-amber-800">Μέσος Όρος (για ΕΒΕ): {ebe.toFixed(2)}</p>
                     <p className="text-[11px] text-amber-600 mt-0.5">
-                      Ελάχιστη Βάση Εισαγωγής — αν δεν την πιάνετε, δεν μπορείτε να δηλώσετε σχολές πάνω από αυτό το όριο.
+                      Ελάχιστη Βάση Εισαγωγής — εάν ο μέσος όρος σας (χωρίς συντελεστές) είναι μικρότερος από την ΕΒΕ μιας σχολής, δεν μπορείτε να την δηλώσετε. (Η ακριβής ΕΒΕ κάθε σχολής καθορίζεται αφού βγουν τα αποτελέσματα).
                     </p>
                   </div>
                 </div>
