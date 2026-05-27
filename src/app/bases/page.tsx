@@ -76,10 +76,9 @@ const schoolBases: SchoolBase[] = [
 ];
 
 const fields = [
-  "Όλα τα Πεδία",
+  "Ανθρωπιστικών Σπουδών",
   "Θετικών Σπουδών",
   "Σπουδών Υγείας",
-  "Ανθρωπιστικών Σπουδών",
   "Σπουδών Οικονομίας & Πληροφορικής",
   "ΕΠΑΛ",
 ];
@@ -96,7 +95,7 @@ const fieldColors: Record<string, { text: string; bg: string }> = {
 /* ─── Page Component ─── */
 export default function BasesPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedField, setSelectedField] = useState("Όλα τα Πεδία");
+  const [selectedField, setSelectedField] = useState("Ανθρωπιστικών Σπουδών");
   const [sortBy, setSortBy] = useState<"name" | "points">("points");
 
   const deduplicateSchools = (schools: SchoolBase[]) => {
@@ -166,7 +165,7 @@ export default function BasesPage() {
         s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         s.institution.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesField =
-        selectedField === "Όλα τα Πεδία" || s.field.includes(selectedField) ||
+        s.field.includes(selectedField) ||
         (selectedField === "Οικονομίας & Πληροφορικής" && s.field.includes("Σπουδών Οικονομίας & Πληροφορικής")) ||
         (selectedField === "Σπουδών Οικονομίας & Πληροφορικής" && s.field.includes("Οικονομίας & Πληροφορικής"));
       return matchesSearch && matchesField;

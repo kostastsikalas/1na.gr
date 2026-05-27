@@ -141,7 +141,7 @@ export default function AdminNews() {
                   type="text" 
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] text-gray-900 bg-white"
                   placeholder="π.χ. Κοπή Πίτας 2026"
                   required
                 />
@@ -154,7 +154,7 @@ export default function AdminNews() {
                     type="text" 
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576]"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] text-gray-900 bg-white"
                     placeholder="π.χ. Εκπαιδευτική Εκδρομή"
                   />
                 </div>
@@ -164,7 +164,7 @@ export default function AdminNews() {
                     type="text" 
                     value={dateString}
                     onChange={(e) => setDateString(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576]"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] text-gray-900 bg-white"
                     placeholder="π.χ. Μάρτιος 2024"
                   />
                 </div>
@@ -175,7 +175,7 @@ export default function AdminNews() {
                 <textarea 
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] min-h-[80px]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] text-gray-900 bg-white min-h-[80px]"
                   placeholder="Σύντομη περιγραφή της εκδήλωσης..."
                 />
               </div>

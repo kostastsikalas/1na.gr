@@ -11,7 +11,7 @@ const eventsData = [
     id: "cern",
     title: "Εκδρομή στο CERN",
     description: "Εκπαιδευτική εκδρομή στο Ευρωπαϊκό Κέντρο Πυρηνικών Ερευνών (CERN) στη Γενεύη.",
-    date: "2009",
+    date: "",
     category: "Εκδρομή",
     icon: MapPin,
     color: "bg-emerald-500",
@@ -28,7 +28,7 @@ const eventsData = [
     id: "eppagelmatikos",
     title: "Ημερίδες Επαγγελματικού Προσανατολισμού",
     description: "Ενημερωτικές εκδηλώσεις για μαθητές και γονείς σχετικά με την επιλογή σπουδών και επαγγέλματος.",
-    date: "2018 - 2019",
+    date: "2010 εως και τώρα",
     category: "Ημερίδα",
     icon: Lightbulb,
     color: "bg-amber-500",
@@ -49,9 +49,9 @@ const eventsData = [
   },
   {
     id: "fusiki",
-    title: "Ημέρες Φυσικής",
+    title: "Η φυσική Μαγεύει",
     description: "Πειράματα και διαδραστικές παρουσιάσεις φυσικής στο χώρο του φροντιστηρίου.",
-    date: "Διάφορα Έτη",
+    date: "2015",
     category: "Εκπαιδευτική Δράση",
     icon: Star,
     color: "bg-purple-500",
@@ -205,10 +205,12 @@ export default function EventsPage() {
                     {event.title}
                   </h3>
                   
-                  <div className="flex items-center gap-2 text-slate-500 text-sm mb-4 font-medium">
-                    <Calendar size={16} />
-                    {event.date}
-                  </div>
+                  {event.date && (
+                    <div className="flex items-center gap-2 text-slate-500 text-sm mb-4 font-medium">
+                      <Calendar size={16} />
+                      {event.date}
+                    </div>
+                  )}
                   
                   <p className="text-slate-600 leading-relaxed text-sm flex-1">
                     {event.description}

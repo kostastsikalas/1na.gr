@@ -27,11 +27,11 @@ const branches = [
   {
     id: "athens",
     title: "ΑΘΗΝΑ",
-    address: "Οδός Ερμού 5",
+    address: "Ησιόδου 18, Άλιμος",
     city: "Αθήνα",
-    phone: "210 9876543",
-    image: "/images/branch_athens.png",
-    mapUrl: "https://maps.google.com",
+    phone: "210 991 3433",
+    image: "/images/athens.png",
+    mapUrl: "https://maps.google.com/maps?q=Ησιόδου%2018,%20Άλιμος&t=&z=16&ie=UTF8&iwloc=&output=embed",
   },
 ];
 
@@ -155,7 +155,7 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
               Η σίγουρη επιλογή προς την επιτυχία. Κορυφαία προετοιμασία για
-              Πανελλαδικές εξετάσεις από το 2005.
+              Πανελλαδικές εξετάσεις από το 1999.
             </p>
 
             {/* Contact Snippet */}
@@ -169,7 +169,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5 text-gray-400">
                 <Clock size={15} className="text-blue-400/70" />
-                Δευ – Παρ: 09:00 – 21:00
+                Δευ - Παρ. 09:00-13:30 & 17:00-21:00
               </div>
             </div>
           </div>

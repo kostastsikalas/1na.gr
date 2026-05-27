@@ -9,18 +9,22 @@ import {
   ChevronDown,
   Info,
   Minus,
+  AlertTriangle,
+  Languages,
+  PenTool,
 } from "lucide-react";
 import {
   schools,
   fieldSubjects,
   calcPoints,
   type Field,
+  type School,
 } from "@/lib/schools2026";
 
 const FIELDS: Field[] = [
-  "Σπουδών Υγείας",
-  "Θετικών Σπουδών",
   "Ανθρωπιστικών Σπουδών",
+  "Θετικών Σπουδών",
+  "Σπουδών Υγείας",
   "Σπουδών Οικονομίας & Πληροφορικής",
   "ΕΠΑΛ",
 ];
@@ -41,12 +45,25 @@ const FIELD_ACCENT: Record<Field, string> = {
   "ΕΠΑΛ": "text-rose-600",
 };
 
+/* ─── ΕΒΕ: Ελάχιστη Βάση Εισαγωγής ─── */
+// Η ΕΒΕ υπολογίζεται ως: μέσος όρος 4 μαθημάτων × 0.80 × 1000
+// Αν ο μαθητής δεν πιάνει ΕΒΕ, δεν μπορεί να δηλώσει τη σχολή
+function calcEBE(grades: number[]): number {
+  const avg = grades.reduce((a, b) => a + b, 0) / grades.length;
+  return Math.round(avg * 0.8 * 1000);
+}
+
 export default function CalculatorPage() {
-  const [field, setField] = useState<Field>("Σπουδών Υγείας");
+  const [field, setField] = useState<Field>("Ανθρωπιστικών Σπουδών");
   const [grades, setGrades] = useState<number[]>([15, 15, 15, 15]);
   const [showInfo, setShowInfo] = useState(false);
   const [filterPassing, setFilterPassing] = useState<"all" | "pass" | "fail">("all");
   const [loadedSchools, setLoadedSchools] = useState(schools);
+  
+  // Special subject grades
+  const [foreignLangGrade, setForeignLangGrade] = useState<number>(15);
+  const [drawing1Grade, setDrawing1Grade] = useState<number>(15); // Ελεύθερο Σχέδιο
+  const [drawing2Grade, setDrawing2Grade] = useState<number>(15); // Γραμμικό Σχέδιο
 
   useEffect(() => {
     const fetchDynamicSchools = async () => {
@@ -72,13 +89,50 @@ export default function CalculatorPage() {
     [field, loadedSchools]
   );
 
+  // Check if any school in current field has special subjects
+  const hasSpecialSubjects = useMemo(
+    () => fieldSchools.some((s) => (s as any).specialSubjectPct),
+    [fieldSchools]
+  );
+
+  // ΕΒΕ calculation
+  const ebe = useMemo(() => calcEBE(grades), [grades]);
+
   /** Κάθε σχολή παίρνει τα δικά της μόρια */
   const schoolResults = useMemo(
     () =>
       fieldSchools
-        .map((s) => ({ ...s, points: calcPoints(grades, s.coefficients) }))
+        .map((s) => {
+          const school = s as School & { specialSubjectPct?: number };
+          
+          // Determine special subject grade for this school
+          let specGrade: number | undefined;
+          if (school.specialSubjectPct) {
+            // Determine the type of special subject based on school name
+            const name = school.name.toLowerCase();
+            if (name.includes('αρχιτεκτ') || name.includes('εικαστ') || name.includes('γραφιστ')) {
+              // Σχέδιο schools — use average of both drawing grades
+              specGrade = (drawing1Grade + drawing2Grade) / 2;
+            } else {
+              // Ξένη γλώσσα schools (Αγγλικής, Γαλλικής, etc.) or other special subjects
+              specGrade = foreignLangGrade;
+            }
+          }
+          
+          const points = calcPoints(
+            grades,
+            school.coefficients,
+            specGrade,
+            school.specialSubjectPct
+          );
+          
+          // ΕΒΕ check: schools require EBE to be met
+          const meetsEBE = ebe >= (school.base2025 > 0 ? Math.min(ebe, school.base2025) : 0);
+          
+          return { ...school, points, meetsEBE, hasSpecSubj: !!school.specialSubjectPct };
+        })
         .sort((a, b) => b.base2025 - a.base2025),
-    [fieldSchools, grades]
+    [fieldSchools, grades, foreignLangGrade, drawing1Grade, drawing2Grade, ebe]
   );
 
   const passing = schoolResults.filter((s) => s.base2025 > 0 && s.points >= s.base2025);
@@ -106,6 +160,13 @@ export default function CalculatorPage() {
       next[idx] = n;
       return next;
     });
+  }
+
+  function handleSpecialGrade(setter: (n: number) => void, val: string) {
+    let n = parseFloat(val);
+    if (isNaN(n)) n = 0;
+    n = Math.min(20, Math.max(0, n));
+    setter(n);
   }
 
   function handleFieldChange(f: Field) {
@@ -211,6 +272,114 @@ export default function CalculatorPage() {
                 ))}
               </div>
 
+              {/* ── Special Subjects ── */}
+              {hasSpecialSubjects && (
+                <div className="mt-8 pt-6 border-t border-gray-100">
+                  <h3 className="text-[15px] font-bold text-[#002B5B] mb-1 flex items-center gap-2">
+                    <Languages size={16} className="text-[#213576]" />
+                    Ειδικά Μαθήματα
+                  </h3>
+                  <p className="text-[12px] text-gray-400 mb-5">
+                    Συμπληρώστε μόνο αν η σχολή που σας ενδιαφέρει απαιτεί ειδικό μάθημα
+                  </p>
+                  <div className="space-y-4">
+                    {/* Ξένη Γλώσσα */}
+                    <div>
+                      <div className="flex justify-between items-center mb-1.5">
+                        <label className="text-[14px] font-semibold text-gray-700 flex items-center gap-1.5">
+                          <Languages size={14} className="text-indigo-500" />
+                          Ξένη Γλώσσα
+                        </label>
+                        <span className="text-[13px] font-bold text-indigo-600">
+                          {foreignLangGrade.toFixed(1)}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <input
+                          type="number" step="0.1" min="0" max="20"
+                          value={foreignLangGrade}
+                          onChange={(e) => handleSpecialGrade(setForeignLangGrade, e.target.value)}
+                          className="w-[72px] px-2 py-2 border border-gray-200 rounded-lg text-gray-700 font-medium text-center text-[14px] focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                        />
+                        <input
+                          type="range" min="0" max="20" step="0.1"
+                          value={foreignLangGrade}
+                          onChange={(e) => handleSpecialGrade(setForeignLangGrade, e.target.value)}
+                          className="flex-1 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Ελεύθερο Σχέδιο */}
+                    <div>
+                      <div className="flex justify-between items-center mb-1.5">
+                        <label className="text-[14px] font-semibold text-gray-700 flex items-center gap-1.5">
+                          <PenTool size={14} className="text-rose-500" />
+                          Ελεύθερο Σχέδιο
+                        </label>
+                        <span className="text-[13px] font-bold text-rose-600">
+                          {drawing1Grade.toFixed(1)}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <input
+                          type="number" step="0.1" min="0" max="20"
+                          value={drawing1Grade}
+                          onChange={(e) => handleSpecialGrade(setDrawing1Grade, e.target.value)}
+                          className="w-[72px] px-2 py-2 border border-gray-200 rounded-lg text-gray-700 font-medium text-center text-[14px] focus:outline-none focus:ring-2 focus:ring-rose-500/20"
+                        />
+                        <input
+                          type="range" min="0" max="20" step="0.1"
+                          value={drawing1Grade}
+                          onChange={(e) => handleSpecialGrade(setDrawing1Grade, e.target.value)}
+                          className="flex-1 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-rose-500"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Γραμμικό Σχέδιο */}
+                    <div>
+                      <div className="flex justify-between items-center mb-1.5">
+                        <label className="text-[14px] font-semibold text-gray-700 flex items-center gap-1.5">
+                          <PenTool size={14} className="text-orange-500" />
+                          Γραμμικό Σχέδιο
+                        </label>
+                        <span className="text-[13px] font-bold text-orange-600">
+                          {drawing2Grade.toFixed(1)}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <input
+                          type="number" step="0.1" min="0" max="20"
+                          value={drawing2Grade}
+                          onChange={(e) => handleSpecialGrade(setDrawing2Grade, e.target.value)}
+                          className="w-[72px] px-2 py-2 border border-gray-200 rounded-lg text-gray-700 font-medium text-center text-[14px] focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                        />
+                        <input
+                          type="range" min="0" max="20" step="0.1"
+                          value={drawing2Grade}
+                          onChange={(e) => handleSpecialGrade(setDrawing2Grade, e.target.value)}
+                          className="flex-1 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ── ΕΒΕ Info ── */}
+              <div className="mt-6 p-3.5 bg-amber-50/80 rounded-xl border border-amber-200/60">
+                <div className="flex items-start gap-2">
+                  <AlertTriangle size={15} className="text-amber-600 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-[13px] font-semibold text-amber-800">ΕΒΕ: {ebe.toLocaleString("el-GR")} μόρια</p>
+                    <p className="text-[11px] text-amber-600 mt-0.5">
+                      Ελάχιστη Βάση Εισαγωγής — αν δεν την πιάνετε, δεν μπορείτε να δηλώσετε σχολές πάνω από αυτό το όριο.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Formula info */}
               <button
                 onClick={() => setShowInfo(!showInfo)}
@@ -234,6 +403,8 @@ export default function CalculatorPage() {
                         Μόρια = (Β₁×σ₁ + Β₂×σ₂ + Β₃×σ₃ + Β₄×σ₄) × 1000
                       </p>
                       <p className="mt-2">Κάθε σχολή έχει δικούς της συντελεστές βαρύτητας (σ₁–σ₄) — γι&apos; αυτό τα μόρια διαφέρουν ανά τμήμα.</p>
+                      <p className="mt-2 text-[12px]">Αν η σχολή απαιτεί <strong>ειδικό μάθημα</strong> (π.χ. ξένη γλώσσα), αυτό προστίθεται στο σύνολο με τον δικό του συντελεστή.</p>
+                      <p className="mt-2 text-[12px]"><strong>ΕΒΕ</strong> = Μ.Ο. βαθμών × 0.80 × 1000 — αν δεν πληρείται, δεν μπορείτε να δηλώσετε τη σχολή.</p>
                     </div>
                   </motion.div>
                 )}
@@ -324,6 +495,7 @@ export default function CalculatorPage() {
             const hasBase = s.base2025 > 0;
             const passes = hasBase && s.points >= s.base2025;
             const diff = s.points - s.base2025;
+            const hasSpec = s.hasSpecSubj;
             return (
               <motion.div
                 key={`${s.name}-${s.institution}`}
@@ -362,6 +534,11 @@ export default function CalculatorPage() {
                           {subj.split(" ")[0]}: {Math.round(s.coefficients[idx] * 100)}%
                         </span>
                       ))}
+                      {hasSpec && (
+                        <span className="text-[10px] px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full font-semibold">
+                          Ειδικό: {(s as any).specialSubjectPct}%
+                        </span>
+                      )}
                     </div>
                   </div>
 

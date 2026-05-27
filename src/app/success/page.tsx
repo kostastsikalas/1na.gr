@@ -8,6 +8,8 @@ import {
   Trophy,
   GraduationCap,
   Filter,
+  FileText,
+  Download,
 } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 
@@ -18,6 +20,16 @@ type Student = {
   school: string;
   year?: string;
 };
+
+/* ─── PDF Files ─── */
+const pdfFiles = [
+  { year: "2024", filename: "epit2024.pdf" },
+  { year: "2021", filename: "epit2021.pdf" },
+  { year: "2018", filename: "2018.pdf" },
+  { year: "2012", filename: "2012.pdf" },
+  { year: "2010", filename: "2010.pdf" },
+  { year: "2009", filename: "2009.pdf" },
+];
 
 /* ─── Animation ─── */
 const fadeUp = {
@@ -108,6 +120,35 @@ export default function SuccessPage() {
             Χιλιάδες μαθητές εμπιστεύτηκαν το ΕΝΑ και πέτυχαν. 
             Αναζητήστε ονόματα, σχολές, ή χρονιές.
           </motion.p>
+        </div>
+      </section>
+
+      {/* ══════ PDF Downloads ══════ */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-8">
+        <h2 className="text-2xl font-bold text-[#002B5B] mb-6 flex items-center gap-2">
+          <FileText className="text-[#e74c3c]" />
+          Επίσημα Αρχεία Επιτυχόντων
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {pdfFiles.map((pdf) => (
+            <a
+              key={pdf.year}
+              href={`/epitixontes/${pdf.filename}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center justify-center p-4 bg-white border border-gray-200 rounded-2xl hover:border-[#213576]/30 hover:shadow-md transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-[#213576]/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#213576]/10 transition-colors">
+                <Download className="text-[#213576] w-5 h-5 group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="text-[15px] font-bold text-gray-800">
+                Έτος {pdf.year}
+              </span>
+              <span className="text-[12px] text-gray-500 mt-1">
+                Προβολή PDF
+              </span>
+            </a>
+          ))}
         </div>
       </section>
 

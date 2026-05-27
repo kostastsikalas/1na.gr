@@ -65,10 +65,10 @@ const services: Service[] = [
     description:
       "Ολοκληρωμένα προγράμματα Α΄, Β΄ & Γ΄ Λυκείου με εξειδίκευση σε κάθε κατεύθυνση.",
     features: [
-      "Θετικές Σπουδές",
       "Ανθρωπιστικές Σπουδές",
-      "Σπουδές Οικονομίας & Πληροφορικής",
+      "Θετικές Σπουδές",
       "Σπουδές Υγείας",
+      "Σπουδές Οικονομίας & Πληροφορικής",
     ],
     color: "text-blue-600",
     bg: "bg-blue-50",
@@ -321,7 +321,6 @@ export default function ServicesPage() {
                     <div className="w-9 h-9 rounded-lg bg-[#213576]/8 flex items-center justify-center text-[#213576] shrink-0">
                       <Icon size={18} />
                     </div>
-                    <span className="text-[12px] font-bold text-[#213576]/60">{i + 1}.</span>
                   </div>
                   <h3 className="text-[15px] font-bold text-[#002B5B] mb-2">
                     {item.title}

@@ -68,23 +68,33 @@ export default function ExamArchive() {
         <div className="mb-10 text-center flex flex-col items-center">
           <h1 className="text-[2.5rem] font-extrabold text-[#002B5B] mb-4">Αρχείο Θεμάτων Πανελλαδικών</h1>
           <p className="text-gray-600 text-lg max-w-2xl">
-            Επιλέξτε την Ομάδα Προσανατολισμού σας και τη χρονιά για να βρείτε και να κατεβάσετε τα αντίστοιχα θέματα.
+            Επιλέξτε τη χρονιά και την Ομάδα Προσανατολισμού σας για να βρείτε και να κατεβάσετε τα αντίστοιχα θέματα.
           </p>
         </div>
 
-        {/* Category Tabs */}
+        {/* Year Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((cat) => (
+          <button
+            onClick={() => setSelectedYear("all")}
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+              selectedYear === "all" 
+                ? "bg-[#213576] text-white shadow-md" 
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            Όλα τα Έτη
+          </button>
+          {uniqueYears.map((year) => (
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              key={year}
+              onClick={() => setSelectedYear(year)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                selectedCategory === cat 
+                selectedYear === year 
                   ? "bg-[#213576] text-white shadow-md" 
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
-              {cat}
+              {year}
             </button>
           ))}
         </div>
@@ -110,12 +120,11 @@ export default function ExamArchive() {
             </div>
             <select
               className="block w-full pl-11 pr-10 py-3 bg-white border border-gray-200 rounded-xl text-gray-700 font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
-              value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
             >
-              <option value="all">Όλα τα Έτη</option>
-              {uniqueYears.map(year => (
-                <option key={year} value={year}>{year}</option>
+              {categories.map(cat => (
+                <option key={cat} value={cat}>{cat}</option>
               ))}
             </select>
           </div>
