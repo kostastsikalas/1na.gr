@@ -60,7 +60,7 @@ export const schools: School[] = [
     institution: "Α.Ε.Α. ΑΘΗΝΑΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 9130.0,
   },
   {
@@ -109,7 +109,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 12655.0,
   },
   {
@@ -167,7 +167,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 14380.0,
   },
   {
@@ -175,7 +175,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 14380.0,
   },
   {
@@ -183,7 +183,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 11340.0,
   },
   {
@@ -191,7 +191,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11340.0,
   },
   {
@@ -199,7 +199,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 16860.0,
   },
   {
@@ -207,7 +207,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17161.0,
   },
   {
@@ -215,7 +215,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17161.0,
   },
   {
@@ -223,7 +223,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 17161.0,
   },
   {
@@ -231,7 +231,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 17161.0,
   },
   {
@@ -239,7 +239,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 13729.0,
   },
   {
@@ -247,7 +247,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 13729.0,
   },
   {
@@ -255,7 +255,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 13729.0,
   },
   {
@@ -263,7 +263,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 13729.0,
   },
   {
@@ -303,7 +303,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17960.0,
   },
   {
@@ -424,7 +424,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.27, 0.33],
     base2025: 17657.0,
   },
   {
@@ -432,7 +432,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 14200.0,
   },
   {
@@ -500,7 +500,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 17995.0,
   },
   {
@@ -508,7 +508,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 13240.0,
   },
   {
@@ -548,7 +548,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17720.0,
   },
   {
@@ -556,7 +556,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17720.0,
   },
   {
@@ -564,7 +564,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 14410.0,
   },
   {
@@ -572,7 +572,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.35, 0.2, 0.2],
     base2025: 15850.0,
   },
   {
@@ -588,7 +588,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.3, 0.25, 0.2],
+    coefficients: [0.27, 0.27, 0.2, 0.26],
     base2025: 11127.0,
   },
   {
@@ -596,7 +596,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.3, 0.25, 0.25, 0.2],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11580.0,
   },
   {
@@ -604,7 +604,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.35, 0.2],
+    coefficients: [0.2, 0.27, 0.33, 0.2],
     base2025: 14518.0,
   },
   {
@@ -612,7 +612,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 16590.0,
   },
   {
@@ -620,7 +620,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.35, 0.2],
     base2025: 16590.0,
   },
   {
@@ -628,7 +628,7 @@ export const schools: School[] = [
     institution: "Α.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 17000.0,
   },
   {
@@ -636,7 +636,7 @@ export const schools: School[] = [
     institution: "ΑΠΘ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.3, 0.2, 0.3, 0.2],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 17150.0,
   },
   {
@@ -644,7 +644,7 @@ export const schools: School[] = [
     institution: "Α.Σ.ΠΑΙ.Τ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 10315.0,
   },
   {
@@ -652,7 +652,7 @@ export const schools: School[] = [
     institution: "Α.Σ.ΠΑΙ.Τ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 10815.0,
   },
   {
@@ -660,7 +660,7 @@ export const schools: School[] = [
     institution: "Α.Σ.ΠΑΙ.Τ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.32, 0.26, 0.2],
     base2025: 10255.0,
   },
   {
@@ -668,7 +668,7 @@ export const schools: School[] = [
     institution: "Α.Σ.ΠΑΙ.Τ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.33, 0.27, 0.2],
     base2025: 10315.0,
   },
   {
@@ -676,7 +676,7 @@ export const schools: School[] = [
     institution: "Α.Σ.Τ.Ε.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.24, 0.28],
     base2025: 11706.0,
   },
   {
@@ -684,7 +684,7 @@ export const schools: School[] = [
     institution: "Α.Σ.Τ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.22, 0.28, 0.28],
     base2025: 11706.0,
   },
   {
@@ -692,7 +692,7 @@ export const schools: School[] = [
     institution: "Α.Σ.Τ.Ε.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.24, 0.28],
     base2025: 11312.0,
   },
   {
@@ -700,7 +700,7 @@ export const schools: School[] = [
     institution: "Α.Σ.Τ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.22, 0.28, 0.28],
     base2025: 11312.0,
   },
   {
@@ -716,7 +716,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 17370.0,
   },
   {
@@ -724,7 +724,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 17370.0,
   },
   {
@@ -732,7 +732,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 17370.0,
   },
   {
@@ -740,7 +740,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 17590.0,
   },
   {
@@ -748,7 +748,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 17590.0,
   },
   {
@@ -756,7 +756,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 17590.0,
   },
   {
@@ -764,7 +764,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 11710.0,
   },
   {
@@ -772,7 +772,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11710.0,
   },
   {
@@ -780,7 +780,7 @@ export const schools: School[] = [
     institution: "ΑΣΤ. ΣΧΟΛΕΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11710.0,
   },
   {
@@ -796,7 +796,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 12310.0,
   },
   {
@@ -804,7 +804,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 11315.0,
   },
   {
@@ -812,7 +812,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 11315.0,
   },
   {
@@ -820,7 +820,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 15870.0,
   },
   {
@@ -828,7 +828,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 15870.0,
   },
   {
@@ -836,7 +836,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 9700.0,
   },
   {
@@ -844,7 +844,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 9700.0,
   },
   {
@@ -852,7 +852,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9095.0,
   },
   {
@@ -860,7 +860,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 11950.0,
   },
   {
@@ -868,7 +868,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11950.0,
   },
   {
@@ -876,7 +876,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.2, 0.3],
     base2025: 14520.0,
   },
   {
@@ -884,7 +884,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.3, 0.25],
     base2025: 14520.0,
   },
   {
@@ -892,7 +892,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.2, 0.35],
     base2025: 14720.0,
   },
   {
@@ -900,7 +900,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 14720.0,
   },
   {
@@ -908,7 +908,7 @@ export const schools: School[] = [
     institution: "ΓΕΩΠΟΝΙΚΟ ΠΑΝ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 7040.0,
   },
   {
@@ -940,7 +940,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.2, 0.4],
     base2025: 9430.0,
   },
   {
@@ -948,7 +948,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9430.0,
   },
   {
@@ -980,7 +980,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 8640.0,
   },
   {
@@ -988,7 +988,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 8640.0,
   },
   {
@@ -996,7 +996,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 8640.0,
   },
   {
@@ -1004,7 +1004,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 9530.0,
   },
   {
@@ -1012,7 +1012,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9530.0,
   },
   {
@@ -1020,7 +1020,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 13219.0,
   },
   {
@@ -1028,7 +1028,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 13219.0,
   },
   {
@@ -1036,7 +1036,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 13219.0,
   },
   {
@@ -1044,7 +1044,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 13219.0,
   },
   {
@@ -1084,7 +1084,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.26, 0.26, 0.26],
     base2025: 13132.0,
   },
   {
@@ -1092,7 +1092,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 14310.0,
   },
   {
@@ -1124,7 +1124,7 @@ export const schools: School[] = [
     institution: "ΔΠΘ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 10820.0,
   },
   {
@@ -1132,7 +1132,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 8300.0,
   },
   {
@@ -1156,7 +1156,7 @@ export const schools: School[] = [
     institution: "ΔΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9790.0,
   },
   {
@@ -1164,7 +1164,7 @@ export const schools: School[] = [
     institution: "ΔΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 16595.0,
   },
   {
@@ -1172,7 +1172,7 @@ export const schools: School[] = [
     institution: "ΔΠΘ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 16595.0,
   },
   {
@@ -1196,7 +1196,7 @@ export const schools: School[] = [
     institution: "ΔΠΘ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.2, 0.28, 0.2, 0.32],
     base2025: 9696.0,
   },
   {
@@ -1236,7 +1236,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 12880.0,
   },
   {
@@ -1244,7 +1244,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 12880.0,
   },
   {
@@ -1252,7 +1252,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.35, 0.2],
     base2025: 10660.0,
   },
   {
@@ -1260,7 +1260,7 @@ export const schools: School[] = [
     institution: "ΔΠΘ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.26, 0.28, 0.26, 0.2],
     base2025: 13164.0,
   },
   {
@@ -1268,7 +1268,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.27, 0.3, 0.23],
     base2025: 9504.0,
   },
   {
@@ -1292,7 +1292,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.26, 0.26, 0.28],
     base2025: 14712.0,
   },
   {
@@ -1300,7 +1300,7 @@ export const schools: School[] = [
     institution: "Δ.Π.Θ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.26, 0.28, 0.26],
     base2025: 14712.0,
   },
   {
@@ -1364,7 +1364,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 14240.0,
   },
   {
@@ -1372,7 +1372,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 11040.0,
   },
   {
@@ -1380,7 +1380,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11040.0,
   },
   {
@@ -1420,7 +1420,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9660.0,
   },
   {
@@ -1428,7 +1428,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 12170.0,
   },
   {
@@ -1436,7 +1436,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 12650.0,
   },
   {
@@ -1444,7 +1444,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.3, 0.25],
     base2025: 12650.0,
   },
   {
@@ -1452,7 +1452,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 13850.0,
   },
   {
@@ -1476,7 +1476,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 12360.0,
   },
   {
@@ -1484,7 +1484,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.22, 0.25, 0.31],
     base2025: 13241.0,
   },
   {
@@ -1500,7 +1500,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.3, 0.25],
     base2025: 12585.0,
   },
   {
@@ -1508,7 +1508,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 10510.0,
   },
   {
@@ -1516,7 +1516,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 14740.0,
   },
   {
@@ -1524,7 +1524,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 14740.0,
   },
   {
@@ -1532,7 +1532,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 13450.0,
   },
   {
@@ -1540,7 +1540,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 13450.0,
   },
   {
@@ -1548,7 +1548,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11280.0,
   },
   {
@@ -1556,7 +1556,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 11980.0,
   },
   {
@@ -1564,7 +1564,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 12790.0,
   },
   {
@@ -1572,7 +1572,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.2, 0.35],
     base2025: 9555.0,
   },
   {
@@ -1588,7 +1588,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.26, 0.27, 0.27, 0.2],
     base2025: 12154.0,
   },
   {
@@ -1596,7 +1596,7 @@ export const schools: School[] = [
     institution: "ΔΙ.ΠΑ.Ε.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 15100.0,
   },
   {
@@ -1613,7 +1613,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9870.0,
   },
   {
@@ -1621,7 +1621,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9870.0,
   },
   {
@@ -1629,7 +1629,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9870.0,
   },
   {
@@ -1637,7 +1637,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 10010.0,
   },
   {
@@ -1645,7 +1645,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.25, 0.23, 0.3],
     base2025: 17428.0,
   },
   {
@@ -1653,7 +1653,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.2, 0.25, 0.33],
     base2025: 17428.0,
   },
   {
@@ -1679,7 +1679,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 11100.0,
   },
   {
@@ -1695,7 +1695,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 16220.0,
   },
   {
@@ -1735,7 +1735,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 16110.0,
   },
   {
@@ -1743,7 +1743,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17399.0,
   },
   {
@@ -1751,7 +1751,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17399.0,
   },
   {
@@ -1759,7 +1759,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 17399.0,
   },
   {
@@ -1767,7 +1767,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17399.0,
   },
   {
@@ -1816,7 +1816,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.28, 0.22, 0.28, 0.22],
     base2025: 10810.0,
   },
   {
@@ -1824,7 +1824,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.28, 0.22, 0.28, 0.22],
     base2025: 10810.0,
   },
   {
@@ -1832,7 +1832,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.28, 0.22, 0.22, 0.28],
     base2025: 10810.0,
   },
   {
@@ -1840,7 +1840,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.28, 0.28, 0.22, 0.22],
     base2025: 10810.0,
   },
   {
@@ -1873,7 +1873,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 14500.0,
   },
   {
@@ -1941,7 +1941,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.22, 0.34, 0.2, 0.24],
     base2025: 13896.0,
   },
   {
@@ -1949,7 +1949,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 11495.0,
   },
   {
@@ -1989,7 +1989,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 16955.0,
   },
   {
@@ -1997,7 +1997,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 16955.0,
   },
   {
@@ -2005,7 +2005,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.3, 0.2, 0.3, 0.2],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 14430.0,
   },
   {
@@ -2013,7 +2013,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 10225.0,
   },
   {
@@ -2021,7 +2021,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 9830.0,
   },
   {
@@ -2029,7 +2029,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 9830.0,
   },
   {
@@ -2037,7 +2037,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 11250.0,
   },
   {
@@ -2045,7 +2045,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 17880.0,
   },
   {
@@ -2053,7 +2053,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.3, 0.3, 0.25, 0.15],
+    coefficients: [0.26, 0.26, 0.22, 0.26],
     base2025: 11304.0,
   },
   {
@@ -2061,7 +2061,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.35, 0.2],
+    coefficients: [0.2, 0.27, 0.33, 0.2],
     base2025: 14513.0,
   },
   {
@@ -2069,7 +2069,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 17275.0,
   },
   {
@@ -2077,7 +2077,7 @@ export const schools: School[] = [
     institution: "ΕΚΠΑ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.35, 0.2],
     base2025: 17275.0,
   },
   {
@@ -2085,7 +2085,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 10520.0,
   },
   {
@@ -2093,7 +2093,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 10520.0,
   },
   {
@@ -2101,7 +2101,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 10520.0,
   },
   {
@@ -2109,7 +2109,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 10520.0,
   },
   {
@@ -2117,7 +2117,7 @@ export const schools: School[] = [
     institution: "Ε.Κ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17475.0,
   },
   {
@@ -2125,7 +2125,7 @@ export const schools: School[] = [
     institution: "Ε.Μ.Π.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 14715.0,
   },
   {
@@ -2141,7 +2141,7 @@ export const schools: School[] = [
     institution: "Ε.Μ.Π.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 15860.0,
   },
   {
@@ -2149,7 +2149,7 @@ export const schools: School[] = [
     institution: "Ε.Μ.Π.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 18390.0,
   },
   {
@@ -2165,7 +2165,7 @@ export const schools: School[] = [
     institution: "ΕΜΠ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.22, 0.32, 0.26, 0.2],
     base2025: 18128.0,
   },
   {
@@ -2173,7 +2173,7 @@ export const schools: School[] = [
     institution: "ΕΜΠ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17840.0,
   },
   {
@@ -2181,7 +2181,7 @@ export const schools: School[] = [
     institution: "ΕΜΠ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.2, 0.33, 0.27, 0.2],
     base2025: 17265.0,
   },
   {
@@ -2189,7 +2189,7 @@ export const schools: School[] = [
     institution: "ΕΜΠ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.3, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 17775.0,
   },
   {
@@ -2197,7 +2197,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 9400.0,
   },
   {
@@ -2205,7 +2205,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9400.0,
   },
   {
@@ -2213,7 +2213,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.28, 0.2, 0.28],
     base2025: 10088.0,
   },
   {
@@ -2229,7 +2229,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8875.0,
   },
   {
@@ -2237,7 +2237,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 10460.0,
   },
   {
@@ -2245,7 +2245,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11520.0,
   },
   {
@@ -2253,7 +2253,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.27, 0.2, 0.27, 0.26],
     base2025: 10071.0,
   },
   {
@@ -2261,7 +2261,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 10071.0,
   },
   {
@@ -2277,7 +2277,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 8780.0,
   },
   {
@@ -2285,7 +2285,7 @@ export const schools: School[] = [
     institution: "ΕΛ.ΜΕ.ΠΑ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 12515.0,
   },
   {
@@ -2325,7 +2325,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.3, 0.25],
     base2025: 8525.0,
   },
   {
@@ -2333,7 +2333,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.24, 0.28],
     base2025: 9461.0,
   },
   {
@@ -2341,7 +2341,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.23, 0.23, 0.28, 0.26],
     base2025: 9461.0,
   },
   {
@@ -2349,7 +2349,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.4, 0.2],
     base2025: 8560.0,
   },
   {
@@ -2402,7 +2402,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8670.0,
   },
   {
@@ -2410,7 +2410,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 8670.0,
   },
   {
@@ -2418,7 +2418,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8670.0,
   },
   {
@@ -2426,7 +2426,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 8640.0,
   },
   {
@@ -2434,7 +2434,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 8640.0,
   },
   {
@@ -2442,7 +2442,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 9410.0,
   },
   {
@@ -2450,7 +2450,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 9410.0,
   },
   {
@@ -2458,7 +2458,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 9410.0,
   },
   {
@@ -2466,7 +2466,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 9410.0,
   },
   {
@@ -2474,7 +2474,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9820.0,
   },
   {
@@ -2482,7 +2482,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 8550.0,
   },
   {
@@ -2490,7 +2490,7 @@ export const schools: School[] = [
     institution: "ΙΟΝΙΟ ΠΑΝ/ΜΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 8550.0,
   },
   {
@@ -2498,7 +2498,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13970.0,
   },
   {
@@ -2506,7 +2506,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 13970.0,
   },
   {
@@ -2514,7 +2514,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 13970.0,
   },
   {
@@ -2522,7 +2522,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 13970.0,
   },
   {
@@ -2530,7 +2530,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 16650.0,
   },
   {
@@ -2538,7 +2538,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 16650.0,
   },
   {
@@ -2546,7 +2546,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 16650.0,
   },
   {
@@ -2554,7 +2554,7 @@ export const schools: School[] = [
     institution: "Λ.Σ. - ΕΛ. ΑΚΤ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 16650.0,
   },
   {
@@ -2562,7 +2562,7 @@ export const schools: School[] = [
     institution: "Ο.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 15150.0,
   },
   {
@@ -2570,7 +2570,7 @@ export const schools: School[] = [
     institution: "Ο.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 18400.0,
   },
   {
@@ -2594,7 +2594,7 @@ export const schools: School[] = [
     institution: "ΟΠΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 16350.0,
   },
   {
@@ -2602,7 +2602,7 @@ export const schools: School[] = [
     institution: "ΟΠΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.22, 0.34, 0.2, 0.24],
     base2025: 15900.0,
   },
   {
@@ -2618,7 +2618,7 @@ export const schools: School[] = [
     institution: "ΟΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17590.0,
   },
   {
@@ -2626,7 +2626,7 @@ export const schools: School[] = [
     institution: "ΟΠΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17590.0,
   },
   {
@@ -2634,7 +2634,7 @@ export const schools: School[] = [
     institution: "ΟΠΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.22, 0.34, 0.22, 0.22],
     base2025: 14440.0,
   },
   {
@@ -2642,7 +2642,7 @@ export const schools: School[] = [
     institution: "ΟΠΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.22, 0.34, 0.22, 0.22],
     base2025: 14440.0,
   },
   {
@@ -2650,7 +2650,7 @@ export const schools: School[] = [
     institution: "Π.Α.Ε.Α. ΚΡΗΤΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.3, 0.25],
     base2025: 0,
   },
   {
@@ -2666,7 +2666,7 @@ export const schools: School[] = [
     institution: "ΠΑΜΑΚ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 12240.0,
   },
   {
@@ -2674,7 +2674,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.35, 0.2],
     base2025: 19295.0,
   },
   {
@@ -2682,7 +2682,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.2, 0.35],
     base2025: 19295.0,
   },
   {
@@ -2698,7 +2698,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16915.0,
   },
   {
@@ -2706,7 +2706,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16915.0,
   },
   {
@@ -2714,7 +2714,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16705.0,
   },
   {
@@ -2722,7 +2722,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16705.0,
   },
   {
@@ -2770,7 +2770,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 14460.0,
   },
   {
@@ -2778,7 +2778,7 @@ export const schools: School[] = [
     institution: "ΠΑ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.23, 0.3, 0.22, 0.25],
     base2025: 15532.0,
   },
   {
@@ -2794,7 +2794,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 7740.0,
   },
   {
@@ -2802,7 +2802,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.2, 0.3],
     base2025: 8630.0,
   },
   {
@@ -2874,7 +2874,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΑΙΓΑΙΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 11275.0,
   },
   {
@@ -2882,7 +2882,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.22, 0.24, 0.24],
     base2025: 8798.0,
   },
   {
@@ -2890,7 +2890,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.25, 0.25],
     base2025: 8798.0,
   },
   {
@@ -2898,7 +2898,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΑΙΓΑΙΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 9050.0,
   },
   {
@@ -2906,7 +2906,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 9050.0,
   },
   {
@@ -2914,7 +2914,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 9660.0,
   },
   {
@@ -2922,7 +2922,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 9660.0,
   },
   {
@@ -2930,7 +2930,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 10330.0,
   },
   {
@@ -2938,7 +2938,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 10330.0,
   },
   {
@@ -2946,7 +2946,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 9890.0,
   },
   {
@@ -2954,7 +2954,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.2, 0.3],
     base2025: 11550.0,
   },
   {
@@ -2994,7 +2994,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8550.0,
   },
   {
@@ -3002,7 +3002,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 8550.0,
   },
   {
@@ -3010,7 +3010,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8550.0,
   },
   {
@@ -3018,7 +3018,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.3, 0.25],
     base2025: 8355.0,
   },
   {
@@ -3026,7 +3026,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 8355.0,
   },
   {
@@ -3050,7 +3050,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 9300.0,
   },
   {
@@ -3058,7 +3058,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΑΙΓΑΙΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9300.0,
   },
   {
@@ -3066,7 +3066,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13120.0,
   },
   {
@@ -3074,7 +3074,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13120.0,
   },
   {
@@ -3082,7 +3082,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13120.0,
   },
   {
@@ -3090,7 +3090,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13120.0,
   },
   {
@@ -3098,7 +3098,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 10730.0,
   },
   {
@@ -3106,7 +3106,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 10730.0,
   },
   {
@@ -3114,7 +3114,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 14130.0,
   },
   {
@@ -3138,7 +3138,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.2, 0.35],
     base2025: 11680.0,
   },
   {
@@ -3146,7 +3146,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 12920.0,
   },
   {
@@ -3154,7 +3154,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 15850.0,
   },
   {
@@ -3162,7 +3162,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 13620.0,
   },
   {
@@ -3170,7 +3170,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 13620.0,
   },
   {
@@ -3178,7 +3178,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.2, 0.4],
     base2025: 11600.0,
   },
   {
@@ -3186,7 +3186,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11600.0,
   },
   {
@@ -3194,7 +3194,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 14370.0,
   },
   {
@@ -3202,7 +3202,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 14405.0,
   },
   {
@@ -3210,7 +3210,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 14405.0,
   },
   {
@@ -3218,7 +3218,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 14520.0,
   },
   {
@@ -3234,7 +3234,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.25, 0.25],
+    coefficients: [0.2, 0.33, 0.2, 0.27],
     base2025: 12765.0,
   },
   {
@@ -3250,7 +3250,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.3, 0.25],
     base2025: 13885.0,
   },
   {
@@ -3258,7 +3258,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 13885.0,
   },
   {
@@ -3266,7 +3266,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.28, 0.28, 0.2],
     base2025: 12032.0,
   },
   {
@@ -3274,7 +3274,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.28, 0.28, 0.22],
     base2025: 12032.0,
   },
   {
@@ -3282,7 +3282,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.24, 0.28, 0.28, 0.2],
     base2025: 15336.0,
   },
   {
@@ -3290,7 +3290,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.24, 0.28, 0.28, 0.2],
     base2025: 15336.0,
   },
   {
@@ -3298,7 +3298,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 11950.0,
   },
   {
@@ -3306,7 +3306,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.27, 0.28, 0.2],
     base2025: 15477.0,
   },
   {
@@ -3314,7 +3314,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 13600.0,
   },
   {
@@ -3322,7 +3322,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.2, 0.4],
     base2025: 10500.0,
   },
   {
@@ -3338,7 +3338,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.25, 0.2],
     base2025: 11540.0,
   },
   {
@@ -3346,7 +3346,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.25, 0.2],
     base2025: 11540.0,
   },
   {
@@ -3354,7 +3354,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΑΤΤΙΚΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.25, 0.2],
     base2025: 11540.0,
   },
   {
@@ -3362,7 +3362,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 9300.0,
   },
   {
@@ -3370,7 +3370,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9300.0,
   },
   {
@@ -3386,7 +3386,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 8920.0,
   },
   {
@@ -3394,7 +3394,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8920.0,
   },
   {
@@ -3402,7 +3402,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 11020.0,
   },
   {
@@ -3410,7 +3410,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 11020.0,
   },
   {
@@ -3418,7 +3418,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.22, 0.27, 0.29],
     base2025: 13000.0,
   },
   {
@@ -3426,7 +3426,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 13290.0,
   },
   {
@@ -3434,7 +3434,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 7310.0,
   },
   {
@@ -3450,7 +3450,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.23, 0.25, 0.3],
     base2025: 12065.0,
   },
   {
@@ -3482,7 +3482,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΜΑΚ/ΝΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.24, 0.26, 0.26, 0.24],
     base2025: 14714.0,
   },
   {
@@ -3490,7 +3490,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 10330.0,
   },
   {
@@ -3498,7 +3498,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 7840.0,
   },
   {
@@ -3514,7 +3514,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΜΑΚ/ΝΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 12860.0,
   },
   {
@@ -3522,7 +3522,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΜΑΚ/ΝΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 12860.0,
   },
   {
@@ -3530,7 +3530,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΜΑΚ/ΝΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 12860.0,
   },
   {
@@ -3578,7 +3578,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.4, 0.2],
     base2025: 10340.0,
   },
   {
@@ -3586,7 +3586,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.4, 0.2, 0.2],
     base2025: 7280.0,
   },
   {
@@ -3594,7 +3594,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.2, 0.25],
     base2025: 7280.0,
   },
   {
@@ -3602,7 +3602,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΔΥΤ ΜΑΚ/ΝΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.3, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 14605.0,
   },
   {
@@ -3610,7 +3610,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΔΥΤ. ΜΑΚ.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 15905.0,
   },
   {
@@ -3626,7 +3626,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.2, 0.3],
     base2025: 16030.0,
   },
   {
@@ -3634,7 +3634,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 16030.0,
   },
   {
@@ -3642,7 +3642,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 9585.0,
   },
   {
@@ -3650,7 +3650,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.3, 0.25],
     base2025: 9585.0,
   },
   {
@@ -3674,7 +3674,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11010.0,
   },
   {
@@ -3682,7 +3682,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11010.0,
   },
   {
@@ -3690,7 +3690,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 9410.0,
   },
   {
@@ -3698,7 +3698,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 8605.0,
   },
   {
@@ -3706,7 +3706,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 8605.0,
   },
   {
@@ -3714,7 +3714,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.3, 0.25],
     base2025: 8605.0,
   },
   {
@@ -3730,7 +3730,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 12130.0,
   },
   {
@@ -3738,7 +3738,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9825.0,
   },
   {
@@ -3787,7 +3787,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 15134.0,
     specialSubjectPct: 20,
   },
@@ -3796,7 +3796,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.2, 0.25],
     base2025: 15134.0,
     specialSubjectPct: 20,
   },
@@ -3805,7 +3805,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 15134.0,
     specialSubjectPct: 20,
   },
@@ -3814,7 +3814,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16000.0,
   },
   {
@@ -3846,7 +3846,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.25, 0.27],
     base2025: 8867.0,
   },
   {
@@ -3854,7 +3854,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 9365.0,
   },
   {
@@ -3862,7 +3862,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.35, 0.2, 0.2],
     base2025: 10553.0,
   },
   {
@@ -3878,7 +3878,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 10570.0,
   },
   {
@@ -3886,7 +3886,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.27, 0.25, 0.25, 0.23],
     base2025: 11851.0,
   },
   {
@@ -3990,7 +3990,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.2, 0.25],
     base2025: 9590.0,
   },
   {
@@ -3998,7 +3998,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 9590.0,
   },
   {
@@ -4006,7 +4006,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.2, 0.25],
     base2025: 9590.0,
   },
   {
@@ -4030,7 +4030,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.27, 0.27, 0.21],
     base2025: 12515.0,
   },
   {
@@ -4038,7 +4038,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.27, 0.21, 0.27],
     base2025: 12515.0,
   },
   {
@@ -4046,7 +4046,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.27, 0.28, 0.2],
     base2025: 12515.0,
   },
   {
@@ -4054,7 +4054,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 14105.0,
   },
   {
@@ -4062,7 +4062,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 9410.0,
   },
   {
@@ -4070,7 +4070,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 9410.0,
   },
   {
@@ -4078,7 +4078,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8990.0,
   },
   {
@@ -4110,7 +4110,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 10445.0,
   },
   {
@@ -4118,7 +4118,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΘΕΣΣΑΛΙΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.3, 0.25],
     base2025: 10445.0,
   },
   {
@@ -4126,7 +4126,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.34, 0.22, 0.22, 0.22],
     base2025: 10914.0,
   },
   {
@@ -4134,7 +4134,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.34, 0.22, 0.22, 0.22],
     base2025: 10914.0,
   },
   {
@@ -4142,7 +4142,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.34, 0.22, 0.22, 0.22],
     base2025: 10914.0,
   },
   {
@@ -4150,7 +4150,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.34, 0.22, 0.22, 0.22],
     base2025: 10914.0,
   },
   {
@@ -4158,7 +4158,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.25, 0.2],
     base2025: 16785.0,
   },
   {
@@ -4166,7 +4166,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 16260.0,
   },
   {
@@ -4174,7 +4174,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 16260.0,
   },
   {
@@ -4182,7 +4182,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.2, 0.25],
     base2025: 9455.0,
   },
   {
@@ -4190,7 +4190,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.2, 0.3],
     base2025: 9455.0,
   },
   {
@@ -4214,7 +4214,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 7890.0,
   },
   {
@@ -4222,7 +4222,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.2, 0.25],
     base2025: 12695.0,
   },
   {
@@ -4230,7 +4230,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 9385.0,
   },
   {
@@ -4246,7 +4246,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.26, 0.28, 0.26, 0.2],
     base2025: 13355.0,
   },
   {
@@ -4286,7 +4286,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 10930.0,
   },
   {
@@ -4294,7 +4294,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 11450.0,
   },
   {
@@ -4334,7 +4334,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 11905.0,
   },
   {
@@ -4342,7 +4342,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11905.0,
   },
   {
@@ -4350,7 +4350,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 11905.0,
   },
   {
@@ -4358,7 +4358,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 11905.0,
   },
   {
@@ -4374,7 +4374,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.23, 0.23, 0.31, 0.23],
     base2025: 8911.0,
   },
   {
@@ -4382,7 +4382,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.29, 0.21, 0.25],
     base2025: 9451.0,
   },
   {
@@ -4390,7 +4390,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 9180.0,
   },
   {
@@ -4398,7 +4398,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.35, 0.2],
+    coefficients: [0.2, 0.27, 0.33, 0.2],
     base2025: 9365.0,
   },
   {
@@ -4406,7 +4406,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 15570.0,
   },
   {
@@ -4414,7 +4414,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΙΩΑΝΝΙΝΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.35, 0.2],
     base2025: 15570.0,
   },
   {
@@ -4422,7 +4422,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.24, 0.28],
     base2025: 16430.0,
   },
   {
@@ -4430,7 +4430,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.25, 0.27],
     base2025: 16430.0,
   },
   {
@@ -4438,7 +4438,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 10780.0,
   },
   {
@@ -4446,7 +4446,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 10780.0,
   },
   {
@@ -4454,7 +4454,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.26, 0.27, 0.27, 0.2],
     base2025: 15646.0,
   },
   {
@@ -4462,7 +4462,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.26, 0.27, 0.27, 0.2],
     base2025: 15646.0,
   },
   {
@@ -4494,7 +4494,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 9675.0,
   },
   {
@@ -4502,7 +4502,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 9515.0,
   },
   {
@@ -4510,7 +4510,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.25, 0.3, 0.2, 0.25],
     base2025: 10415.0,
   },
   {
@@ -4550,7 +4550,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 11600.0,
   },
   {
@@ -4558,7 +4558,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 11600.0,
   },
   {
@@ -4566,7 +4566,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 11600.0,
   },
   {
@@ -4574,7 +4574,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 11600.0,
   },
   {
@@ -4590,7 +4590,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.3, 0.2],
+    coefficients: [0.26, 0.26, 0.22, 0.26],
     base2025: 9134.0,
   },
   {
@@ -4598,7 +4598,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.35, 0.2],
+    coefficients: [0.2, 0.33, 0.27, 0.2],
     base2025: 13073.0,
   },
   {
@@ -4606,7 +4606,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.27, 0.26, 0.27],
     base2025: 15278.0,
   },
   {
@@ -4614,7 +4614,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.27, 0.27, 0.26],
     base2025: 15278.0,
   },
   {
@@ -4622,7 +4622,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΚΡΗΤΗΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.3, 0.2, 0.3, 0.2],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 16165.0,
   },
   {
@@ -4630,7 +4630,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 9885.0,
   },
   {
@@ -4638,7 +4638,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9885.0,
   },
   {
@@ -4646,7 +4646,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.27, 0.23, 0.3],
     base2025: 8335.0,
   },
   {
@@ -4654,7 +4654,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.23, 0.25, 0.32],
     base2025: 8335.0,
   },
   {
@@ -4662,7 +4662,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.27, 0.27, 0.26],
     base2025: 8335.0,
   },
   {
@@ -4670,7 +4670,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 18690.0,
   },
   {
@@ -4678,7 +4678,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.24, 0.28],
     base2025: 16746.0,
   },
   {
@@ -4686,7 +4686,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.22, 0.28, 0.28],
     base2025: 16746.0,
   },
   {
@@ -4694,7 +4694,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 9280.0,
   },
   {
@@ -4702,7 +4702,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9445.0,
   },
   {
@@ -4710,7 +4710,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9445.0,
   },
   {
@@ -4718,7 +4718,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.28, 0.28, 0.22, 0.22],
     base2025: 11900.0,
   },
   {
@@ -4734,7 +4734,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 12150.0,
   },
   {
@@ -4742,7 +4742,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 12150.0,
   },
   {
@@ -4750,7 +4750,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.2, 0.4],
     base2025: 9630.0,
   },
   {
@@ -4758,7 +4758,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 9630.0,
   },
   {
@@ -4766,7 +4766,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.23, 0.27, 0.28],
     base2025: 11093.0,
   },
   {
@@ -4774,7 +4774,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.27, 0.28, 0.23],
     base2025: 11093.0,
   },
   {
@@ -4782,7 +4782,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.25, 0.2],
     base2025: 14422.0,
   },
   {
@@ -4790,7 +4790,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 14422.0,
   },
   {
@@ -4798,7 +4798,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 14422.0,
   },
   {
@@ -4806,7 +4806,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 14422.0,
   },
   {
@@ -4814,7 +4814,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13000.0,
   },
   {
@@ -4822,7 +4822,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13000.0,
   },
   {
@@ -4830,7 +4830,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13000.0,
   },
   {
@@ -4838,7 +4838,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.4, 0.2, 0.2, 0.2],
     base2025: 13000.0,
   },
   {
@@ -4846,7 +4846,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16575.0,
   },
   {
@@ -4862,7 +4862,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 18445.0,
   },
   {
@@ -4878,7 +4878,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.26, 0.28, 0.2, 0.26],
     base2025: 12844.0,
   },
   {
@@ -4886,7 +4886,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.33, 0.27, 0.2],
     base2025: 10053.0,
   },
   {
@@ -4894,7 +4894,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.21, 0.32, 0.27, 0.2],
     base2025: 14500.0,
   },
   {
@@ -4902,7 +4902,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17130.0,
   },
   {
@@ -4918,7 +4918,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.26, 0.26, 0.2, 0.28],
     base2025: 12426.0,
   },
   {
@@ -4926,7 +4926,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 14545.0,
   },
   {
@@ -4934,7 +4934,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 17620.0,
   },
   {
@@ -4950,7 +4950,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.35, 0.2],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 10920.0,
   },
   {
@@ -4958,7 +4958,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 14381.0,
   },
   {
@@ -4966,7 +4966,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.2, 0.4],
     base2025: 16240.0,
   },
   {
@@ -4974,7 +4974,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.4, 0.2],
     base2025: 16240.0,
   },
   {
@@ -4982,7 +4982,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΑΤΡΩΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.3, 0.3, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 16275.0,
   },
   {
@@ -4990,7 +4990,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΙΡΑΙΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 13465.0,
   },
   {
@@ -4998,7 +4998,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 13465.0,
   },
   {
@@ -5015,7 +5015,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 18990.0,
     specialSubjectPct: 20,
   },
@@ -5024,7 +5024,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 19210.0,
   },
   {
@@ -5032,7 +5032,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 15100.0,
   },
   {
@@ -5040,7 +5040,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 16620.0,
   },
   {
@@ -5048,7 +5048,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16935.0,
   },
   {
@@ -5056,7 +5056,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 16935.0,
   },
   {
@@ -5064,7 +5064,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 13070.0,
   },
   {
@@ -5072,7 +5072,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 13070.0,
   },
   {
@@ -5104,7 +5104,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 15940.0,
   },
   {
@@ -5112,7 +5112,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΙΡΑΙΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 15940.0,
   },
   {
@@ -5120,7 +5120,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.24, 0.28],
     base2025: 9496.0,
   },
   {
@@ -5128,7 +5128,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.28, 0.24],
     base2025: 9496.0,
   },
   {
@@ -5136,7 +5136,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.25, 0.35],
     base2025: 9715.0,
   },
   {
@@ -5160,7 +5160,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 11460.0,
   },
   {
@@ -5168,7 +5168,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 10180.0,
   },
   {
@@ -5176,7 +5176,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 10180.0,
   },
   {
@@ -5184,7 +5184,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.28, 0.27, 0.2],
     base2025: 12611.0,
   },
   {
@@ -5200,7 +5200,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.3, 0.2],
     base2025: 8760.0,
   },
   {
@@ -5216,7 +5216,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 9250.0,
   },
   {
@@ -5224,7 +5224,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 12440.0,
   },
   {
@@ -5240,7 +5240,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.2, 0.35],
     base2025: 9755.0,
   },
   {
@@ -5248,7 +5248,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.35, 0.25, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 10030.0,
   },
   {
@@ -5256,7 +5256,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.3, 0.3],
     base2025: 8940.0,
   },
   {
@@ -5312,7 +5312,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 11530.0,
   },
   {
@@ -5320,7 +5320,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.28, 0.27, 0.2],
     base2025: 11221.0,
   },
   {
@@ -5328,7 +5328,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.3, 0.2],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 8900.0,
   },
   {
@@ -5336,7 +5336,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 13450.0,
   },
   {
@@ -5344,7 +5344,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.28, 0.28, 0.22, 0.22],
     base2025: 9040.0,
   },
   {
@@ -5352,7 +5352,7 @@ export const schools: School[] = [
     institution: "ΠΑΝ. ΠΕΛ/ΝΗΣΟΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.22, 0.28, 0.28],
     base2025: 9040.0,
   },
   {
@@ -5376,7 +5376,7 @@ export const schools: School[] = [
     institution: "ΠΑΝΤΕΙΟ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.3, 0.2],
     base2025: 17040.0,
   },
   {
@@ -5384,7 +5384,7 @@ export const schools: School[] = [
     institution: "ΠΑΝΤΕΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 17040.0,
   },
   {
@@ -5417,7 +5417,7 @@ export const schools: School[] = [
     institution: "ΠΑΝΤΕΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.3, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.2, 0.2, 0.3],
     base2025: 12430.0,
   },
   {
@@ -5449,7 +5449,7 @@ export const schools: School[] = [
     institution: "ΠΑΝΤΕΙΟ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.3, 0.2, 0.3, 0.2],
+    coefficients: [0.3, 0.25, 0.25, 0.2],
     base2025: 17100.0,
   },
   {
@@ -5465,7 +5465,7 @@ export const schools: School[] = [
     institution: "ΠΟΛ/ΧΝΕΙΟ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 14648.0,
   },
   {
@@ -5473,7 +5473,7 @@ export const schools: School[] = [
     institution: "ΠΟΛΥΤ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 9440.0,
   },
   {
@@ -5481,7 +5481,7 @@ export const schools: School[] = [
     institution: "ΠΟΛ/ΧΝΕΙΟ ΚΡΗΤΗΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 12290.0,
   },
   {
@@ -5489,7 +5489,7 @@ export const schools: School[] = [
     institution: "ΠΟΛ/ΧΝΕΙΟ ΚΡΗΤΗΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.25, 0.25],
     base2025: 12290.0,
   },
   {
@@ -5505,7 +5505,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 17460.0,
   },
   {
@@ -5513,7 +5513,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 17460.0,
   },
   {
@@ -5521,7 +5521,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 17460.0,
   },
   {
@@ -5529,7 +5529,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 17460.0,
   },
   {
@@ -5537,7 +5537,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 9940.0,
   },
   {
@@ -5545,7 +5545,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 9940.0,
   },
   {
@@ -5553,7 +5553,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 9940.0,
   },
   {
@@ -5561,7 +5561,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 9940.0,
   },
   {
@@ -5569,7 +5569,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 14460.0,
   },
   {
@@ -5577,7 +5577,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 14460.0,
   },
   {
@@ -5585,7 +5585,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 14460.0,
   },
   {
@@ -5593,7 +5593,7 @@ export const schools: School[] = [
     institution: "Σ.Π.Α.",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.2, 0.3],
     base2025: 14460.0,
   },
   {
@@ -5609,7 +5609,7 @@ export const schools: School[] = [
     institution: "ΣΙ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.2, 0.25, 0.2],
     base2025: 17260.0,
   },
   {
@@ -5617,7 +5617,7 @@ export const schools: School[] = [
     institution: "ΣΙ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 15305.0,
   },
   {
@@ -5625,7 +5625,7 @@ export const schools: School[] = [
     institution: "ΣΙ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.25, 0.3],
     base2025: 17465.0,
   },
   {
@@ -5633,7 +5633,7 @@ export const schools: School[] = [
     institution: "ΣΙ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 14685.0,
   },
   {
@@ -5641,7 +5641,7 @@ export const schools: School[] = [
     institution: "ΣΙ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 17025.0,
   },
   {
@@ -5649,7 +5649,7 @@ export const schools: School[] = [
     institution: "ΣΙ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16335.0,
   },
   {
@@ -5657,7 +5657,7 @@ export const schools: School[] = [
     institution: "ΣΜΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 9170.0,
   },
   {
@@ -5665,7 +5665,7 @@ export const schools: School[] = [
     institution: "ΣΜΥ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 13080.0,
   },
   {
@@ -5673,7 +5673,7 @@ export const schools: School[] = [
     institution: "ΣΜΥ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 13080.0,
   },
   {
@@ -5681,7 +5681,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16030.0,
   },
   {
@@ -5689,7 +5689,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΑ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 16030.0,
   },
   {
@@ -5697,7 +5697,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 12265.0,
   },
   {
@@ -5705,7 +5705,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 14150.0,
   },
   {
@@ -5713,7 +5713,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΑ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.3, 0.25, 0.2],
     base2025: 11095.0,
   },
   {
@@ -5721,7 +5721,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΝ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 8940.0,
   },
   {
@@ -5729,7 +5729,7 @@ export const schools: School[] = [
     institution: "ΣΜΥΝ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 8940.0,
   },
   {
@@ -5737,7 +5737,7 @@ export const schools: School[] = [
     institution: "ΣΝΔ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.33, 0.25, 0.2],
     base2025: 11069.0,
   },
   {
@@ -5745,7 +5745,7 @@ export const schools: School[] = [
     institution: "ΣΝΔ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.22, 0.33, 0.25, 0.2],
     base2025: 11898.0,
   },
   {
@@ -5761,7 +5761,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.2, 0.27, 0.33],
     base2025: 17482.0,
   },
   {
@@ -5769,7 +5769,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.3, 0.3, 0.2, 0.2],
     base2025: 18040.0,
   },
   {
@@ -5777,7 +5777,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.25, 0.25, 0.3],
     base2025: 17770.0,
   },
   {
@@ -5785,7 +5785,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.25, 0.2, 0.3],
     base2025: 17735.0,
   },
   {
@@ -5793,7 +5793,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 18240.0,
   },
   {
@@ -5801,7 +5801,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.25, 0.2, 0.35, 0.2],
     base2025: 18240.0,
   },
   {
@@ -5817,7 +5817,7 @@ export const schools: School[] = [
     institution: "ΣΣΑΣ",
     city: "",
     field: "Ανθρωπιστικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.35, 0.25, 0.2, 0.2],
     base2025: 18155.0,
   },
   {
@@ -5825,7 +5825,7 @@ export const schools: School[] = [
     institution: "ΣΣΕ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 10865.0,
   },
   {
@@ -5833,7 +5833,7 @@ export const schools: School[] = [
     institution: "ΣΣΕ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.2, 0.35, 0.25, 0.2],
     base2025: 13055.0,
   },
   {
@@ -5841,7 +5841,7 @@ export const schools: School[] = [
     institution: "ΧΑΡΟΚΟΠΕΙΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 10725.0,
   },
   {
@@ -5849,7 +5849,7 @@ export const schools: School[] = [
     institution: "ΧΑΡΟΚΟΠΕΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.2, 0.3, 0.3, 0.2],
+    coefficients: [0.25, 0.25, 0.25, 0.25],
     base2025: 10725.0,
   },
   {
@@ -5857,7 +5857,7 @@ export const schools: School[] = [
     institution: "ΧΑΡΟΚΟΠΕΙΟ",
     city: "",
     field: "Σπουδών Υγείας",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.24, 0.24, 0.26, 0.26],
     base2025: 16344.0,
   },
   {
@@ -5865,7 +5865,7 @@ export const schools: School[] = [
     institution: "ΧΑΡΟΚΟΠΕΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.25, 0.25, 0.25, 0.25],
+    coefficients: [0.23, 0.3, 0.2, 0.27],
     base2025: 12556.0,
   },
   {
@@ -5873,7 +5873,7 @@ export const schools: School[] = [
     institution: "ΧΑΡΟΚΟΠΕΙΟ",
     city: "",
     field: "Θετικών Σπουδών",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 16320.0,
   },
   {
@@ -5881,7 +5881,7 @@ export const schools: School[] = [
     institution: "ΧΑΡΟΚΟΠΕΙΟ",
     city: "",
     field: "Σπουδών Οικονομίας & Πληροφορικής",
-    coefficients: [0.15, 0.35, 0.35, 0.15],
+    coefficients: [0.2, 0.3, 0.3, 0.2],
     base2025: 16320.0,
   },
   {
