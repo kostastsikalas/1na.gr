@@ -180,7 +180,7 @@ function BookCarousel({ books, label }: { books: Book[]; label: string }) {
           >
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group-hover/card:border-[#213576]/20 group-hover/card:-translate-y-1">
               <Image
-                src={book.image}
+                src={encodeURI(book.image)}
                 alt={book.title}
                 fill
                 sizes="200px"
