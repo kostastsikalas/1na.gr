@@ -78,7 +78,7 @@ export default function Footer() {
         {pathname !== "/contact" && (
           <div className="pt-16 pb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 tracking-wide">
-              ΤΑ ΠΑΡΑΡΤΗΜΑΤΑ ΜΑΣ
+              ΟΙ ΕΓΚΑΤΑΣΤΑΣΕΙΣ ΜΑΣ
             </h2>
             <p className="text-blue-200/60 text-center text-sm mb-10 max-w-md mx-auto">
               3 σύγχρονες δομές σε Ηράκλειο & Αθήνα

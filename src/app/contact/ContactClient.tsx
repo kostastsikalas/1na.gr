@@ -58,13 +58,13 @@ export default function ContactClient() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#213576]/8 text-[#213576] text-[13px] font-semibold rounded-full mb-6">
             <MapPin size={15} />
-            Επικοινωνία & Παραρτήματα
+            Επικοινωνία & Εγκαταστάσεις
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#002B5B] mb-6 tracking-tight">
             Είμαστε δίπλα σας
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Βρείτε μας στα παραρτήματά μας σε Ηράκλειο Κρήτης και Αττική. 
+            Βρείτε μας στις εγκαταστάσεις μας σε Ηράκλειο Κρήτης και Αττική. 
             Επικοινωνήστε μαζί μας για οποιαδήποτε απορία ή εγγραφή.
           </p>
         </motion.div>

@@ -32,7 +32,7 @@ export default function Branches() {
     <section id="branches" className="w-full bg-gradient-to-b from-[#0a4b86] to-[#052b52] pt-20 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 tracking-wide">
-          ΤΑ ΠΑΡΑΡΤΗΜΑΤΑ ΜΑΣ
+          ΟΙ ΕΓΚΑΤΑΣΤΑΣΕΙΣ ΜΑΣ
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-6xl mx-auto">

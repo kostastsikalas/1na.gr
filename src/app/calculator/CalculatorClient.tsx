@@ -473,18 +473,7 @@ export default function CalculatorClient() {
                     }`}
                   >
                     <CheckCircle2 size={15} />
-                    {passing.length} Περνάτε
-                  </button>
-                  <button
-                    onClick={() => setFilterPassing(filterPassing === "fail" ? "all" : "fail")}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all text-[13px] font-semibold ${
-                      filterPassing === "fail"
-                        ? "bg-rose-100 text-rose-700"
-                        : "text-rose-500 hover:bg-rose-50"
-                    }`}
-                  >
-                    <XCircle size={15} />
-                    {failing.length} Δεν περνάτε
+                    {passing.length} Εισάγεσαι
                   </button>
                 </div>
                 <p className="text-[11px] text-gray-400 text-center">

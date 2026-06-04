@@ -10,47 +10,103 @@ type Book = { title: string; image: string };
 
 const categories = [
   {
-    label: "Α΄ Λυκείου",
+    label: "Α' Λυκείου",
     books: [
-      { title: "Άλγεβρα Α΄", image: "/images/books/a-lykeiou/algebra-a.jpg" },
-      { title: "Έκθεση Α΄", image: "/images/books/a-lykeiou/ekthesi-a.jpg" },
-      { title: "Φυσική Α΄", image: "/images/books/a-lykeiou/fysiki-a.jpg" },
-      { title: "Χημεία Α΄", image: "/images/books/a-lykeiou/ximeia-a.jpg" },
+      { title: "Έκθεση", image: "/βιβλια/Α λυκείου/Έκθεση Α.jpg" },
+      { title: "Άλγεβρα", image: "/βιβλια/Α λυκείου/Αλγεβρα Α.jpg" },
+      { title: "Αρχαία", image: "/βιβλια/Α λυκείου/ΑΡΧΑΙΑ Α.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Α λυκείου/θεωρια Εκθεση.jpg" },
+      { title: "Φυσική", image: "/βιβλια/Α λυκείου/Φυσική Α.jpg" },
+      { title: "Χημεία", image: "/βιβλια/Α λυκείου/Χημεία Α.jpg" },
+      { title: "Τράπεζα Θεμάτων Μαθηματικών", image: "/βιβλια/Α λυκείου/τραπεζα θεματων μαθηματικων Α.jpg" },
     ],
   },
   {
-    label: "Β΄ Λυκείου",
+    label: "Β' Λυκείου - Ανθρωπιστικών Σπουδών",
     books: [
-      { title: "Άλγεβρα Β΄", image: "/images/books/b-lykeiou/algebra-b.jpg" },
-      { title: "Έκθεση Β΄", image: "/images/books/b-lykeiou/ekthesi-b.jpg" },
-      { title: "Φυσική Β΄", image: "/images/books/b-lykeiou/fysiki-b.jpg" },
-      { title: "Φυσική Β΄ — Τράπεζα Θεμάτων", image: "/images/books/b-lykeiou/fysiki-b-trapeza.jpg" },
+      { title: "Λατινικά", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/ΛΑΤΙΝΙΚΑ.jpg" },
+      { title: "Χωρίς τίτλο", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/Χωρίς τίτλο_18.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/θεωρια Εκθεση.jpg" },
+      { title: "Ιστορία", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/ιστορία Γ.jpg" },
+      { title: "Συντακτικό", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/Συντακτικο.jpg" },
+      { title: "Έκθεση", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/Εκθεση Β.jpg" },
+      { title: "Τράπεζα Αρχαίων", image: "/βιβλια/Β λυκειου - ανθρωπιστικών/ΤΡΑΠΕΖΑ ΑΡΧΑΙΩΝ.jpg" },
     ],
   },
   {
-    label: "Γ΄ Λυκείου & ΕΠΑΛ",
+    label: "Β' Λυκείου - Θετικής & Υγείας",
     books: [
-      { title: "Μαθηματικά Προσανατολισμού", image: "/images/books/g-lykeiou/mathimatika-g.jpg" },
-      { title: "Έκθεση Γ΄ — Α΄ τόμος", image: "/images/books/g-lykeiou/ekthesi-g-a.jpg" },
-      { title: "Έκθεση Γ΄ — Β΄ τόμος", image: "/images/books/g-lykeiou/ekthesi-g-b.jpg" },
-      { title: "Έκθεση — Θεωρία", image: "/images/books/g-lykeiou/theoria-ekthesi.jpg" },
-      { title: "Ιστορία Γ΄", image: "/images/books/g-lykeiou/istoria-g.jpg" },
-      { title: "Λατινικά Γ΄", image: "/images/books/g-lykeiou/latinika-g.jpg" },
-      { title: "Λατινικά Γ΄ — Β΄ τόμος", image: "/images/books/g-lykeiou/latinika-g2.jpg" },
-      { title: "Συντακτικό", image: "/images/books/g-lykeiou/syntaktiko.jpg" },
-      { title: "Γνωστό Κείμενο Γ΄", image: "/images/books/g-lykeiou/gnosto-keimeno.jpg" },
-      { title: "Πληροφορική Γ΄", image: "/images/books/g-lykeiou/pliroforiki-g.jpg" },
-      { title: "Βιολογία Προσανατολισμού", image: "/images/books/g-lykeiou/viologia-pros.jpg" },
-      { title: "Αρχές Οικονομικής Θεωρίας", image: "/images/books/g-lykeiou/aoth.jpg" },
-      { title: "Κρούσεις Γ΄", image: "/images/books/g-lykeiou/krouseis-g.jpg" },
-      { title: "Ταλαντώσεις", image: "/images/books/g-lykeiou/talantoseis.jpg" },
-      { title: "Ηλεκτρομαγνητισμός", image: "/images/books/g-lykeiou/ilektromagnetismos.jpg" },
-      { title: "Μηχανική Στερεού", image: "/images/books/g-lykeiou/mixaniki-stereou.jpg" },
-      { title: "Φυσική Γ΄ — Η τελευταία επανάληψη", image: "/images/books/g-lykeiou/teleutaia-epanalipsi.jpg" },
-      { title: "Χημεία Γ΄ — Α΄ τόμος", image: "/images/books/g-lykeiou/ximeia-g-a.jpg" },
-      { title: "Χημεία Γ΄ — Β΄ τόμος", image: "/images/books/g-lykeiou/ximeia-g-b.jpg" },
-      { title: "Μαθηματικά ΕΠΑΛ", image: "/images/books/g-lykeiou/mathimatika-epal.jpg" },
-      { title: "Μαθηματικά Γ΄ ΕΠΑΛ", image: "/images/books/g-lykeiou/mathimatika-g-epal.jpg" },
+      { title: "Άλγεβρα", image: "/βιβλια/Β λυκειου - θετικής υγείας/Αλγεβρα Β.jpg" },
+      { title: "Βιολογία Προσανατολισμού", image: "/βιβλια/Β λυκειου - θετικής υγείας/Βιολογία Προσανατολισμού.jpg" },
+      { title: "Τράπεζα Θεμάτων Φυσικής", image: "/βιβλια/Β λυκειου - θετικής υγείας/φυσικηβτραπεζα.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Β λυκειου - θετικής υγείας/θεωρια Εκθεση.jpg" },
+      { title: "Τράπεζα Θεμάτων Άλγεβρας", image: "/βιβλια/Β λυκειου - θετικής υγείας/τραπεζα αλγεβρας Β.jpg" },
+      { title: "Φυσική", image: "/βιβλια/Β λυκειου - θετικής υγείας/Φυσική Β.jpg" },
+      { title: "Μαθηματικά", image: "/βιβλια/Β λυκειου - θετικής υγείας/Μαθηματικά Β.jpg" },
+      { title: "Τράπεζα Θεμάτων Μαθηματικών", image: "/βιβλια/Β λυκειου - θετικής υγείας/τραπεζα θεματων μαθηματικων Β.jpg" },
+      { title: "Έκθεση", image: "/βιβλια/Β λυκειου - θετικής υγείας/Εκθεση Β.jpg" },
+    ],
+  },
+  {
+    label: "Β' Λυκείου - Οικονομίας",
+    books: [
+      { title: "Άλγεβρα", image: "/βιβλια/Β λυκείου οικονομιας/Αλγεβρα Β.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Β λυκείου οικονομιας/θεωρια Εκθεση.jpg" },
+      { title: "Πληροφορική", image: "/βιβλια/Β λυκείου οικονομιας/Πληροφορική Γ.jpg" },
+      { title: "Μαθηματικά", image: "/βιβλια/Β λυκείου οικονομιας/Μαθηματικά Β.jpg" },
+      { title: "Αρχές Οικονομικής Θεωρίας", image: "/βιβλια/Β λυκείου οικονομιας/Αρχες Οικονομικής Θεωρίας.jpg" },
+      { title: "Έκθεση", image: "/βιβλια/Β λυκείου οικονομιας/Εκθεση Β.jpg" },
+    ],
+  },
+  {
+    label: "Γ' Λυκείου - Ανθρωπιστικών Σπουδών",
+    books: [
+      { title: "Λατινικά", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/ΛΑΤΙΝΙΚΑ.jpg" },
+      { title: "Γνωστό Κείμενο", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/γΝΩΣΤΟ ΚΕΙΜΕΝΟ.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/θεωρια Εκθεση.jpg" },
+      { title: "Έκθεση - Β' Τόμος", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/Εκθεση Γ βτομος.jpg" },
+      { title: "Συντακτικό", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/Συντακτικο.jpg" },
+      { title: "Ιστορία", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/Ιστορια.jpg" },
+      { title: "Έκθεση - Α' Τόμος", image: "/βιβλια/Γ λυκειου - ανθρωπιστικών/Εκθεση Γ ατομος.jpg" },
+    ],
+  },
+  {
+    label: "Γ' Λυκείου - Θετικής",
+    books: [
+      { title: "Μηχανική Στερεού", image: "/βιβλια/Γ λυκειου - θετικής/μηχανικη στερεου.jpg" },
+      { title: "Κρούσεις", image: "/βιβλια/Γ λυκειου - θετικής/Κρουσεις Γ.jpg" },
+      { title: "Τελευταία Επανάληψη", image: "/βιβλια/Γ λυκειου - θετικής/τελευταια επαναλγλυκ.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Γ λυκειου - θετικής/θεωρια Εκθεση.jpg" },
+      { title: "Έκθεση - Β' Τόμος", image: "/βιβλια/Γ λυκειου - θετικής/Εκθεση Γ βτομος.jpg" },
+      { title: "Ηλεκτρομαγνητισμός", image: "/βιβλια/Γ λυκειου - θετικής/ηλεκτρομαγνητισμός.jpg" },
+      { title: "Ταλαντώσεις", image: "/βιβλια/Γ λυκειου - θετικής/Ταλαντωσεις.jpg" },
+      { title: "Μαθηματικά", image: "/βιβλια/Γ λυκειου - θετικής/Μαθηματικά Γ.jpg" },
+      { title: "Έκθεση - Α' Τόμος", image: "/βιβλια/Γ λυκειου - θετικής/Εκθεση Γ ατομος.jpg" },
+    ],
+  },
+  {
+    label: "Γ' Λυκείου - Υγείας",
+    books: [
+      { title: "Μηχανική Στερεού", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/μηχανικη στερεου.jpg" },
+      { title: "Κρούσεις", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/Κρουσεις Γ.jpg" },
+      { title: "Τελευταία Επανάληψη", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/τελευταια επαναλγλυκ.jpg" },
+      { title: "Βιολογία Προσανατολισμού", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/Βιολογία Προσανατολισμού.jpg" },
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/θεωρια Εκθεση.jpg" },
+      { title: "Έκθεση - Β' Τόμος", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/Εκθεση Γ βτομος.jpg" },
+      { title: "Ηλεκτρομαγνητισμός", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/ηλεκτρομαγνητισμός.jpg" },
+      { title: "Ταλαντώσεις", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/Ταλαντωσεις.jpg" },
+      { title: "Έκθεση - Α' Τόμος", image: "/βιβλια/Γ λυκειου - ΥΓΕΙΑς/Εκθεση Γ ατομος.jpg" },
+    ],
+  },
+  {
+    label: "Γ' Λυκείου - Οικονομίας",
+    books: [
+      { title: "Θεωρία Έκθεσης", image: "/βιβλια/Γ λυκειου - οικονομιας/θεωρια Εκθεση.jpg" },
+      { title: "Πληροφορική", image: "/βιβλια/Γ λυκειου - οικονομιας/Πληροφορική Γ.jpg" },
+      { title: "Έκθεση - Β' Τόμος", image: "/βιβλια/Γ λυκειου - οικονομιας/Εκθεση Γ βτομος.jpg" },
+      { title: "Μαθηματικά", image: "/βιβλια/Γ λυκειου - οικονομιας/Μαθηματικά Γ.jpg" },
+      { title: "Έκθεση - Α' Τόμος", image: "/βιβλια/Γ λυκειου - οικονομιας/Εκθεση Γ ατομος.jpg" },
+      { title: "Αρχές Οικονομικής Θεωρίας", image: "/βιβλια/Γ λυκειου - οικονομιας/Αρχες Οικονομικής Θεωρίας.jpg" },
     ],
   },
 ];
@@ -214,7 +270,7 @@ export default function PublicationsClient() {
               {/* Section header */}
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-[#213576] flex items-center justify-center text-white text-[14px] font-bold shrink-0">
-                  {idx === 0 ? "Α΄" : idx === 1 ? "Β΄" : "Γ΄"}
+                  {cat.label.split(" ")[0]}
                 </div>
                 <div>
                   <h2 className="text-xl md:text-2xl font-extrabold text-[#002B5B]">
