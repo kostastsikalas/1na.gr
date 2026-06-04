@@ -33,7 +33,6 @@ export default function Hero() {
           loop
           muted={isMuted}
           playsInline
-          poster="/images/arxiki.jpg"
           className="object-cover w-full h-full"
         >
           <source src="/download.mp4" type="video/mp4" />
