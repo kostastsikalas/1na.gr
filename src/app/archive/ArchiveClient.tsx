@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
   Download,
@@ -9,6 +9,7 @@ import {
   Filter,
   Loader2,
   BookOpen,
+  ChevronDown,
 } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 
@@ -54,6 +55,19 @@ export default function ArchiveClient() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedYear, setSelectedYear] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("Όλα τα Πεδία");
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsCategoryOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const [exams, setExams] = useState<ExamArchiveItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const supabase = createClient();
@@ -137,29 +151,56 @@ export default function ArchiveClient() {
         </div>
       </section>
 
-      {/* ══════ Category Tabs ══════ */}
-      <section className="relative -mt-8 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      {/* ══════ Category Dropdown ══════ */}
+      <section className="relative -mt-8 z-30 max-w-[320px] mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100/80 p-3"
+          className="relative"
+          ref={dropdownRef}
         >
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 ${
-                  selectedCategory === cat
-                    ? "bg-[#213576] text-white shadow-md"
-                    : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                }`}
+          <button
+            onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+            className="w-full flex items-center justify-between bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100/80 px-5 py-4 transition-all hover:border-[#213576]/20 focus:outline-none focus:ring-2 focus:ring-[#213576]/20"
+          >
+            <span className="font-bold text-[#002B5B] text-[14px]">
+              {selectedCategory}
+            </span>
+            <ChevronDown
+              size={18}
+              className={`text-[#213576] transition-transform duration-300 ${isCategoryOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+
+          <AnimatePresence>
+            {isCategoryOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-40 py-2"
               >
-                {cat}
-              </button>
-            ))}
-          </div>
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => {
+                      setSelectedCategory(cat);
+                      setIsCategoryOpen(false);
+                    }}
+                    className={`w-full text-left px-5 py-3 text-[13px] font-medium transition-colors ${
+                      selectedCategory === cat
+                        ? "bg-[#213576]/5 text-[#213576] font-bold"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-[#002B5B]"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </section>
 
