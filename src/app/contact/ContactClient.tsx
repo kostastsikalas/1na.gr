@@ -33,13 +33,6 @@ const branches = [
         email: "1isiodou@ena.edu.gr",
         mapUrl: "https://maps.google.com/maps?q=Ησιόδου%2018,%20Άλιμος&t=&z=16&ie=UTF8&iwloc=&output=embed",
       },
-      {
-        name: "Κτήριο 2",
-        address: "Θεομήτορος 54",
-        phone: "210 9820561",
-        email: "1theomitoros@ena.edu.gr",
-        mapUrl: "https://maps.google.com/maps?q=Θεομήτορος%2054,%20Άλιμος&t=&z=16&ie=UTF8&iwloc=&output=embed",
-      },
     ],
   },
 ];

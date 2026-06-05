@@ -44,6 +44,7 @@ const steps = [
     step: 1,
     icon: BookOpen,
     title: "Γνωρίστε τα Πεδία",
+    titleLink: "/bases",
     description: "Κατανοήστε τα 4 Επιστημονικά Πεδία και τις σχολές που αντιστοιχούν σε κάθε πεδίο. Αυτό θα σας βοηθήσει να κάνετε στρατηγικές επιλογές.",
     tips: [
       "1ο Πεδίο → Νομική, Φιλολογία, Ψυχολογία",
@@ -85,7 +86,7 @@ const steps = [
     step: 4,
     icon: CalendarCheck,
     title: "Προθεσμίες & Υποβολή",
-    description: "Μην αφήνετε τίποτα για την τελευταία στιγμή. Σημειώστε τις ημερομηνίες και υποβάλετε εγκαίρως μέσω του TaxisNet.",
+    description: "Μην αφήνετε τίποτα για την τελευταία στιγμή. Σημειώστε τις ημερομηνίες και υποβάλετε εγκαίρως.",
     tips: [
       "Ηλεκτρονική υποβολή στο exams.it.minedu.gov.gr",
       "Κρατήστε αντίγραφο/εκτύπωση",
@@ -98,8 +99,8 @@ const steps = [
 
 const faqs = [
   {
-    question: "Μπορώ να αλλάξω τις επιλογές μου μετά την υποβολή;",
-    answer: "Ναι, μπορείτε να τροποποιήσετε το μηχανογραφικό σας όσες φορές θέλετε μέχρι τη λήξη της προθεσμίας. Μετρά ΜΟΝΟ η τελευταία υποβολή.",
+    question: "Μπορώ να αλλάξω τις επιλογές μου πριν οριστικοποιήσω;",
+    answer: "Ναι, μπορείτε να τροποποιήσετε το μηχανογραφικό σας όσες φορές θέλετε μέχρι τη λήξη της προθεσμίας και την οριστική υποβολή.",
   },
   {
     question: "Πόσες σχολές μπορώ να δηλώσω;",
@@ -192,7 +193,9 @@ export default function GuideClient() {
                           <Icon size={24} />
                         </div>
                         <div>
-                          <h3 className="text-[17px] font-bold text-[#002B5B] mb-2">{item.step}. {item.title}</h3>
+                          <h3 className="text-[17px] font-bold text-[#002B5B] mb-2">
+                            {item.step}. {item.titleLink ? <Link href={item.titleLink} className="hover:underline hover:text-blue-600 transition-colors">{item.title}</Link> : item.title}
+                          </h3>
                           <p className="text-[14px] text-gray-500 leading-relaxed mb-4">{item.description}</p>
                           <ul className="space-y-2">
                             {item.tips.map((tip) => (
@@ -345,6 +348,14 @@ export default function GuideClient() {
                         <li className="flex justify-between pb-1"><span>Γυναίκες:</span> <span className="font-bold text-[#213576]">18 - 25</span></li>
                       </ul>
                       <p className="text-[11px] text-gray-400 mt-2">ΔΜΣ = Βάρος (kg) / Ύψος² (m)</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-400 mb-2">Ελαχιστο Αναστημα (Στρατιωτικες)</h4>
+                      <ul className="space-y-2 text-[13px] text-gray-600 mb-6">
+                        <li className="flex justify-between border-b border-gray-50 pb-1"><span>Άνδρες:</span> <span className="font-bold text-[#213576]">1.65 m</span></li>
+                        <li className="flex justify-between pb-1"><span>Γυναίκες:</span> <span className="font-bold text-[#213576]">1.55 m</span></li>
+                      </ul>
                     </div>
 
                     <div>
