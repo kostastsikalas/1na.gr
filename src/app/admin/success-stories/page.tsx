@@ -118,7 +118,7 @@ export default function AdminSuccessStories() {
                   type="file" 
                   accept="application/pdf"
                   onChange={(e) => setPdfFile(e.target.files?.[0] || null)}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] text-gray-900 bg-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#213576]/10 file:text-[#213576] hover:file:bg-[#213576]/20"
                   required
                 />
               </div>

@@ -206,6 +206,10 @@ export default function Navbar() {
     );
   };
 
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <header ref={navRef} className="fixed top-0 left-0 w-full z-50">
       {/* Glass bar */}

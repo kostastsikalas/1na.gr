@@ -65,6 +65,10 @@ const quickLinks = [
 export default function Footer() {
   const pathname = usePathname();
 
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer className="relative bg-gradient-to-b from-[#0a1e3d] to-[#050e1d] text-white overflow-hidden">
       {/* Decorative gradient overlay */}
