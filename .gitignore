@@ -46,5 +46,6 @@ __pycache__/
 *.xls
 *.xlsx
 *.pdf
-# Exam archive PDFs must ship with the build (served from /public)
+# Public PDFs must ship with the build (served from /public)
 !public/themata/**/*.pdf
+!public/epitixontes/**/*.pdf
