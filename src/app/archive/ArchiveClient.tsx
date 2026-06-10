@@ -7,6 +7,7 @@ import {
   FileText,
   Loader2,
   BookOpen,
+  CheckCircle2,
   GraduationCap,
 } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
@@ -333,6 +334,7 @@ export default function ArchiveClient() {
             {filtered.map((exam, i) => {
               const dir = exam.directions[0] || "";
               const c = colorOf(dir);
+              const isSolution = exam.kind === "Λύσεις";
               return (
                 <motion.div
                   key={exam.id}
@@ -343,9 +345,21 @@ export default function ArchiveClient() {
                   className="group bg-white rounded-2xl border border-gray-100 hover:border-[#213576]/15 p-5 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold ${c.bg} ${c.text}`}>
-                      {exam.year}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold ${c.bg} ${c.text}`}>
+                        {exam.year}
+                      </span>
+                      <span
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold ${
+                          isSolution
+                            ? "bg-emerald-50 text-emerald-600"
+                            : "bg-[#213576]/8 text-[#213576]"
+                        }`}
+                      >
+                        {isSolution ? <CheckCircle2 size={12} /> : <FileText size={12} />}
+                        {exam.kind}
+                      </span>
+                    </div>
                     <div className="w-9 h-9 rounded-lg bg-[#213576]/5 flex items-center justify-center group-hover:bg-[#213576] transition-colors duration-300 shrink-0">
                       <BookOpen size={16} className="text-[#213576] group-hover:text-white transition-colors duration-300" />
                     </div>
