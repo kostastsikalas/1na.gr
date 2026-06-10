@@ -336,7 +336,7 @@ export default function Navbar() {
                 <a href="https://www.instagram.com/frontistirio.ena/?hl=en" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center rounded-xl text-[#213576]/70 hover:bg-[#213576]/10 hover:text-[#213576] transition-all">
                   <InstagramIcon size={18} />
                 </a>
-                <a href="https://www.tiktok.com/@frontistrioena" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center rounded-xl text-[#213576]/70 hover:bg-[#213576]/10 hover:text-[#213576] transition-all">
+                <a href="https://www.tiktok.com/@frontistirio.ena?_r=1&_t=ZN-975SihZRTF8" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center rounded-xl text-[#213576]/70 hover:bg-[#213576]/10 hover:text-[#213576] transition-all">
                   <TikTokIcon size={18} />
                 </a>
                 <a href="https://www.youtube.com/channel/UCfmVMF00ZV2bNehoGGG_SOw" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center rounded-xl text-[#213576]/70 hover:bg-[#213576]/10 hover:text-[#213576] transition-all">
@@ -478,7 +478,7 @@ export default function Navbar() {
               <a href="https://www.instagram.com/frontistirio.ena/?hl=en" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#213576]/5 text-[#213576] hover:bg-[#213576]/10 transition-colors">
                 <InstagramIcon size={20} />
               </a>
-              <a href="https://www.tiktok.com/@frontistrioena" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#213576]/5 text-[#213576] hover:bg-[#213576]/10 transition-colors">
+              <a href="https://www.tiktok.com/@frontistirio.ena?_r=1&_t=ZN-975SihZRTF8" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#213576]/5 text-[#213576] hover:bg-[#213576]/10 transition-colors">
                 <TikTokIcon size={20} />
               </a>
               <a href="https://www.youtube.com/channel/UCfmVMF00ZV2bNehoGGG_SOw" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#213576]/5 text-[#213576] hover:bg-[#213576]/10 transition-colors">
