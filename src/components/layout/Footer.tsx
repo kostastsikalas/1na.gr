@@ -171,9 +171,15 @@ export default function Footer() {
                 <Mail size={15} className="text-blue-400/70" />
                 info@1na.gr
               </a>
-              <div className="flex items-center gap-2.5 text-gray-400">
-                <Clock size={15} className="text-blue-400/70" />
-                Δευ - Παρ. 09:00-13:30 & 17:00-21:00
+              <div className="flex flex-col gap-1.5 text-gray-400">
+                <div className="flex items-center gap-2.5">
+                  <Clock size={15} className="text-blue-400/70 shrink-0" />
+                  <span>Δευ - Παρ. 09:00-13:30 & 17:00-21:00</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-[15px] shrink-0" />
+                  <span>Σάββατο 09:00-13:00</span>
+                </div>
               </div>
             </div>
           </div>
