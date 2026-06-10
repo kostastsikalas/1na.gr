@@ -1,0 +1,2395 @@
+[
+  {
+    "id": "local-2026-them_arxaia_ellinika_gel_260603",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_arxaia_ellinika_gel_260603.pdf"
+  },
+  {
+    "id": "local-2026-ap_arxaia_2026",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/ap_arxaia_2026.pdf"
+  },
+  {
+    "id": "local-2026-them_biologia_gel_260603",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_biologia_gel_260603.pdf"
+  },
+  {
+    "id": "local-2026-biologia_2026",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/biologia_2026.pdf"
+  },
+  {
+    "id": "local-2026-them_istoria_gel_260608",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_istoria_gel_260608.pdf"
+  },
+  {
+    "id": "local-2026-istoria_apan_pan_2026",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/istoria_apan_pan_2026.pdf"
+  },
+  {
+    "id": "local-2026-latinika_1na_20252",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/latinika_1na_20252.pdf"
+  },
+  {
+    "id": "local-2026-them_mathimatika_gel_260603",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_mathimatika_gel_260603.pdf"
+  },
+  {
+    "id": "local-2026-maths_2026_2",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/maths_2026_2.pdf"
+  },
+  {
+    "id": "local-2026-them_nea_ellinika_gel_260529__1_",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_nea_ellinika_gel_260529%20(1).pdf"
+  },
+  {
+    "id": "local-2026-them_oikonomia_gel_260608",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_oikonomia_gel_260608.pdf"
+  },
+  {
+    "id": "local-2026-ap_oikonomia-202611",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/ap_oikonomia-202611.pdf"
+  },
+  {
+    "id": "local-2026-them_plirof_gel_260605",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_plirof_gel_260605.pdf"
+  },
+  {
+    "id": "local-2026-plhroforikh_2026",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/plhroforikh_2026.pdf"
+  },
+  {
+    "id": "local-2026-them_fysiki_gel_260608",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_fysiki_gel_260608.pdf"
+  },
+  {
+    "id": "local-2026-fysikh_2026",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/fysikh_2026.pdf"
+  },
+  {
+    "id": "local-2026-them_ximeia_gel_260605",
+    "source": "local",
+    "year": "2026",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_ximeia_gel_260605.pdf"
+  },
+  {
+    "id": "local-2026-them_mathimatika_epal_260602",
+    "source": "local",
+    "year": "2026",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_mathimatika_epal_260602.pdf"
+  },
+  {
+    "id": "local-2026-AP_MATH_EPAL_2026",
+    "source": "local",
+    "year": "2026",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/AP_MATH_EPAL_2026.pdf"
+  },
+  {
+    "id": "local-2026-them_nea_ellinika_epal_260530",
+    "source": "local",
+    "year": "2026",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2026/them_nea_ellinika_epal_260530.pdf"
+  },
+  {
+    "id": "local-2026-ap_nea_ellinika_epal_260530",
+    "source": "local",
+    "year": "2026",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2026/ap_nea_ellinika_epal_260530.pdf"
+  },
+  {
+    "id": "local-2025-them_arxaia_gel_250602",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_arxaia_gel_250602.pdf"
+  },
+  {
+    "id": "local-2025-ap_arxaia_gel_250602",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/ap_arxaia_gel_250602.pdf"
+  },
+  {
+    "id": "local-2025-them_biol_gel_250602",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_biol_gel_250602.pdf"
+  },
+  {
+    "id": "local-2025-ap_biol_gel_250602",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/ap_biol_gel_250602.pdf"
+  },
+  {
+    "id": "local-2025-them_istoria_gel_250606",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_istoria_gel_250606.pdf"
+  },
+  {
+    "id": "local-2025-istoria_apan_pan_2025",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/istoria_apan_pan_2025.pdf"
+  },
+  {
+    "id": "local-2025-them_latin_gel_250604",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_latin_gel_250604.pdf"
+  },
+  {
+    "id": "local-2025-latinika_1na_2025",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/latinika_1na_2025.pdf"
+  },
+  {
+    "id": "local-2025-them_math_gel_250602",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_math_gel_250602.pdf"
+  },
+  {
+    "id": "local-2025-maths_2025",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/maths_2025.pdf"
+  },
+  {
+    "id": "local-2025-them_nea_ellinika_gel_250530",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_nea_ellinika_gel_250530.pdf"
+  },
+  {
+    "id": "local-2025-ap_nea_ellinika_gel_250530",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/ap_nea_ellinika_gel_250530.pdf"
+  },
+  {
+    "id": "local-2025-them_oikonomia_gel_250606",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_oikonomia_gel_250606.pdf"
+  },
+  {
+    "id": "local-2025-apan_oik_2025",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/apan_oik_2025.pdf"
+  },
+  {
+    "id": "local-2025-them_plirof_gel_250604",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_plirof_gel_250604.pdf"
+  },
+  {
+    "id": "local-2025-plhroforikh_2025",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/plhroforikh_2025.pdf"
+  },
+  {
+    "id": "local-2025-them_fysiki_gel_250606",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_fysiki_gel_250606.pdf"
+  },
+  {
+    "id": "local-2025-fysikh_20251",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/fysikh_20251.pdf"
+  },
+  {
+    "id": "local-2025-them_ximeia_gel_250604",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_ximeia_gel_250604.pdf"
+  },
+  {
+    "id": "local-2025-xhmeia_2025",
+    "source": "local",
+    "year": "2025",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/xhmeia_2025.pdf"
+  },
+  {
+    "id": "local-2025-them_mathimatika_epal_20250603",
+    "source": "local",
+    "year": "2025",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_mathimatika_epal_20250603.pdf"
+  },
+  {
+    "id": "local-2025-maths_epal_20251",
+    "source": "local",
+    "year": "2025",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/maths_epal_20251.pdf"
+  },
+  {
+    "id": "local-2025-them_nea_ellinika_epal_250531",
+    "source": "local",
+    "year": "2025",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2025/them_nea_ellinika_epal_250531.pdf"
+  },
+  {
+    "id": "local-2025-ap_nea_ellinika_epal_250531",
+    "source": "local",
+    "year": "2025",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2025/ap_nea_ellinika_epal_250531.pdf"
+  },
+  {
+    "id": "local-2024-them_arxaia_gel_240604",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_arxaia_gel_240604.pdf"
+  },
+  {
+    "id": "local-2024-them_biol_gel_240604",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_biol_gel_240604.pdf"
+  },
+  {
+    "id": "local-2024-them_istoria_gel_240612",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_istoria_gel_240612.pdf"
+  },
+  {
+    "id": "local-2024-them_latin_gel_240606",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_latin_gel_240606.pdf"
+  },
+  {
+    "id": "local-2024-them_math_gel_240604",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_math_gel_240604.pdf"
+  },
+  {
+    "id": "local-2024-maths_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/maths_2024.pdf"
+  },
+  {
+    "id": "local-2024-5_-NEA_ELLHNIKA_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/5.-NEA_ELLHNIKA_2024.pdf"
+  },
+  {
+    "id": "local-2024-NEOELLHNIKH_GLOSSA_GEN_2024_18",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/NEOELLHNIKH_GLOSSA_GEN_2024_18.pdf"
+  },
+  {
+    "id": "local-2024-neol_glwssa_logot_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/neol_glwssa_logot_2024.pdf"
+  },
+  {
+    "id": "local-2024-them_oikonomia_gel_240612",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_oikonomia_gel_240612.pdf"
+  },
+  {
+    "id": "local-2024-plhroforikh_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/plhroforikh_2024.pdf"
+  },
+  {
+    "id": "local-2024-them_fysiki_gel_240612",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_fysiki_gel_240612.pdf"
+  },
+  {
+    "id": "local-2024-fysikh_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/fysikh_2024.pdf"
+  },
+  {
+    "id": "local-2024-them_ximeia_gel_240606",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_ximeia_gel_240606.pdf"
+  },
+  {
+    "id": "local-2024-xhmeia_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/xhmeia_2024.pdf"
+  },
+  {
+    "id": "local-2024-them_anatomia_epal_240603",
+    "source": "local",
+    "year": "2024",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_anatomia_epal_240603.pdf"
+  },
+  {
+    "id": "local-2024-AP_EPAL_ANAT_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/AP_EPAL_ANAT_2024.pdf"
+  },
+  {
+    "id": "local-2024-them_math_epal_240601",
+    "source": "local",
+    "year": "2024",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_math_epal_240601.pdf"
+  },
+  {
+    "id": "local-2024-math_epal_2024",
+    "source": "local",
+    "year": "2024",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2024/math_epal_2024.pdf"
+  },
+  {
+    "id": "local-2024-them_ygieini_epal_240611",
+    "source": "local",
+    "year": "2024",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2024/them_ygieini_epal_240611.pdf"
+  },
+  {
+    "id": "local-2023-ARXAIA_OP_HM_NEO_2023_21",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/ARXAIA_OP_HM_NEO_2023_21.pdf"
+  },
+  {
+    "id": "local-2023-05_BIOLOGIA_OP_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/05_BIOLOGIA_OP_2023.pdf"
+  },
+  {
+    "id": "local-2023-ISTORIA_OP_HM_2023_13",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/ISTORIA_OP_HM_2023_13.pdf"
+  },
+  {
+    "id": "local-2023-istoria_apan_pan_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/istoria_apan_pan_2023.pdf"
+  },
+  {
+    "id": "local-2023-latinika_1na_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/latinika_1na_2023.pdf"
+  },
+  {
+    "id": "local-2023-maths_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/maths_2023.pdf"
+  },
+  {
+    "id": "local-2023-7_-NEA_ELLHNIKA-2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/7.-NEA_ELLHNIKA-2023.pdf"
+  },
+  {
+    "id": "local-2023-them_nea_gel_230602",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/them_nea_gel_230602.pdf"
+  },
+  {
+    "id": "local-2023-ap_ekthesis_2023-1",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/ap_ekthesis_2023-1.pdf"
+  },
+  {
+    "id": "local-2023-ap_ekthesis_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/ap_ekthesis_2023.pdf"
+  },
+  {
+    "id": "local-2023-nea_ellhnika_ap_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/nea_ellhnika_ap_2023.pdf"
+  },
+  {
+    "id": "local-2023-OIKONOMIKA_OP_HM_ESP_2023_2",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/OIKONOMIKA_OP_HM_ESP_2023_2.pdf"
+  },
+  {
+    "id": "local-2023-ap_oik_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/ap_oik_2023.pdf"
+  },
+  {
+    "id": "local-2023-plhroforikh_20231",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/plhroforikh_20231.pdf"
+  },
+  {
+    "id": "local-2023-phys_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/phys_2023.pdf"
+  },
+  {
+    "id": "local-2023-2023_H05_XHMEIA_NEO_OP_HM",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/2023_H05_XHMEIA_NEO_OP_HM.pdf"
+  },
+  {
+    "id": "local-2023-xhmeia_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/xhmeia_2023.pdf"
+  },
+  {
+    "id": "local-2023-them_anat_fys_ii_epal_230607",
+    "source": "local",
+    "year": "2023",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/them_anat_fys_ii_epal_230607.pdf"
+  },
+  {
+    "id": "local-2023-ap_anat_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/ap_anat_2023.pdf"
+  },
+  {
+    "id": "local-2023-them_aoth_epal_230607",
+    "source": "local",
+    "year": "2023",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/them_aoth_epal_230607.pdf"
+  },
+  {
+    "id": "local-2023-them_math_epal_230603",
+    "source": "local",
+    "year": "2023",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2023/them_math_epal_230603.pdf"
+  },
+  {
+    "id": "local-2023-sxolio_epal_math_2023",
+    "source": "local",
+    "year": "2023",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/sxolio_epal_math_2023.pdf"
+  },
+  {
+    "id": "local-2023-ygieini_epal_230610_0",
+    "source": "local",
+    "year": "2023",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2023/ygieini_epal_230610_0.pdf"
+  },
+  {
+    "id": "local-2022-them_arx_gel_220606",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_arx_gel_220606.pdf"
+  },
+  {
+    "id": "local-2022-apant_arxaia-1",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_arxaia-1.pdf"
+  },
+  {
+    "id": "local-2022-apant_arxaia-2",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_arxaia-2.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_arxaia-1",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_arxaia-1.pdf"
+  },
+  {
+    "id": "local-2022-them_bio_gel_220606",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_bio_gel_220606.pdf"
+  },
+  {
+    "id": "local-2022-apant_biology-1",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_biology-1.pdf"
+  },
+  {
+    "id": "local-2022-apant_biology",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_biology.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_biology",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_biology.pdf"
+  },
+  {
+    "id": "local-2022-ISTORIA_OP_HM_2022_18",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/ISTORIA_OP_HM_2022_18.pdf"
+  },
+  {
+    "id": "local-2022-apant_ist_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_ist_2022.pdf"
+  },
+  {
+    "id": "local-2022-LATINIKA_OP_HM_2022_15",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/LATINIKA_OP_HM_2022_15.pdf"
+  },
+  {
+    "id": "local-2022-latinika_apant_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/latinika_apant_2022.pdf"
+  },
+  {
+    "id": "local-2022-sxolio-latinika_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio-latinika_2022.pdf"
+  },
+  {
+    "id": "local-2022-them_math_gel_220606",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_math_gel_220606.pdf"
+  },
+  {
+    "id": "local-2022-maths_gel_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/maths_gel_2022.pdf"
+  },
+  {
+    "id": "local-2022-them_nea_gel_220603",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_nea_gel_220603.pdf"
+  },
+  {
+    "id": "local-2022-apant_ekthesis_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_ekthesis_2022.pdf"
+  },
+  {
+    "id": "local-2022-OIKONOMIKA_OP_HM_2022_2",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/OIKONOMIKA_OP_HM_2022_2.pdf"
+  },
+  {
+    "id": "local-2022-apant_oik_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_oik_2022.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_oik_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_oik_2022.pdf"
+  },
+  {
+    "id": "local-2022-plhroforikh_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/plhroforikh_2022.pdf"
+  },
+  {
+    "id": "local-2022-H04_FYSIKH_HM_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/H04_FYSIKH_HM_2022.pdf"
+  },
+  {
+    "id": "local-2022-phys_gel_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/phys_gel_2022.pdf"
+  },
+  {
+    "id": "local-2022-H04_XHMEIA_NEO_OP_HM_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/H04_XHMEIA_NEO_OP_HM_2022.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_xhmeias_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_xhmeias_2022.pdf"
+  },
+  {
+    "id": "local-2022-xhmeia_gel_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/xhmeia_gel_2022.pdf"
+  },
+  {
+    "id": "local-2022-them_anat_fys_ii_epal_220607",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_anat_fys_ii_epal_220607.pdf"
+  },
+  {
+    "id": "local-2022-anatomia_epal_apant_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/anatomia_epal_apant_2022.pdf"
+  },
+  {
+    "id": "local-2022-them_aoth_epal_220607",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_aoth_epal_220607.pdf"
+  },
+  {
+    "id": "local-2022-them_aod_epal_220611",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_aod_epal_220611.pdf"
+  },
+  {
+    "id": "local-2022-them_diktya_epal_220607",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Δίκτυα Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_diktya_epal_220607.pdf"
+  },
+  {
+    "id": "local-2022-apant_diktya_epal_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Δίκτυα Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_diktya_epal_2022.pdf"
+  },
+  {
+    "id": "local-2022-them_math_epal_220604",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_math_epal_220604.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_math_epal",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_math_epal.pdf"
+  },
+  {
+    "id": "local-2022-them_nea_epal_220602",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_nea_epal_220602.pdf"
+  },
+  {
+    "id": "local-2022-them_prog_epal_220611",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Προγραμματισμός Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_prog_epal_220611.pdf"
+  },
+  {
+    "id": "local-2022-apant_progr_2022-1",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Προγραμματισμός Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_progr_2022-1.pdf"
+  },
+  {
+    "id": "local-2022-apant_progr_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Προγραμματισμός Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_progr_2022.pdf"
+  },
+  {
+    "id": "local-2022-them_stoix_mhx_epal_220611",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_stoix_mhx_epal_220611.pdf"
+  },
+  {
+    "id": "local-2022-apant_stoixeia_mhx2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/apant_stoixeia_mhx2022.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_stoixeia",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_stoixeia.pdf"
+  },
+  {
+    "id": "local-2022-them_ygieinh_epal_220611",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2022/them_ygieinh_epal_220611.pdf"
+  },
+  {
+    "id": "local-2022-sxolio_ygieini",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/sxolio_ygieini.pdf"
+  },
+  {
+    "id": "local-2022-ygieinh_2022",
+    "source": "local",
+    "year": "2022",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2022/ygieinh_2022.pdf"
+  },
+  {
+    "id": "local-2021-ARXAIA_OP_HM_NEO_2021_24",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/ARXAIA_OP_HM_NEO_2021_24.pdf"
+  },
+  {
+    "id": "local-2021-apant_arxaiwn_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/apant_arxaiwn_2021.pdf"
+  },
+  {
+    "id": "local-2021-BIOLOGIA_OP_NEO_2021_12-1",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/BIOLOGIA_OP_NEO_2021_12-1.pdf"
+  },
+  {
+    "id": "local-2021-BIOLOGIA_OP_NEO_2021_12",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/BIOLOGIA_OP_NEO_2021_12.pdf"
+  },
+  {
+    "id": "local-2021-apan_biol_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/apan_biol_2021.pdf"
+  },
+  {
+    "id": "local-2021-them_ist_210622",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/them_ist_210622.pdf"
+  },
+  {
+    "id": "local-2021-istoria_apan_pan_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/istoria_apan_pan_2021.pdf"
+  },
+  {
+    "id": "local-2021-koinoniologia_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Κοινωνιολογία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/koinoniologia_2021.pdf"
+  },
+  {
+    "id": "local-2021-maths_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/maths_2021.pdf"
+  },
+  {
+    "id": "local-2021-them_glo_gen_210614",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/them_glo_gen_210614.pdf"
+  },
+  {
+    "id": "local-2021-ekthesi_1na",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/ekthesi_1na.pdf"
+  },
+  {
+    "id": "local-2021-them_oik_210622",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/them_oik_210622.pdf"
+  },
+  {
+    "id": "local-2021-oik_apan_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/oik_apan_2021.pdf"
+  },
+  {
+    "id": "local-2021-plhroforikh_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/plhroforikh_2021.pdf"
+  },
+  {
+    "id": "local-2021-them_fys_210622",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/them_fys_210622.pdf"
+  },
+  {
+    "id": "local-2021-phys_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/phys_2021.pdf"
+  },
+  {
+    "id": "local-2021-XHMEIA_NEO_OP_HM_2021-12",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/XHMEIA_NEO_OP_HM_2021-12.pdf"
+  },
+  {
+    "id": "local-2021-xhmeia_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/xhmeia_2021.pdf"
+  },
+  {
+    "id": "local-2021-STOIXEIA_ANATOMIAS-FYSIOLOGIAS_II_2021_10",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/STOIXEIA_ANATOMIAS-FYSIOLOGIAS_II_2021_10.pdf"
+  },
+  {
+    "id": "local-2021-anatomia_1na_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/anatomia_1na_2021.pdf"
+  },
+  {
+    "id": "local-2021-AOTH",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/AOTH.pdf"
+  },
+  {
+    "id": "local-2021-ARXES_ORGANWSHS_KAI_DIOIKHSHS_2021-7",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/ARXES_ORGANWSHS_KAI_DIOIKHSHS_2021-7.pdf"
+  },
+  {
+    "id": "local-2021-diktya_kat_pan_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Δίκτυα Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/diktya_kat_pan_2021.pdf"
+  },
+  {
+    "id": "local-2021-them_math_epal_210617",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/them_math_epal_210617.pdf"
+  },
+  {
+    "id": "local-2021-maths_epal_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/maths_epal_2021.pdf"
+  },
+  {
+    "id": "local-2021-them_nea_epal_210615",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/them_nea_epal_210615.pdf"
+  },
+  {
+    "id": "local-2021-ekthesi_epal_1na",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/ekthesi_epal_1na.pdf"
+  },
+  {
+    "id": "local-2021-06_PROGRAMMATISMOS_YPOLOGISTWN_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Προγραμματισμός Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/06_PROGRAMMATISMOS_YPOLOGISTWN_2021.pdf"
+  },
+  {
+    "id": "local-2021-3_YGIEINH_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2021/3.YGIEINH_2021.pdf"
+  },
+  {
+    "id": "local-2021-yg_apan_2021",
+    "source": "local",
+    "year": "2021",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2021/yg_apan_2021.pdf"
+  },
+  {
+    "id": "local-2020-them_arx_NEO_200617",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_arx_NEO_200617.pdf"
+  },
+  {
+    "id": "local-2020-arxaia_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/arxaia_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-BIOLOGIA_OP_NEO_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/BIOLOGIA_OP_NEO_2020.pdf"
+  },
+  {
+    "id": "local-2020-biologia_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/biologia_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Ist_op_NEO_200624",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Ist_op_NEO_200624.pdf"
+  },
+  {
+    "id": "local-2020-istoria_apan_pan_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/istoria_apan_pan_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_koin_op_200619",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Κοινωνιολογία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_koin_op_200619.pdf"
+  },
+  {
+    "id": "local-2020-koinoniologia_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Κοινωνιολογία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/koinoniologia_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Lat_op_hmer_200622",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Lat_op_hmer_200622.pdf"
+  },
+  {
+    "id": "local-2020-latinika_1na_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/latinika_1na_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_math_NEO_200617",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_math_NEO_200617.pdf"
+  },
+  {
+    "id": "local-2020-them_math_hmer_PALAIO_200617-1",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_math_hmer_PALAIO_200617-1.pdf"
+  },
+  {
+    "id": "local-2020-them_math_hmer_PALAIO_200617",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_math_hmer_PALAIO_200617.pdf"
+  },
+  {
+    "id": "local-2020-maths_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/maths_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_glo_gen_Pal_Sys_200615",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_glo_gen_Pal_Sys_200615.pdf"
+  },
+  {
+    "id": "local-2020-ekthesh_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/ekthesh_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Oikonomia_NEO_200626",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Oikonomia_NEO_200626.pdf"
+  },
+  {
+    "id": "local-2020-oikonomia_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/oikonomia_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Plhrof_op_NEO_200624",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Plhrof_op_NEO_200624.pdf"
+  },
+  {
+    "id": "local-2020-pliroforikh_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/pliroforikh_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Phys_op_NEO_2006221",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Phys_op_NEO_2006221.pdf"
+  },
+  {
+    "id": "local-2020-fysikh_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/fysikh_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Xhmeia_NEO_200626",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Xhmeia_NEO_200626.pdf"
+  },
+  {
+    "id": "local-2020-xhmeia_neo_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/xhmeia_neo_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_AnatFysII_epal_200620",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_AnatFysII_epal_200620.pdf"
+  },
+  {
+    "id": "local-2020-them_math_epal_2006181",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_math_epal_2006181.pdf"
+  },
+  {
+    "id": "local-2020-maths_epal_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/maths_epal_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_MEKII_epal_200625",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_MEKII_epal_200625.pdf"
+  },
+  {
+    "id": "local-2020-mek_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/mek_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_nea_ellin_epal_200616",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_nea_ellin_epal_200616.pdf"
+  },
+  {
+    "id": "local-2020-them_StxMhx_epal_200620",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_StxMhx_epal_200620.pdf"
+  },
+  {
+    "id": "local-2020-ap_st_mhx_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/ap_st_mhx_2020.pdf"
+  },
+  {
+    "id": "local-2020-them_Ygieinh_epal_200625",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2020/them_Ygieinh_epal_200625.pdf"
+  },
+  {
+    "id": "local-2020-ygieini_epal_apant_2020",
+    "source": "local",
+    "year": "2020",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2020/ygieini_epal_apant_2020.pdf"
+  }
+]
