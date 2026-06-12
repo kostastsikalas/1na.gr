@@ -14,6 +14,7 @@ const branches = [
     phone: "2810 285726",
     image: "/images/kentro/02.JPG",
     mapUrl: "https://maps.google.com/maps?q=Γραμβούσης%205,%20Ηράκλειο&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    directionsUrl: "https://www.google.com/maps/search/?api=1&query=Γραμβούσης+5+Ηράκλειο",
   },
   {
     id: "east",
@@ -23,6 +24,7 @@ const branches = [
     phone: "2810 212333",
     image: "/images/knossou/DSC00715.JPG",
     mapUrl: "https://maps.google.com/maps?q=Λεωφ.%20Κνωσού%20187,%20Ηράκλειο&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    directionsUrl: "https://www.google.com/maps/search/?api=1&query=Λεωφόρος+Κνωσού+187+Ηράκλειο",
   },
   {
     id: "athens",
@@ -32,6 +34,7 @@ const branches = [
     phone: "210 991 3433",
     image: "/images/athens.png",
     mapUrl: "https://maps.google.com/maps?q=Ησιόδου%2018,%20Άλιμος&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    directionsUrl: "https://www.google.com/maps/search/?api=1&query=Ησιόδου+18+Άλιμος",
   },
 ];
 
@@ -125,7 +128,7 @@ export default function Footer() {
                     </div>
 
                     <a
-                      href={branch.mapUrl}
+                      href={branch.directionsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 w-full py-2.5 bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.08] rounded-xl text-[13px] font-medium text-blue-200 transition-all duration-200"
