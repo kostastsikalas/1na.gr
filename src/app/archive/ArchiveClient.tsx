@@ -43,6 +43,7 @@ const DIRECTION_ORDER: Record<ExamType, string[]> = {
     "Τομέας Πληροφορικής",
     "Τομέας Διοίκησης & Οικονομίας",
     "Τομέας Μηχανολογίας",
+    "Τομέας Ηλεκτρολογίας",
   ],
 };
 
@@ -57,6 +58,7 @@ const directionColors: Record<string, { text: string; bg: string; border: string
   "Τομέας Πληροφορικής": { text: "text-violet-600", bg: "bg-violet-50", border: "border-violet-200", dot: "bg-violet-400" },
   "Τομέας Διοίκησης & Οικονομίας": { text: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200", dot: "bg-amber-400" },
   "Τομέας Μηχανολογίας": { text: "text-blue-600", bg: "bg-blue-50", border: "border-blue-200", dot: "bg-blue-400" },
+  "Τομέας Ηλεκτρολογίας": { text: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200", dot: "bg-amber-400" },
 };
 
 const defaultColor = { text: "text-gray-600", bg: "bg-gray-50", border: "border-gray-200", dot: "bg-gray-400" };

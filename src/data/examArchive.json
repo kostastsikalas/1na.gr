@@ -2391,5 +2391,1261 @@
     ],
     "kind": "Λύσεις",
     "file_url": "/themata/2020/ygieini_epal_apant_2020.pdf"
+  },
+  {
+    "id": "local-2019-them_arx_190610",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_arx_190610.pdf"
+  },
+  {
+    "id": "local-2019-arxaia_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/arxaia_2019.pdf"
+  },
+  {
+    "id": "local-2019-_______________________________________________2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/%CE%91%CE%A0%CE%91%CE%9D%CE%A4%CE%97%CE%A3%CE%95%CE%99%CE%A3%20%CE%91%CE%A1%CE%A7%CE%91%CE%99%CE%A9%CE%9D%20%CE%A0%CE%A1%CE%9F%CE%A3%CE%91%CE%9D%CE%91%CE%A4%CE%9F%CE%9B%CE%99%CE%A3%CE%9C%CE%9F%CE%A5%20%CE%A0%CE%91%CE%9D%CE%95%CE%9B%CE%9B%CE%97%CE%9D%CE%99%CE%95%CE%A3%202019.pdf"
+  },
+  {
+    "id": "local-2019-them_ist_op_c_hmer_190612",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_ist_op_c_hmer_190612.pdf"
+  },
+  {
+    "id": "local-2019-istoria_apan_pan_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/istoria_apan_pan_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_lat_op_c_hmer_190614",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_lat_op_c_hmer_190614.pdf"
+  },
+  {
+    "id": "local-2019-latinika_1na_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/latinika_1na_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_math_c_hmer_190610",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_math_c_hmer_190610.pdf"
+  },
+  {
+    "id": "local-2019-math_panel_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/math_panel_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_oik_op_c_hmer_190614",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_oik_op_c_hmer_190614.pdf"
+  },
+  {
+    "id": "local-2019-them_plir_op_c_hmer_190612",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_plir_op_c_hmer_190612.pdf"
+  },
+  {
+    "id": "local-2019-aepp_panel_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/aepp_panel_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_fis_op_c_hmer_190612",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_fis_op_c_hmer_190612.pdf"
+  },
+  {
+    "id": "local-2019-fys_panel_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/fys_panel_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_xhm_op_c_hmer_190614",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_xhm_op_c_hmer_190614.pdf"
+  },
+  {
+    "id": "local-2019-xhmeia_panel_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/xhmeia_panel_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_stanat2_epal_c_hmer_190613",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_stanat2_epal_c_hmer_190613.pdf"
+  },
+  {
+    "id": "local-2019-anatomia_epal_apant_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/anatomia_epal_apant_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_aoth_epal_190615",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_aoth_epal_190615.pdf"
+  },
+  {
+    "id": "local-2019-ap_arxes_oik_theorias_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/ap_arxes_oik_theorias_2019.pdf"
+  },
+  {
+    "id": "local-2019-arxes_oik_epal_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/arxes_oik_epal_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_aod_epal_c_hmer_190611",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_aod_epal_c_hmer_190611.pdf"
+  },
+  {
+    "id": "local-2019-them_dikt_epal_190615",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Δίκτυα Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_dikt_epal_190615.pdf"
+  },
+  {
+    "id": "local-2019-ap_dikt_ypol_epal_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Δίκτυα Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/ap_dikt_ypol_epal_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_hltex_epal_c_hmer_190613",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Ηλεκτροτεχνία",
+    "directions": [
+      "Τομέας Ηλεκτρολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_hltex_epal_c_hmer_190613.pdf"
+  },
+  {
+    "id": "local-2019-hlektrotexnia_epal_apan_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Ηλεκτροτεχνία",
+    "directions": [
+      "Τομέας Ηλεκτρολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/hlektrotexnia_epal_apan_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_mekII_epal_190615",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_mekII_epal_190615.pdf"
+  },
+  {
+    "id": "local-2019-mek_epal_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/mek_epal_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_progyp_epal_c_hmer_190611",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Προγραμματισμός Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_progyp_epal_c_hmer_190611.pdf"
+  },
+  {
+    "id": "local-2019-ap_programmatismos_epal_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Προγραμματισμός Υπολογιστών",
+    "directions": [
+      "Τομέας Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/ap_programmatismos_epal_2019.pdf"
+  },
+  {
+    "id": "local-2019-them_stxmhx_epal_c_hmer_190611",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2019/them_stxmhx_epal_c_hmer_190611.pdf"
+  },
+  {
+    "id": "local-2019-stoixeia_mhxanon_epal_2019",
+    "source": "local",
+    "year": "2019",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2019/stoixeia_mhxanon_epal_2019.pdf"
+  },
+  {
+    "id": "local-2018-them_bio_gen_c_hmer_180619",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_bio_gen_c_hmer_180619.pdf"
+  },
+  {
+    "id": "local-2018-them_bio_op_c_hmer_180619",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_bio_op_c_hmer_180619.pdf"
+  },
+  {
+    "id": "local-2018-biologia_prosanatolismou_1na_2018",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/biologia_prosanatolismou_1na_2018.pdf"
+  },
+  {
+    "id": "local-2018-them_ist_op_c_hmer_180613",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_ist_op_c_hmer_180613.pdf"
+  },
+  {
+    "id": "local-2018-_________________________2018___________",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%99%CE%A3%CE%A4%CE%9F%CE%A1%CE%99%CE%91%20%CE%A0%CE%A1%CE%9F%CE%A3%CE%91%CE%9D%CE%91%CE%A4%CE%9F%CE%9B%CE%99%CE%A3%CE%9C%CE%9F%CE%A5%20%202018%20%CE%91%CE%A0%CE%91%CE%9D%CE%A4%CE%97%CE%A3%CE%95%CE%99%CE%A3.pdf"
+  },
+  {
+    "id": "local-2018-them_lat_op_c_hmer_180615",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_lat_op_c_hmer_180615.pdf"
+  },
+  {
+    "id": "local-2018-math_pros_2018__3",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/math_pros_2018__3.pdf"
+  },
+  {
+    "id": "local-2018-math_pros_2018__3aaa",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/math_pros_2018__3aaa.pdf"
+  },
+  {
+    "id": "local-2018-them_glo_gen_c_hmer_180608",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_glo_gen_c_hmer_180608.pdf"
+  },
+  {
+    "id": "local-2018-them_oik_op_c_hmer_180615",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_oik_op_c_hmer_180615.pdf"
+  },
+  {
+    "id": "local-2018-ANA________________2018",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/ANA%CE%A0%CE%A4%CE%A5%CE%9E%CE%97%20%CE%95%CE%A6%CE%91%CE%A1%CE%9C%CE%9F%CE%93%CE%A9%CE%9D%202018.pdf"
+  },
+  {
+    "id": "local-2018-them_plir_op_c_hmer_180613",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_plir_op_c_hmer_180613.pdf"
+  },
+  {
+    "id": "local-2018-them_fis_op_c_hmer_180613",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_fis_op_c_hmer_180613.pdf"
+  },
+  {
+    "id": "local-2018-fysikh_pros_2018_8",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/fysikh_pros_2018_8.pdf"
+  },
+  {
+    "id": "local-2018-_______________________2018",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%A6%CE%A5%CE%A3%CE%99%CE%9A%CE%97%20%CE%A0%CE%A1%CE%9F%CE%A3%CE%91%CE%9D%CE%91%CE%A4%CE%9F%CE%9B%CE%99%CE%A3%CE%9C%CE%9F%CE%A5%202018.pdf"
+  },
+  {
+    "id": "local-2018-them_xhm_op_c_hmer_180615",
+    "source": "local",
+    "year": "2018",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_xhm_op_c_hmer_180615.pdf"
+  },
+  {
+    "id": "local-2018-them_stanat2_epal_c_hmer_180614",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_stanat2_epal_c_hmer_180614.pdf"
+  },
+  {
+    "id": "local-2018-________-____________________2018",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Ανατομία - Φυσιολογία ΙΙ",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%91%CE%9D%CE%91%CE%A4%CE%9F%CE%9C%CE%99%CE%91-%20%CE%A6%CE%A5%CE%A3%CE%99%CE%9F%CE%9B%CE%9F%CE%93%CE%99%CE%91%20%CE%99%CE%99%20%CE%95%CE%A0%CE%91%CE%9B%202018.pdf"
+  },
+  {
+    "id": "local-2018-___________________________",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%91%CF%81%CF%87%CE%B5%CF%82%20%CE%BF%CE%B9%CE%BA%CE%BF%CE%BD%CE%BF%CE%BC%CE%B9%CE%BA%CE%B7%CC%81%CF%82%20%CE%B8%CE%B5%CF%89%CF%81%CE%B9%CC%81%CE%B1%CF%82.pdf"
+  },
+  {
+    "id": "local-2018-them_mat_epal_c_hmer_180609",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_mat_epal_c_hmer_180609.pdf"
+  },
+  {
+    "id": "local-2018-_______________________________2018-1",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%91%CE%A0%CE%91%CE%9D%CE%A4%CE%97%CE%A3%CE%95%CE%99%CE%A3%20%CE%A3%CE%A4%CE%91%20%CE%9C%CE%91%CE%98%CE%97%CE%9C%CE%91%CE%A4%CE%99%CE%9A%CE%91%20%CE%95%CE%A0%CE%91%CE%9B%202018-1.pdf"
+  },
+  {
+    "id": "local-2018-__________________2018",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%9D%CE%95%CE%91%20%CE%95%CE%9B%CE%9B%CE%97%CE%9D%CE%99%CE%9A%CE%91%20%CE%95%CE%A0%CE%91%CE%9B%202018.pdf"
+  },
+  {
+    "id": "local-2018-them_stxmhx_epal_c_hmer_180612",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_stxmhx_epal_c_hmer_180612.pdf"
+  },
+  {
+    "id": "local-2018-_____________________",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/%CE%A3%CE%A4%CE%9F%CE%99%CE%A7%CE%95%CE%99%CE%91%20%CE%9C%CE%97%CE%A7%CE%91%CE%9D%CE%A9%CE%9D%20%CE%95%CE%A0%CE%91%CE%9B.pdf"
+  },
+  {
+    "id": "local-2018-them_ygieinh_epal_c_hmer_180618",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2018/them_ygieinh_epal_c_hmer_180618.pdf"
+  },
+  {
+    "id": "local-2018-ygieini_epal_2018",
+    "source": "local",
+    "year": "2018",
+    "type": "ΕΠΑΛ",
+    "subject": "Υγιεινή",
+    "directions": [
+      "Τομέας Υγείας - Πρόνοιας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2018/ygieini_epal_2018.pdf"
+  },
+  {
+    "id": "local-2017-them_arx_op_c_hmer_170609",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_arx_op_c_hmer_170609.pdf"
+  },
+  {
+    "id": "local-2017-arxaia_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Αρχαία Ελληνικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/arxaia_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_bio_gen_c_hmer_170616",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_bio_gen_c_hmer_170616.pdf"
+  },
+  {
+    "id": "local-2017-them_bio_op_c_hmer_170616",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_bio_op_c_hmer_170616.pdf"
+  },
+  {
+    "id": "local-2017-biologia_genikhs_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/biologia_genikhs_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-biologia_prosanatolismou_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Βιολογία",
+    "directions": [
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/biologia_prosanatolismou_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_ist_gen_c_hmer_170619",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_ist_gen_c_hmer_170619.pdf"
+  },
+  {
+    "id": "local-2017-them_ist_op_c_hmer_170612",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_ist_op_c_hmer_170612.pdf"
+  },
+  {
+    "id": "local-2017-apant_istoria_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/apant_istoria_2017.pdf"
+  },
+  {
+    "id": "local-2017-istoria_gen_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Ιστορία",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/istoria_gen_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_lat_op_c_hmer_170614",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_lat_op_c_hmer_170614.pdf"
+  },
+  {
+    "id": "local-2017-latinika_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Λατινικά",
+    "directions": [
+      "Ανθρωπιστικών Σπουδών"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/latinika_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_mat_gen_c_hmer_170619",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_mat_gen_c_hmer_170619.pdf"
+  },
+  {
+    "id": "local-2017-them_mat_op_c_hmer_170609",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_mat_op_c_hmer_170609.pdf"
+  },
+  {
+    "id": "local-2017-math_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/math_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-math_gen_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/math_gen_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_glo_gen_c_hmer_170607",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_glo_gen_c_hmer_170607.pdf"
+  },
+  {
+    "id": "local-2017-ekthesh_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Νεοελληνική Γλώσσα",
+    "directions": [
+      "Γενικής Παιδείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/ekthesh_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_oik_op_c_hmer_170614",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_oik_op_c_hmer_170614.pdf"
+  },
+  {
+    "id": "local-2017-oikonomia_1na_2017_1",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Οικονομία (ΑΟΘ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/oikonomia_1na_2017_1.pdf"
+  },
+  {
+    "id": "local-2017-them_plir_op_c_hmer_170612",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_plir_op_c_hmer_170612.pdf"
+  },
+  {
+    "id": "local-2017-plhroforikh_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Πληροφορική (ΑΕΠΠ)",
+    "directions": [
+      "Σπουδών Οικονομίας & Πληροφορικής"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/plhroforikh_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_fis_op_c_hmer_170612",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_fis_op_c_hmer_170612.pdf"
+  },
+  {
+    "id": "local-2017-fysikh_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Φυσική",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/fysikh_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_xhm_op_c_hmer_170614",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_xhm_op_c_hmer_170614.pdf"
+  },
+  {
+    "id": "local-2017-xhmeia_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΓΕΛ",
+    "subject": "Χημεία",
+    "directions": [
+      "Θετικών Σπουδών",
+      "Σπουδών Υγείας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/xhmeia_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_aoth_epal_c_hmer_170615",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_aoth_epal_c_hmer_170615.pdf"
+  },
+  {
+    "id": "local-2017-aoth_epal_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/aoth_epal_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_aod_epal_c_hmer_170610",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_aod_epal_c_hmer_170610.pdf"
+  },
+  {
+    "id": "local-2017-_____________________2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)",
+    "directions": [
+      "Τομέας Διοίκησης & Οικονομίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/%CE%91%CE%A1%CE%A7%CE%95%CE%A3%20%CE%9F%CE%A1%CE%93%CE%91%CE%9D%CE%A9%CE%A3%CE%97%CE%A3%20%CE%95%CE%A0%CE%91%CE%9B%202017.pdf"
+  },
+  {
+    "id": "local-2017-them_hlmhx_epal_c_hmer_170617",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Ηλεκτρικές Μηχανές",
+    "directions": [
+      "Τομέας Ηλεκτρολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_hlmhx_epal_c_hmer_170617.pdf"
+  },
+  {
+    "id": "local-2017-hlektr_mhx_1na",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Ηλεκτρικές Μηχανές",
+    "directions": [
+      "Τομέας Ηλεκτρολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/hlektr_mhx_1na.pdf"
+  },
+  {
+    "id": "local-2017-them_hltex_epal_c_hmer_170621",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Ηλεκτροτεχνία",
+    "directions": [
+      "Τομέας Ηλεκτρολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_hltex_epal_c_hmer_170621.pdf"
+  },
+  {
+    "id": "local-2017-_________2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Ηλεκτροτεχνία",
+    "directions": [
+      "Τομέας Ηλεκτρολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/%CE%B7%CE%BB%CE%B5%CE%BA%CF%84%CF%81%CE%BF%CF%84_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_mat_epal_c_hmer_170608",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_mat_epal_c_hmer_170608.pdf"
+  },
+  {
+    "id": "local-2017-mathimatika_epal_1na_2017-1",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Μαθηματικά",
+    "directions": [
+      "Κοινά Μαθήματα"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/mathimatika_epal_1na_2017-1.pdf"
+  },
+  {
+    "id": "local-2017-them_mhxesk2_epal_c_hmer_170615",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_mhxesk2_epal_c_hmer_170615.pdf"
+  },
+  {
+    "id": "local-2017-mek_II__epal_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/mek_II__epal_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_stxmhx_epal_c_hmer_170610",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_stxmhx_epal_c_hmer_170610.pdf"
+  },
+  {
+    "id": "local-2017-stoixeia_mixanwn_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Μηχανών",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/stoixeia_mixanwn_2017.pdf"
+  },
+  {
+    "id": "local-2017-___________________________2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Σχεδιασμού Κεντρικών Θερμάνσεων",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/%CF%83%CF%84%CE%BF%CE%B9%CF%87%CE%B5%CE%B9%CE%B1_%CF%83%CF%87%CE%B5%CE%B4%CE%B9%CF%83%CE%BC%CE%BF%CF%85%20%CE%BA%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_stpk_epal_c_hmer_170617",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Ψύξης - Κλιματισμού",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_stpk_epal_c_hmer_170617.pdf"
+  },
+  {
+    "id": "local-2017-st_ps_kl_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Ψύξης - Κλιματισμού",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/st_ps_kl_2017.pdf"
+  },
+  {
+    "id": "local-2017-stoixeia_ps_klim_1na_2017",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Στοιχεία Ψύξης - Κλιματισμού",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Λύσεις",
+    "file_url": "/themata/2017/stoixeia_ps_klim_1na_2017.pdf"
+  },
+  {
+    "id": "local-2017-them_systher_epal_c_hmer_170621",
+    "source": "local",
+    "year": "2017",
+    "type": "ΕΠΑΛ",
+    "subject": "Συστήματα Θέρμανσης",
+    "directions": [
+      "Τομέας Μηχανολογίας"
+    ],
+    "kind": "Θέματα",
+    "file_url": "/themata/2017/them_systher_epal_c_hmer_170621.pdf"
   }
 ]

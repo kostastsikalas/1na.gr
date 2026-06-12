@@ -32,7 +32,14 @@ const EPAL_DIRECTIONS = {
   "Τομέας Υγείας - Πρόνοιας": ["Ανατομία - Φυσιολογία ΙΙ", "Υγιεινή"],
   "Τομέας Πληροφορικής": ["Προγραμματισμός Υπολογιστών", "Δίκτυα Υπολογιστών"],
   "Τομέας Διοίκησης & Οικονομίας": ["Αρχές Οικονομικής Θεωρίας (ΑΟΘ)", "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)"],
-  "Τομέας Μηχανολογίας": ["Στοιχεία Μηχανών", "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)"],
+  "Τομέας Μηχανολογίας": [
+    "Στοιχεία Μηχανών",
+    "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+    "Στοιχεία Ψύξης - Κλιματισμού",
+    "Συστήματα Θέρμανσης",
+    "Στοιχεία Σχεδιασμού Κεντρικών Θερμάνσεων",
+  ],
+  "Τομέας Ηλεκτρολογίας": ["Ηλεκτροτεχνία", "Ηλεκτρικές Μηχανές"],
 };
 
 // ΕΠΑΛ-only specialty subjects force type=ΕΠΑΛ even without "epal" in the name.
@@ -45,33 +52,47 @@ const EPAL_ONLY = new Set([
   "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)",
   "Στοιχεία Μηχανών",
   "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)",
+  "Στοιχεία Ψύξης - Κλιματισμού",
+  "Συστήματα Θέρμανσης",
+  "Στοιχεία Σχεδιασμού Κεντρικών Θερμάνσεων",
+  "Ηλεκτροτεχνία",
+  "Ηλεκτρικές Μηχανές",
 ]);
 
-/* ── Subject detection (order matters: specific → generic) ── */
+/* ── Subject detection (order matters: specific → generic) ──
+ * Handles both Latin-transliterated and Greek filenames.            */
 function detectSubject(name, isEpal) {
   const n = name.toLowerCase();
-  // specialty / ΕΠΑΛ first
-  if (/anat|anatomia|anatfys/.test(n)) return "Ανατομία - Φυσιολογία ΙΙ";
-  if (/ygiein|ygieinh|ygieini|(^|_)yg(_|\b)/.test(n)) return "Υγιεινή";
-  if (/diktya/.test(n)) return "Δίκτυα Υπολογιστών";
-  if (/stoix|stx|mhx/.test(n)) return "Στοιχεία Μηχανών";
-  if (/(^|_)mek|mekii/.test(n)) return "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)";
-  if (/programmatismos|progr|(^|_)prog(_|\b)/.test(n)) return "Προγραμματισμός Υπολογιστών";
-  if (/aod|arxes_org|organwsh/.test(n)) return "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)";
-  if (/aoth/.test(n)) return "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)";
+  // ΕΠΑΛ specialties first (some contain substrings like "mhx" that
+  // would otherwise match a more generic rule)
+  // anchor "anat" so it doesn't match "pros-anat-olismou" (= προσανατολισμού)
+  if (/anatomia|anatfys|anat_fys|stanat|(^|_)anat(_|\b)|ανατομ/.test(n)) return "Ανατομία - Φυσιολογία ΙΙ";
+  if (/ygiein|(^|_)yg(_|\b)|υγιειν/.test(n)) return "Υγιεινή";
+  if (/hl.*mhx|ηλεκτρ.*μηχ/.test(n)) return "Ηλεκτρικές Μηχανές";
+  if (/hltex|hlektr|ηλεκτρ/.test(n)) return "Ηλεκτροτεχνία";
+  if (/stpk|st_ps|ps_klim|stoixeia_ps|ψυξ|κλιματ/.test(n)) return "Στοιχεία Ψύξης - Κλιματισμού";
+  if (/systher|θερμανσ/.test(n)) return "Συστήματα Θέρμανσης";
+  if (/sxedi|σχεδ/.test(n)) return "Στοιχεία Σχεδιασμού Κεντρικών Θερμάνσεων";
+  if (/(^|_)mek|mekii|mhxesk|μεκ/.test(n)) return "Μηχανές Εσωτερικής Καύσης (ΜΕΚ)";
+  if (/stoix|stx|mhx|στοιχεια μηχ|μηχανων/.test(n)) return "Στοιχεία Μηχανών";
+  if (/dikt|δικτυ/.test(n)) return "Δίκτυα Υπολογιστών";
+  if (/programmatismos|progr|prog|προγραμματ/.test(n)) return "Προγραμματισμός Υπολογιστών";
+  if (/aepp|αεππ|εφαρμογ/.test(n)) return "Πληροφορική (ΑΕΠΠ)";
+  if (/aod|arxes_org|organwsh|αρχες οργαν|οργανωσ/.test(n)) return "Αρχές Οργάνωσης & Διοίκησης (ΑΟΔΕ)";
+  if (/aoth|arxes_oik|αρχες οικονομ/.test(n)) return "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)";
   // Πληροφορική ΓΕΛ
-  if (/plhrof|pliroforikh|plirof|plhroforikh|plhrof/.test(n)) return "Πληροφορική (ΑΕΠΠ)";
+  if (/plhrof|pliroforikh|plirof|plir|πληροφορ/.test(n)) return "Πληροφορική (ΑΕΠΠ)";
   // ΓΕΛ generic
-  if (/arx/.test(n)) return "Αρχαία Ελληνικά";
-  if (/istoria|(^|_)ist(_|\b)/.test(n)) return "Ιστορία";
-  if (/latin|(^|_)lat(_|\b)/.test(n)) return "Λατινικά";
-  if (/koin/.test(n)) return "Κοινωνιολογία";
-  if (/biol|(^|_)bio(_|\b)/.test(n)) return "Βιολογία";
-  if (/fysik|phys|(^|_)fys(_|\b)/.test(n)) return "Φυσική";
-  if (/xhmeia|ximeia/.test(n)) return "Χημεία";
-  if (/oikonom|(^|_)oik(_|\b)/.test(n)) return isEpal ? "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)" : "Οικονομία (ΑΟΘ)";
-  if (/math/.test(n)) return "Μαθηματικά";
-  if (/nea[_-]?ell|(^|[^a-z])nea([^a-z]|$)|glwssa|glossa|(^|_)glo(_|\b)|ekthesi|ekthesh|ekthesis|neol|neoellhnikh/.test(n))
+  if (/arxaia|arxaiw|αρχαι|(^|_)arx(_|\b)/.test(n)) return "Αρχαία Ελληνικά";
+  if (/istoria|ιστορ|(^|_)ist(_|\b)/.test(n)) return "Ιστορία";
+  if (/latin|λατιν|(^|_)lat(_|\b)/.test(n)) return "Λατινικά";
+  if (/koin|κοινωνιολ/.test(n)) return "Κοινωνιολογία";
+  if (/biol|βιολογ|(^|_)bio(_|\b)/.test(n)) return "Βιολογία";
+  if (/fysik|fis|phys|φυσικ|(^|_)fys(_|\b)/.test(n)) return "Φυσική";
+  if (/xhmeia|ximeia|xhm|xim|χημ/.test(n)) return "Χημεία";
+  if (/oikonom|οικονομ|(^|_)oik(_|\b)/.test(n)) return isEpal ? "Αρχές Οικονομικής Θεωρίας (ΑΟΘ)" : "Οικονομία (ΑΟΘ)";
+  if (/math|(^|_)mat|μαθηματ/.test(n)) return "Μαθηματικά";
+  if (/nea[_-]?ell|νεα ελλ|νεοελλ|(^|[^a-z])nea([^a-z]|$)|glwssa|glossa|(^|_)glo(_|\b)|ekthesi|ekthesh|ekthesis|neol|neoellhnikh|γλωσσ|εκθεσ/.test(n))
     return "Νεοελληνική Γλώσσα";
   return null;
 }
@@ -79,13 +100,13 @@ function detectSubject(name, isEpal) {
 /* ── Θέματα vs Λύσεις detection ── */
 function detectKind(name, original) {
   const n = name.toLowerCase();
-  // explicit solutions markers
-  if (/(^|_)ap(_|t|an|a|\b)|apant|apan|sxolio|(^|_)1na(_|\b)/.test(n)) return "Λύσεις";
+  // explicit solutions markers (Latin + Greek)
+  if (/(^|_)ap(_|t|an|a|\b)|apant|apan|sxolio|(^|_)1na(_|\b)|απαντ|λυσ|σχολι/.test(n)) return "Λύσεις";
   // ministry themata markers
-  if (/them/.test(n)) return "Θέματα";
+  if (/them|θεμα/.test(n)) return "Θέματα";
   if (/_op_|op_hm|op_neo|neo_op|(^|_)h0\d/.test(n)) return "Θέματα";
-  // an uppercase run of >=3 letters in the ORIGINAL name => ministry official PDF
-  if (/[A-ZΑ-Ω]{3,}/.test(original)) return "Θέματα";
+  // a Latin uppercase run of >=3 letters => ministry official PDF (exam codes)
+  if (/[A-Z]{3,}/.test(original)) return "Θέματα";
   // otherwise it's the φροντιστήριο's own solutions
   return "Λύσεις";
 }
@@ -109,7 +130,7 @@ for (const year of years) {
   for (const file of readdirSync(dir)) {
     if (!file.toLowerCase().endsWith(".pdf")) continue;
     const base = file.replace(/\.pdf$/i, "");
-    const isEpal = /epal/i.test(file);
+    const isEpal = /epal|επαλ/i.test(file);
     let subject = detectSubject(base, isEpal);
     if (!subject) {
       unmatched.push(`${year}/${file}`);
