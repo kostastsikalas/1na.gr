@@ -13,6 +13,7 @@ const branches = [
         phone: "2810 285726",
         email: "info@1na.gr",
         mapUrl: "https://maps.google.com/maps?q=Γραμβούσης%205,%20Ηράκλειο&t=&z=16&ie=UTF8&iwloc=&output=embed",
+        directionsUrl: "https://www.google.com/maps/search/?api=1&query=Γραμβούσης+5+Ηράκλειο",
       },
       {
         name: "Κτήριο 2 (Κνωσού)",
@@ -20,6 +21,7 @@ const branches = [
         phone: "2810 212333",
         email: "knwssos@1na.gr",
         mapUrl: "https://maps.google.com/maps?q=Λεωφ.%20Κνωσού%20187,%20Ηράκλειο&t=&z=16&ie=UTF8&iwloc=&output=embed",
+        directionsUrl: "https://www.google.com/maps/search/?api=1&query=Λεωφόρος+Κνωσού+187+Ηράκλειο",
       },
     ],
   },
@@ -32,6 +34,7 @@ const branches = [
         phone: "210 9913433",
         email: "1isiodou@ena.edu.gr",
         mapUrl: "https://maps.google.com/maps?q=Ησιόδου%2018,%20Άλιμος&t=&z=16&ie=UTF8&iwloc=&output=embed",
+        directionsUrl: "https://www.google.com/maps/search/?api=1&query=Ησιόδου+18+Άλιμος",
       },
     ],
   },
@@ -136,14 +139,21 @@ export default function ContactClient() {
 
                       {/* Map Section */}
                       <div className="w-full md:w-[300px] h-[250px] md:h-auto rounded-2xl overflow-hidden shadow-inner bg-gray-50 shrink-0 border border-gray-100 relative group-hover:shadow-lg transition-shadow duration-300">
-                        <iframe 
+                        <iframe
                           src={loc.mapUrl}
-                          className="absolute inset-0 w-full h-full" 
-                          style={{ border: 0 }} 
-                          allowFullScreen={true} 
-                          loading="lazy" 
+                          className="absolute inset-0 w-full h-full pointer-events-none"
+                          style={{ border: 0 }}
+                          allowFullScreen={true}
+                          loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
+                        <a
+                          href={loc.directionsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Άνοιγμα στο Google Maps: ${loc.address}`}
+                          className="absolute inset-0 z-10"
+                        ></a>
                       </div>
 
                     </div>
