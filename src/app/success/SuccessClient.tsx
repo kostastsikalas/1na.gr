@@ -24,11 +24,14 @@ export default function SuccessClient() {
       setIsLoading(true);
       const { data, error } = await supabase
         .from("success_stories")
-        .select("*")
-        .order("created_at", { ascending: false });
+        .select("*");
 
       if (!error && data) {
-        setStories(data);
+        // Ταξινόμηση κατά χρονολογία, νεότερο έτος πρώτο
+        const sorted = [...data].sort(
+          (a, b) => Number(b.year ?? 0) - Number(a.year ?? 0)
+        );
+        setStories(sorted);
       }
       setIsLoading(false);
     }
