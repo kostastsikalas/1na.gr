@@ -1,20 +1,40 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Trophy, FileText, Download } from "lucide-react";
+import { Trophy, FileText, Download, Loader2 } from "lucide-react";
+import { createClient } from "@/utils/supabase/client";
 
-/* ─── PDF Files ─── */
-const pdfFiles = [
-  { year: "2024", filename: "epit2024.pdf" },
-  { year: "2021", filename: "epit2021.pdf" },
-  { year: "2018", filename: "2018.pdf" },
-  { year: "2012", filename: "2012.pdf" },
-  { year: "2010", filename: "2010.pdf" },
-  { year: "2009", filename: "2009.pdf" },
-];
+/* ─── Type ─── */
+type SuccessStory = {
+  id: string;
+  name: string; // π.χ. "Λίστα Επιτυχόντων 2026"
+  school: string; // PDF URL
+  year?: string;
+};
 
 /* ─── Page Component ─── */
 export default function SuccessClient() {
+  const [stories, setStories] = useState<SuccessStory[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const supabase = createClient();
+    async function fetchStories() {
+      setIsLoading(true);
+      const { data, error } = await supabase
+        .from("success_stories")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (!error && data) {
+        setStories(data);
+      }
+      setIsLoading(false);
+    }
+    fetchStories();
+  }, []);
+
   return (
     <div className="bg-white">
       {/* ══════ Hero ══════ */}
@@ -63,27 +83,38 @@ export default function SuccessClient() {
           <FileText className="text-[#e74c3c]" />
           Επίσημα Αρχεία Επιτυχόντων
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {pdfFiles.map((pdf) => (
-            <a
-              key={pdf.year}
-              href={`/epitixontes/${pdf.filename}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center justify-center p-4 bg-white border border-gray-200 rounded-2xl hover:border-[#213576]/30 hover:shadow-md transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-[#213576]/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#213576]/10 transition-colors">
-                <Download className="text-[#213576] w-5 h-5 group-hover:scale-110 transition-transform" />
-              </div>
-              <span className="text-[15px] font-bold text-gray-800">
-                Έτος {pdf.year}
-              </span>
-              <span className="text-[12px] text-gray-500 mt-1">
-                Προβολή PDF
-              </span>
-            </a>
-          ))}
-        </div>
+
+        {isLoading ? (
+          <div className="flex justify-center py-16">
+            <Loader2 className="w-10 h-10 animate-spin text-[#213576]" />
+          </div>
+        ) : stories.length === 0 ? (
+          <div className="text-center py-16 text-gray-500 font-medium">
+            Δεν υπάρχουν διαθέσιμα αρχεία επιτυχόντων αυτή τη στιγμή.
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {stories.map((story) => (
+              <a
+                key={story.id}
+                href={story.school}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center justify-center p-4 bg-white border border-gray-200 rounded-2xl hover:border-[#213576]/30 hover:shadow-md transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-[#213576]/5 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#213576]/10 transition-colors">
+                  <Download className="text-[#213576] w-5 h-5 group-hover:scale-110 transition-transform" />
+                </div>
+                <span className="text-[15px] font-bold text-gray-800">
+                  Έτος {story.year || ""}
+                </span>
+                <span className="text-[12px] text-gray-500 mt-1">
+                  Προβολή PDF
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );
