@@ -62,7 +62,8 @@ export default function CalculatorClient() {
   const [showSpecialSubjects, setShowSpecialSubjects] = useState(false);
   const [filterPassing, setFilterPassing] = useState<"all" | "pass" | "fail">("all");
   const [loadedSchools, setLoadedSchools] = useState(schools);
-  
+  const [dataYear, setDataYear] = useState(2025);
+
   // Special subject grades
   const [foreignLangGrade, setForeignLangGrade] = useState<number>(15);
   const [drawing1Grade, setDrawing1Grade] = useState<number>(15); // Ελεύθερο Σχέδιο
@@ -75,9 +76,13 @@ export default function CalculatorClient() {
         const { data } = supabase.storage.from("uploads").getPublicUrl("calculator_bases.json");
         const res = await fetch(data.publicUrl + "?t=" + new Date().getTime());
         if (res.ok) {
-          const dynamicSchools = await res.json();
+          const payload = await res.json();
+          const dynamicSchools = Array.isArray(payload) ? payload : payload?.schools;
           if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
             setLoadedSchools(dynamicSchools);
+            if (!Array.isArray(payload) && payload?.year) {
+              setDataYear(payload.year);
+            }
           }
         }
       } catch (_) {
@@ -480,7 +485,7 @@ export default function CalculatorClient() {
                   </button>
                 </div>
                 <p className="text-[11px] text-gray-400 text-center">
-                  Βάσει βάσεων 2025 · {field}
+                  Βάσει βάσεων {dataYear} · {field}
                 </p>
               </div>
             </div>
@@ -566,7 +571,7 @@ export default function CalculatorClient() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-[11px] text-gray-400 mb-0.5">Βάση 2025</div>
+                      <div className="text-[11px] text-gray-400 mb-0.5">Βάση {dataYear}</div>
                       <div className="text-[15px] font-bold text-gray-600">
                         {hasBase ? s.base2025.toLocaleString("el-GR") : "-"}
                       </div>
@@ -590,7 +595,7 @@ export default function CalculatorClient() {
         )}
 
         <p className="text-center text-[12px] text-gray-400 mt-8">
-          Οι συντελεστές βαρύτητας βασίζονται στο ΦΕΚ 7145/τ.Β&apos;/30-12-2025 · Βάσεις εισαγωγής 2025 · Ενδεικτικά αποτελέσματα
+          Οι συντελεστές βαρύτητας βασίζονται στο ΦΕΚ 7145/τ.Β&apos;/30-12-2025 · Βάσεις εισαγωγής {dataYear} · Ενδεικτικά αποτελέσματα
         </p>
       </section>
     </div>

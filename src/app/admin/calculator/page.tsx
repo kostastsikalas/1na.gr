@@ -18,8 +18,9 @@ export default function CalculatorAdmin() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [stats, setStats] = useState<{ gel: number; epal: number } | null>(null);
-  
+  const [stats, setStats] = useState<{ gel: number; epal: number; year: number } | null>(null);
+  const [year, setYear] = useState(new Date().getFullYear());
+
   const supabase = createClient();
 
   // Βοηθητική συνάρτηση για την καθαρότητα της πόλης (αφαιρεί παρενθέσεις)
@@ -123,7 +124,7 @@ export default function CalculatorAdmin() {
       }
 
       // Αποθήκευση στο Supabase Storage (αντικαθιστά το παλιό αρχείο)
-      const jsonBlob = new Blob([JSON.stringify(schools)], { type: "application/json" });
+      const jsonBlob = new Blob([JSON.stringify({ year, schools })], { type: "application/json" });
       const { error: uploadError } = await supabase.storage
         .from("uploads")
         .upload("calculator_bases.json", jsonBlob, {
@@ -135,7 +136,7 @@ export default function CalculatorAdmin() {
         throw new Error("Σφάλμα κατά την αποθήκευση στο Storage: " + uploadError.message);
       }
 
-      setStats({ gel: gelCount, epal: epalCount });
+      setStats({ gel: gelCount, epal: epalCount, year });
       setSuccess(true);
       setGelFile(null);
       setEpalFile(null);
@@ -165,6 +166,21 @@ export default function CalculatorAdmin() {
             Σιγουρευτείτε ότι κατεβάζετε τα αρχεία για τη &quot;ΓΕΝΙΚΗ ΣΕΙΡΑ ΗΜΕΡΗΣΙΩΝ&quot;. 
             Μπορείτε να ανεβάσετε είτε μόνο του ΓΕΛ, είτε του ΕΠΑΛ, είτε και τα δύο.
           </div>
+        </div>
+
+        <div className="mb-8 max-w-xs">
+          <label className="block text-sm font-bold text-gray-700 mb-2">Έτος Βάσεων</label>
+          <input
+            type="number"
+            value={year}
+            onChange={(e) => setYear(Number(e.target.value) || year)}
+            className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#213576] text-gray-900 bg-white"
+            placeholder="2026"
+          />
+          <p className="text-xs text-gray-500 mt-1">
+            Το έτος στο οποίο ανήκουν αυτές οι βάσεις εισαγωγής. Εμφανίζεται αυτόματα στον
+            Υπολογιστή Μορίων και στις Βάσεις Εισαγωγής.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -222,7 +238,7 @@ export default function CalculatorAdmin() {
               <CheckCircle2 size={18} />
               Η ενημέρωση ολοκληρώθηκε επιτυχώς!
             </div>
-            <p className="ml-6">Ενημερώθηκαν <strong>{stats.gel}</strong> τμήματα ΓΕΛ και <strong>{stats.epal}</strong> τμήματα ΕΠΑΛ.</p>
+            <p className="ml-6">Ενημερώθηκαν <strong>{stats.gel}</strong> τμήματα ΓΕΛ και <strong>{stats.epal}</strong> τμήματα ΕΠΑΛ για το έτος <strong>{stats.year}</strong>.</p>
             <p className="ml-6 mt-1 text-xs text-emerald-600">Οι αλλαγές εμφανίζονται ήδη live στον Υπολογιστή Μορίων.</p>
           </div>
         )}

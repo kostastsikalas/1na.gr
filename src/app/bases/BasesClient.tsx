@@ -130,6 +130,7 @@ export default function BasesClient() {
     });
     return deduplicateSchools(initialMapped);
   });
+  const [dataYear, setDataYear] = useState(2025);
 
   useEffect(() => {
     const fetchDynamicSchools = async () => {
@@ -138,7 +139,8 @@ export default function BasesClient() {
         const { data } = supabase.storage.from("uploads").getPublicUrl("calculator_bases.json");
         const res = await fetch(data.publicUrl + "?t=" + new Date().getTime());
         if (res.ok) {
-          const dynamicSchools = await res.json();
+          const payload = await res.json();
+          const dynamicSchools = Array.isArray(payload) ? payload : payload?.schools;
           if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
             const mapped = dynamicSchools.map((s: any, i: number) => {
               const historical = schoolBases.find(h => h.name === s.name && h.institution === s.institution);
@@ -153,6 +155,9 @@ export default function BasesClient() {
               };
             });
             setLoadedSchools(deduplicateSchools(mapped));
+            if (!Array.isArray(payload) && payload?.year) {
+              setDataYear(payload.year);
+            }
           }
         }
       } catch (_) {
@@ -278,7 +283,7 @@ export default function BasesClient() {
                 <th className="text-left px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">Πεδίο</th>
                 {/* <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">2023</th> */}
                 {/* <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">2024</th> */}
-                <th className="text-center px-4 py-4 text-[12px] font-semibold text-[#213576] uppercase tracking-wider font-bold">2025</th>
+                <th className="text-center px-4 py-4 text-[12px] font-semibold text-[#213576] uppercase tracking-wider font-bold">{dataYear}</th>
                 {/* <th className="text-center px-4 py-4 text-[12px] font-semibold text-gray-500 uppercase tracking-wider">Τάση</th> */}
               </tr>
             </thead>
@@ -339,7 +344,7 @@ export default function BasesClient() {
                 </span>
                 <div className="mt-3 pt-3 border-t border-gray-50">
                   <div className="text-center">
-                    <div className="text-[11px] text-[#213576] font-semibold">2025</div>
+                    <div className="text-[11px] text-[#213576] font-semibold">{dataYear}</div>
                     <div className="text-[15px] font-bold text-[#002B5B]">{school.year2025 ? school.year2025.toLocaleString("el-GR") : "-"}</div>
                   </div>
                 </div>
