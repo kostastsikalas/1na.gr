@@ -18,6 +18,13 @@ type Branch = {
   sort_order: number;
 };
 
+// Το Google Maps δίνει είτε μόνο τον σύνδεσμο, είτε ολόκληρο τον κώδικα <iframe>.
+// Αν κάποιος επικολλήσει ολόκληρο τον κώδικα, κρατάμε μόνο το URL από το src="...".
+const extractMapSrc = (value: string): string => {
+  const match = value.match(/src=["']([^"']+)["']/i);
+  return match ? match[1] : value;
+};
+
 const emptyForm = {
   region: "",
   name: "",
@@ -116,7 +123,7 @@ export default function AdminBranches() {
         phone: form.phone || null,
         email: form.email || null,
         image: imageUrl,
-        map_url: form.mapUrl || null,
+        map_url: form.mapUrl ? extractMapSrc(form.mapUrl.trim()) : null,
         directions_url: form.directionsUrl || null,
         sort_order: Number(form.sortOrder) || 0,
       };
@@ -282,7 +289,9 @@ export default function AdminBranches() {
                 />
                 <p className="text-xs text-gray-500 mt-1">
                   Ανοίξτε το παράρτημα στο Google Maps, πατήστε &quot;Κοινοποίηση&quot; για τον σύνδεσμο
-                  κατεύθυνσης, και &quot;Ενσωμάτωση χάρτη&quot; για το embed URL.
+                  κατεύθυνσης, και &quot;Ενσωμάτωση χάρτη&quot; για το embed URL. Μπορείτε να επικολλήσετε
+                  είτε μόνο τον σύνδεσμο, είτε ολόκληρο τον κώδικα (&lt;iframe&gt;...) — θα κρατηθεί
+                  αυτόματα το σωστό κομμάτι.
                 </p>
               </div>
 
