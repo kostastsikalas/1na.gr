@@ -1,9 +1,11 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { createClient } from "@/utils/supabase/client";
 
-const branches = [
+const defaultBranches = [
   {
     region: "ΗΡΑΚΛΕΙΟ ΚΡΗΤΗΣ",
     locations: [
@@ -41,6 +43,48 @@ const branches = [
 ];
 
 export default function ContactClient() {
+  const [branches, setBranches] = useState(defaultBranches);
+
+  useEffect(() => {
+    const fetchBranches = async () => {
+      try {
+        const supabase = createClient();
+        const { data, error } = await supabase
+          .from("branches")
+          .select("*")
+          .order("sort_order", { ascending: true });
+
+        if (!error && data && data.length > 0) {
+          const grouped: { region: string; locations: typeof defaultBranches[number]["locations"] }[] = [];
+          const regionIndex = new Map<string, number>();
+
+          data.forEach((b) => {
+            const location = {
+              name: b.name,
+              address: b.address,
+              phone: b.phone || "",
+              email: b.email || "",
+              mapUrl: b.map_url,
+              directionsUrl: b.directions_url,
+            };
+
+            if (!regionIndex.has(b.region)) {
+              regionIndex.set(b.region, grouped.length);
+              grouped.push({ region: b.region, locations: [location] });
+            } else {
+              grouped[regionIndex.get(b.region)!].locations.push(location);
+            }
+          });
+
+          setBranches(grouped);
+        }
+      } catch (_) {
+        console.log("Χρήση στατικών παραρτημάτων.");
+      }
+    };
+    fetchBranches();
+  }, []);
+
   return (
     <main className="pt-32 pb-20 min-h-screen bg-gradient-to-br from-[#f4fbff] via-white to-[#eef5ff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +104,7 @@ export default function ContactClient() {
             Είμαστε δίπλα σας
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Βρείτε μας στις εγκαταστάσεις μας σε Ηράκλειο Κρήτης και Αττική. 
+            Βρείτε μας σε όλες τις εγκαταστάσεις μας.
             Επικοινωνήστε μαζί μας για οποιαδήποτε απορία ή εγγραφή.
           </p>
         </motion.div>

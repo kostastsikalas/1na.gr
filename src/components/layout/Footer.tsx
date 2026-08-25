@@ -1,11 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Phone, MapPin, Mail, Clock, ExternalLink } from "lucide-react";
+import { createClient } from "@/utils/supabase/client";
 
-const branches = [
+const defaultBranches = [
   {
     id: "center",
     title: "ΗΡΑΚΛΕΙΟ (Κέντρο)",
@@ -67,6 +69,37 @@ const quickLinks = [
 
 export default function Footer() {
   const pathname = usePathname();
+  const [branches, setBranches] = useState(defaultBranches);
+
+  useEffect(() => {
+    const fetchBranches = async () => {
+      try {
+        const supabase = createClient();
+        const { data, error } = await supabase
+          .from("branches")
+          .select("*")
+          .order("sort_order", { ascending: true });
+
+        if (!error && data && data.length > 0) {
+          setBranches(
+            data.map((b) => ({
+              id: b.id,
+              title: b.name,
+              address: b.address,
+              city: b.city || "",
+              phone: b.phone || "",
+              image: b.image || "/images/kentro/02.JPG",
+              mapUrl: b.map_url,
+              directionsUrl: b.directions_url,
+            }))
+          );
+        }
+      } catch (_) {
+        console.log("Χρήση στατικών παραρτημάτων.");
+      }
+    };
+    fetchBranches();
+  }, []);
 
   if (pathname.startsWith("/admin")) {
     return null;
@@ -88,7 +121,7 @@ export default function Footer() {
               ΟΙ ΕΓΚΑΤΑΣΤΑΣΕΙΣ ΜΑΣ
             </h2>
             <p className="text-blue-200/60 text-center text-sm mb-10 max-w-md mx-auto">
-              3 σύγχρονες δομές σε Ηράκλειο & Αθήνα
+              {branches.length} σύγχρονες {branches.length === 1 ? "δομή" : "δομές"} σε όλη την Ελλάδα
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
