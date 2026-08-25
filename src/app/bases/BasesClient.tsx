@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { schools as fallbackSchools } from "@/lib/schools2026";
+import { createClient } from "@/utils/supabase/client";
 
 /* ─── Animation ─── */
 const fadeUp = {
@@ -133,7 +134,9 @@ export default function BasesClient() {
   useEffect(() => {
     const fetchDynamicSchools = async () => {
       try {
-        const res = await fetch("/calculator_bases.json?t=" + new Date().getTime());
+        const supabase = createClient();
+        const { data } = supabase.storage.from("uploads").getPublicUrl("calculator_bases.json");
+        const res = await fetch(data.publicUrl + "?t=" + new Date().getTime());
         if (res.ok) {
           const dynamicSchools = await res.json();
           if (Array.isArray(dynamicSchools) && dynamicSchools.length > 0) {
