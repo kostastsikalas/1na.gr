@@ -165,7 +165,7 @@ const organizationJsonLd = {
       sameAs: [
         "https://www.facebook.com/1na.gr/",
         "https://www.instagram.com/frontistirio.ena/",
-        "https://www.tiktok.com/@frontistirio.ena",
+        "https://www.tiktok.com/@frontistrioena",
         "https://www.youtube.com/channel/UCfmVMF00ZV2bNehoGGG_SOw",
       ],
     },
