@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Διαδραστική Παρουσίαση - Το Οικονομικό Κύκλωμα</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        
+        .flow-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 1.5s ease-in-out, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .flow-path.active {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+
+        .flow-text {
+            transition: opacity 0.8s ease 0.8s;
+            opacity: 0;
+        }
+
+        .flow-text.active {
+            opacity: 1;
+        }
+
+        .option-btn {
+            transition: all 0.2s ease;
+        }
+        .option-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.4)); }
+            50% { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8)); }
+        }
+
+        .node-active {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-4 sm:p-6">
+
+    <!-- Header -->
+    <header class="max-w-6xl w-full mx-auto text-center space-y-2 mb-2">
+        <div class="inline-flex items-center gap-2 bg-blue-900/50 border border-blue-500/30 text-blue-300 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-graduation-cap text-blue-400"></i>
+            Διαδραστικό Μάθημα
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Χτίζοντας το Οικονομικό Κύκλωμα
+        </h1>
+        <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            Απαντήστε στις ερωτήσεις για να αποκαλύψετε σταδιακά τις ροές του οικονομικού κυκλώματος.
+        </p>
+<p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+           Επιμέλεια Ερωτοκριτάκης Κώστας-Οικονομολόγος.
+        </p>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+
+        <!-- Question / Quiz Panel (Left) -->
+        <div class="lg:col-span-5 space-y-4">
+            
+            <div class="bg-slate-800/90 border border-slate-700/80 p-6 rounded-3xl shadow-2xl backdrop-blur-sm space-y-5">
+                
+                <!-- Progress Bar -->
+                <div class="space-y-2">
+                    <div class="flex justify-between text-xs font-bold text-slate-400">
+                        <span id="stepIndicator">Βήμα 1 από 6</span>
+                        <span id="progressPercent" class="text-blue-400">16%</span>
+                    </div>
+                    <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                        <div id="progressBar" class="bg-blue-500 h-full w-1/6 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Question Header -->
+                <div id="questionBox" class="space-y-3 min-h-[140px] flex flex-col justify-center">
+                    <span id="questionCategory" class="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                        Αγορά Συντελεστών Παραγωγής
+                    </span>
+                    <h2 id="questionText" class="text-lg sm:text-xl font-bold text-white leading-snug">
+                        Τι προσφέρουν τα Νοικοκυριά στις Επιχειρήσεις για να μπορέσουν να παράγουν αγαθά;
+                    </h2>
+                </div>
+
+                <!-- Options -->
+                <div id="optionsContainer" class="space-y-2.5">
+                    <!-- Dynamic Buttons -->
+                </div>
+
+                <!-- Feedback Message -->
+                <div id="feedbackBox" class="hidden p-3.5 rounded-2xl text-xs font-medium border flex items-center gap-3">
+                    <i id="feedbackIcon" class="fa-solid text-lg"></i>
+                    <span id="feedbackText"></span>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="flex justify-between items-center pt-2 border-t border-slate-700/60">
+                    <button onclick="prevStep()" id="prevBtn" class="px-4 py-2 text-xs font-semibold rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Προηγούμενο
+                    </button>
+                    <button onclick="resetQuiz()" class="px-3 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white transition">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Επανεκκίνηση
+                    </button>
+                    <button onclick="nextStep()" id="nextBtn" class="px-4 py-2 text-xs font-semibold rounded-xl bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-40 disabled:cursor-not-allowed transition" disabled>
+                        Επόμενο <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SVG Diagram Panel (Right) -->
+        <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 p-4 sm:p-6 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col items-center justify-center min-h-[500px]">
+            
+            <svg id="circuitSVG" viewBox="0 0 800 600" class="w-full h-auto max-w-[700px]">
+                
+                <defs>
+                    <!-- Arrow Markers -->
+                    <marker id="arrowGold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+                    </marker>
+                    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6"/>
+                    </marker>
+                    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+                    </marker>
+                    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#a855f7"/>
+                    </marker>
+                </defs>
+
+                <!-- FLOWS -->
+
+                <!-- STEP 1: FACTORS (Households -> Businesses) -->
+                <g id="group_step1">
+                    <path d="M 545,210 A 170,100 0 0,1 255,210" 
+                          class="flow-path stroke-emerald-400" stroke-width="6" fill="none" marker-end="url(#arrowGreen)"/>
+                    <text x="400" y="275" text-anchor="middle" fill="#34d399" class="flow-text text-xs font-extrabold" style="font-size: 15px;">ΣΥΝΤΕΛΕΣΤΕΣ ΠΑΡΑΓΩΓΗΣ</text>
+                </g>
+
+                <!-- STEP 2: MONEY FOR FACTORS (Businesses -> Households) -->
+                <g id="group_step2">
+                    <path d="M 230,240 A 210,130 0 0,0 570,240" 
+                          class="flow-path stroke-amber-400" stroke-width="6" fill="none" marker-end="url(#arrowGold)"/>
+                    <text x="400" y="340" text-anchor="middle" fill="#fbbf24" class="flow-text text-xs font-extrabold" style="font-size: 15px;">ΧΡΗΜΑ</text>
+                </g>
+
+                <!-- STEP 3: PRODUCTS (Businesses -> Households) -->
+                <g id="group_step3">
+                    <path d="M 230,130 A 210,130 0 0,1 570,130" 
+                          class="flow-path stroke-blue-400" stroke-width="6" fill="none" marker-end="url(#arrowBlue)"/>
+                    <text x="400" y="45" text-anchor="middle" fill="#60a5fa" class="flow-text text-xs font-extrabold" style="font-size: 15px;">ΠΡΟΪΟΝΤΑ</text>
+                </g>
+
+                <!-- STEP 4: MONEY FOR PRODUCTS (Households -> Businesses) -->
+                <g id="group_step4">
+                    <path d="M 545,160 A 170,100 0 0,0 255,160" 
+                          class="flow-path stroke-amber-400" stroke-width="6" fill="none" marker-end="url(#arrowGold)"/>
+                    <text x="400" y="115" text-anchor="middle" fill="#fbbf24" class="flow-text text-xs font-extrabold" style="font-size: 15px;">ΧΡΗΜΑ</text>
+                </g>
+
+                <!-- STEP 5: MONEY TO STATE (Businesses & Households -> State) -->
+                <g id="group_step5">
+                    <!-- Businesses to State -->
+                    <path d="M 210,250 C 180,380 280,450 340,470" 
+                          class="flow-path stroke-amber-400" stroke-width="5" fill="none" marker-end="url(#arrowGold)"/>
+                    <text x="210" y="380" transform="rotate(-35, 210, 380)" fill="#fbbf24" class="flow-text text-xs font-bold" style="font-size: 13px;">ΧΡΗΜΑ</text>
+                    
+                    <!-- Households to State -->
+                    <path d="M 590,250 C 620,380 520,450 460,470" 
+                          class="flow-path stroke-amber-400" stroke-width="5" fill="none" marker-end="url(#arrowGold)"/>
+                    <text x="590" y="380" transform="rotate(35, 590, 380)" fill="#fbbf24" class="flow-text text-xs font-bold" style="font-size: 13px;">ΧΡΗΜΑ</text>
+                </g>
+
+                <!-- STEP 6: SERVICES FROM STATE (State -> Businesses & Households) -->
+                <g id="group_step6">
+                    <!-- State to Businesses -->
+                    <path d="M 330,500 C 240,480 130,380 180,240" 
+                          class="flow-path stroke-purple-400" stroke-width="5" fill="none" marker-end="url(#arrowPurple)"/>
+                    <text x="170" y="440" transform="rotate(45, 170, 440)" fill="#c084fc" class="flow-text text-xs font-bold" style="font-size: 13px;">ΥΠΗΡΕΣΙΕΣ</text>
+
+                    <!-- State to Households -->
+                    <path d="M 470,500 C 560,480 670,380 620,240" 
+                          class="flow-path stroke-purple-400" stroke-width="5" fill="none" marker-end="url(#arrowPurple)"/>
+                    <text x="630" y="440" transform="rotate(-45, 630, 440)" fill="#c084fc" class="flow-text text-xs font-bold" style="font-size: 13px;">ΥΠΗΡΕΣΙΕΣ</text>
+                </g>
+
+                <!-- NODES / ECONOMIC UNITS -->
+
+                <!-- NODE 1: BUSINESSES -->
+                <g id="node_biz" class="cursor-pointer" transform="translate(190, 185)">
+                    <circle r="65" fill="#1e293b" stroke="#3b82f6" stroke-width="4" />
+                    <text y="5" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="14">ΕΠΙΧΕΙΡΗΣΕΙΣ</text>
+                </g>
+
+                <!-- NODE 2: HOUSEHOLDS -->
+                <g id="node_house" class="cursor-pointer" transform="translate(610, 185)">
+                    <circle r="65" fill="#1e293b" stroke="#10b981" stroke-width="4" />
+                    <text y="5" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="14">ΝΟΙΚΟΚΥΡΙΑ</text>
+                </g>
+
+                <!-- NODE 3: STATE -->
+                <g id="node_state" class="cursor-pointer opacity-40 transition-opacity duration-500" transform="translate(400, 500)">
+                    <circle r="60" fill="#1e293b" stroke="#a855f7" stroke-width="4" />
+                    <text y="5" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="15">ΚΡΑΤΟΣ</text>
+                </g>
+
+            </svg>
+
+        </div>
+
+    </main>
+
+    <script>
+        const stepsData = [
+            {
+                category: "Αγορά Συντελεστών Παραγωγής",
+                question: "Τι προσφέρουν τα Νοικοκυριά στις Επιχειρήσεις για να μπορέσουν να παράγουν προϊόντα;",
+                options: [
+                    { text: "Συντελεστές Παραγωγής (Εργασία, Έδαφος, Κεφάλαιο)", correct: true },
+                    { text: "Τελικά Προϊόντα & Υπηρεσίες", correct: false },
+                    { text: "Επιδοτήσεις & Δάνεια", correct: false }
+                ],
+                flowId: "group_step1",
+                explanation: "Σωστά! Τα νοικοκυριά προσφέρουν την εργασία, τη γη και το κεφάλαιο στις επιχειρήσεις."
+            },
+            {
+                category: "Αγορά Συντελεστών Παραγωγής",
+                question: "Τι δίνουν οι Επιχειρήσεις στα Νοικοκυριά ως αντάλλαγμα για τους συντελεστές παραγωγής;",
+                options: [
+                    { text: "Δωρεάν Αγαθά", correct: false },
+                    { text: "Χρήμα (Αμοιβές Συντελεστών)", correct: true },
+                    { text: "Φόρους & Εισφορές", correct: false }
+                ],
+                flowId: "group_step2",
+                explanation: "Σωστά! Οι επιχειρήσεις πληρώνουν χρήμα στα νοικοκυριά για τη χρησιμοποίηση των συντελεστών."
+            },
+            {
+                category: "Αγορά Προϊόντων",
+                question: "Τι προσφέρουν οι Επιχειρήσεις στα Νοικοκυριά για την ικανοποίηση των αναγκών τους;",
+                options: [
+                    { text: "Προϊόντα & Υπηρεσίες", correct: true },
+                    { text: "Μισθούς & Συντάξεις", correct: false },
+                    { text: "Πρώτες Ύλες", correct: false }
+                ],
+                flowId: "group_step3",
+                explanation: "Σωστά! Οι επιχειρήσεις διαθέτουν τα παράγμενα προϊόντα στην αγορά για τα νοικοκυριά."
+            },
+            {
+                category: "Αγορά Προϊόντων",
+                question: "Τι δίνουν τα Νοικοκυριά στις Επιχειρήσεις σε αντάλλαγμα για την απόκτηση των προϊόντων;",
+                options: [
+                    { text: "Δημόσια Αγαθά", correct: false },
+                    { text: "Χρήμα (Δαπάνες για Αγορά Προϊόντων)", correct: true },
+                    { text: "Νέους Συντελεστές Παραγωγής", correct: false }
+                ],
+                flowId: "group_step4",
+                explanation: "Ακριβώς! Τα νοικοκυριά πληρώνουν χρήμα στις επιχειρήσεις για να αγοράσουν τα προϊόντα."
+            },
+            {
+                category: "Παρέμβαση του Κράτους",
+                question: "Τι μεταφέρουν τα Νοικοκυριά και οι Επιχειρήσεις προς το Κράτος;",
+                options: [
+                    { text: "Χρήμα (Φόρους)", correct: true },
+                    { text: "Δημόσιες Υποδομές", correct: false },
+                    { text: "Προϊόντα & Συντελεστές", correct: false }
+                ],
+                flowId: "group_step5",
+                explanation: "Σωστά! Τόσο τα Νοικοκυριά όσο και οι Επιχειρήσεις μεταφέρουν χρήμα (φόρους) προς το Κράτος."
+            },
+            {
+                category: "Παρέμβαση του Κράτους",
+                question: "Τι προσφέρει το Κράτος προς τα Νοικοκυριά και τις Επιχειρήσεις;",
+                options: [
+                    { text: "Μόνο Νόμους και Κανόνες", correct: false },
+                    { text: "Υπηρεσίες & Δημόσια Αγαθά (Παιδεία, Υγεία, Υποδομές)", correct: true },
+                    { text: "Δωρεάν Μετοχές", correct: false }
+                ],
+                flowId: "group_step6",
+                explanation: "Μπράβο! Το Κράτος παρέχει δημόσιες υπηρεσίες και αγαθά τόσο προς τα Νοικοκυριά όσο και προς τις Επιχειρήσεις."
+            }
+        ];
+
+        let currentStep = 0;
+        let stepAnswered = false;
+
+        function renderStep() {
+            const data = stepsData[currentStep];
+            stepAnswered = false;
+
+            // Update UI Counters
+            document.getElementById('stepIndicator').innerText = `Βήμα ${currentStep + 1} από ${stepsData.length}`;
+            const pct = Math.round(((currentStep + 1) / stepsData.length) * 100);
+            document.getElementById('progressPercent').innerText = `${pct}%`;
+            document.getElementById('progressBar').style.width = `${pct}%`;
+
+            // Update Question
+            document.getElementById('questionCategory').innerText = data.category;
+            document.getElementById('questionText').innerText = data.question;
+
+            // Reset Options
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            data.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "option-btn w-full text-left p-3.5 rounded-2xl border border-slate-700 bg-slate-800 hover:bg-slate-700/80 text-xs sm:text-sm font-semibold text-slate-200 transition flex items-center justify-between";
+                btn.innerHTML = `<span>${opt.text}</span> <i class="fa-regular fa-circle text-slate-500"></i>`;
+                btn.onclick = () => checkAnswer(opt, btn);
+                container.appendChild(btn);
+            });
+
+            // Reset Feedback & Buttons
+            document.getElementById('feedbackBox').className = 'hidden';
+            document.getElementById('nextBtn').disabled = true;
+            document.getElementById('prevBtn').disabled = currentStep === 0;
+
+            // Highlight State node if step >= 4
+            if (currentStep >= 4) {
+                document.getElementById('node_state').classList.remove('opacity-40');
+            }
+        }
+
+        function checkAnswer(selectedOpt, btnElement) {
+            if (stepAnswered) return;
+
+            const data = stepsData[currentStep];
+            const feedbackBox = document.getElementById('feedbackBox');
+            const feedbackIcon = document.getElementById('feedbackIcon');
+            const feedbackText = document.getElementById('feedbackText');
+
+            if (selectedOpt.correct) {
+                stepAnswered = true;
+                btnElement.className = "option-btn w-full text-left p-3.5 rounded-2xl border-2 border-emerald-500 bg-emerald-950/40 text-xs sm:text-sm font-bold text-emerald-200 flex items-center justify-between";
+                btnElement.querySelector('i').className = "fa-solid fa-circle-check text-emerald-400 text-base";
+
+                feedbackBox.className = "p-3.5 rounded-2xl text-xs font-medium border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 flex items-center gap-3";
+                feedbackIcon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
+                feedbackText.innerText = data.explanation;
+
+                // Trigger Flow Animation on SVG
+                triggerFlow(data.flowId);
+
+                document.getElementById('nextBtn').disabled = false;
+
+            } else {
+                btnElement.className = "option-btn w-full text-left p-3.5 rounded-2xl border-2 border-rose-500 bg-rose-950/40 text-xs sm:text-sm font-semibold text-rose-200 flex items-center justify-between";
+                btnElement.querySelector('i').className = "fa-solid fa-circle-xmark text-rose-400 text-base";
+
+                feedbackBox.className = "p-3.5 rounded-2xl text-xs font-medium border border-rose-500/30 bg-rose-950/30 text-rose-300 flex items-center gap-3";
+                feedbackIcon.className = "fa-solid fa-triangle-exclamation text-rose-400 text-lg";
+                feedbackText.innerText = "Λάθος απάντηση. Δοκιμάστε ξανά!";
+            }
+        }
+
+        function triggerFlow(flowId) {
+            const group = document.getElementById(flowId);
+            if (!group) return;
+
+            const paths = group.querySelectorAll('.flow-path');
+            const texts = group.querySelectorAll('.flow-text');
+
+            paths.forEach(p => p.classList.add('active'));
+            texts.forEach(t => t.classList.add('active'));
+        }
+
+        function nextStep() {
+            if (currentStep < stepsData.length - 1) {
+                currentStep++;
+                renderStep();
+            } else {
+                // Completed All Steps
+                document.getElementById('questionCategory').innerText = "Συγχαρητήρια!";
+                document.getElementById('questionText').innerText = "Ολοκληρώσατε με επιτυχία ολόκληρο το Οικονομικό Κύκλωμα!";
+                document.getElementById('optionsContainer').innerHTML = `
+                    <div class="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-500/40 text-center space-y-2">
+                        <i class="fa-solid fa-trophy text-amber-400 text-3xl"></i>
+                        <p class="text-xs text-emerald-200 font-medium">Όλες οι ροές μεταξύ Νοικοκυριών, Επιχειρήσεων και Κράτους έχουν ενεργοποιηθεί στο διάγραμμα.</p>
+                    </div>
+                `;
+                document.getElementById('feedbackBox').className = 'hidden';
+                document.getElementById('nextBtn').disabled = true;
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        }
+
+        function resetQuiz() {
+            currentStep = 0;
+            // Hide all SVG flows
+            document.querySelectorAll('.flow-path').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.flow-text').forEach(t => t.classList.remove('active'));
+            document.getElementById('node_state').classList.add('opacity-40');
+            renderStep();
+        }
+
+        // Initialize First Step
+        renderStep();
+    </script>
+</body>
+</html>

@@ -17,6 +17,10 @@ import {
   Lightbulb,
   ArrowRight,
   CheckCircle2,
+  TrendingUp,
+  BarChart3,
+  Sparkles,
+  Laptop,
 } from "lucide-react";
 
 /* ─── Animation ─── */
@@ -42,6 +46,8 @@ type MockExam = {
   description: string;
   topics: string[];
   downloadUrl: string;
+  isInteractive?: boolean;
+  actionText?: string;
 };
 
 const mockExams: MockExam[] = [
@@ -149,9 +155,71 @@ const mockExams: MockExam[] = [
     topics: ["Reading", "Grammar", "Vocabulary", "Writing"],
     downloadUrl: "#",
   },
+  {
+    id: "econ-interactive-1",
+    subject: "Οικονομία (ΑΟΘ) — Το Οικονομικό Κύκλωμα",
+    icon: TrendingUp,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+    field: "Σπουδών Οικονομίας & Πληροφορικής",
+    duration: "Διαδραστικό",
+    difficulty: "Βασικό",
+    description:
+      "Διαδραστική παρουσίαση και ερωτήσεις αυτοαξιολόγησης για το Οικονομικό Κύκλωμα (Νοικοκυριά, Επιχειρήσεις, Κράτος). Επιμέλεια: Ερωτοκριτάκης Κώστας — Οικονομολόγος.",
+    topics: ["Οικονομικό Κύκλωμα", "Συντελεστές Παραγωγής", "Αγορά Προϊόντων", "Κρατική Παρέμβαση"],
+    downloadUrl: "/mock-exams/oikonomiko-kykloma",
+    isInteractive: true,
+    actionText: "Έναρξη Διαδραστικού Μαθήματος",
+  },
+  {
+    id: "econ-exam-1",
+    subject: "Οικονομία (ΑΟΘ)",
+    icon: BarChart3,
+    color: "text-violet-600",
+    bg: "bg-violet-50",
+    field: "Σπουδών Οικονομίας & Πληροφορικής",
+    duration: "3 ώρες",
+    difficulty: "Προχωρημένο",
+    description:
+      "Πλήρες διαγώνισμα Πανελλαδικών στην Οικονομία με αναλυτικά θέματα και ενδεικτικές απαντήσεις.",
+    topics: ["Βασικές Οικονομικές Έννοιες", "Ζήτηση & Προσφορά", "Ισορροπία Αγοράς", "Εθνικοί Λογαριασμοί"],
+    downloadUrl: "/themata/2026/them_oikonomia_gel_260608.pdf",
+    actionText: "Κατέβασε το Διαγώνισμα",
+  },
+  {
+    id: "cs-exam-1",
+    subject: "Πληροφορική (ΑΕΠΠ)",
+    icon: Laptop,
+    color: "text-blue-600",
+    bg: "bg-blue-50",
+    field: "Σπουδών Οικονομίας & Πληροφορικής",
+    duration: "3 ώρες",
+    difficulty: "Προχωρημένο",
+    description:
+      "Διαγώνισμα προσομοίωσης Πανελλαδικών στην Πληροφορική: Αλγόριθμοι, Δομές Δεδομένων, Υποπρογράμματα.",
+    topics: ["Αλγόριθμοι", "Πίνακες", "Στοίβα & Ουρά", "Υποπρογράμματα"],
+    downloadUrl: "/themata/2026/them_plirof_gel_260605.pdf",
+    actionText: "Κατέβασε το Διαγώνισμα",
+  },
 ];
 
-const fields = ["Όλα", ...new Set(mockExams.map((e) => e.field))];
+const FIELD_ORDER = [
+  "Όλα",
+  "Σπουδών Οικονομίας & Πληροφορικής",
+  "Θετικών Σπουδών",
+  "Σπουδών Υγείας",
+  "Ανθρωπιστικών Σπουδών",
+  "Γενικής Παιδείας",
+];
+
+const fields = [
+  "Όλα",
+  ...Array.from(new Set(mockExams.map((e) => e.field))).sort((a, b) => {
+    const ia = FIELD_ORDER.indexOf(a);
+    const ib = FIELD_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  }),
+];
 
 const difficultyColors: Record<string, string> = {
   "Βασικό": "bg-emerald-50 text-emerald-600",
@@ -264,6 +332,12 @@ export default function MockExamsClient() {
                       {exam.subject}
                     </h3>
                     <div className="flex flex-wrap items-center gap-2">
+                      {exam.isInteractive && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          <Sparkles size={11} className="text-amber-500" />
+                          Διαδραστικό
+                        </span>
+                      )}
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${difficultyColors[exam.difficulty]}`}
                       >
@@ -295,16 +369,29 @@ export default function MockExamsClient() {
                   ))}
                 </div>
 
-                {/* Download */}
-                <a
+                {/* Download / Interactive Action */}
+                <Link
                   href={exam.downloadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-[#213576]/5 hover:bg-[#213576] text-[#213576] hover:text-white rounded-xl transition-all duration-200 font-semibold text-[14px]"
+                  target={exam.downloadUrl.endsWith(".pdf") ? "_blank" : undefined}
+                  rel={exam.downloadUrl.endsWith(".pdf") ? "noopener noreferrer" : undefined}
+                  className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl transition-all duration-200 font-semibold text-[14px] ${
+                    exam.isInteractive
+                      ? "bg-gradient-to-r from-[#213576] to-[#002B5B] hover:from-[#1a2b5f] hover:to-[#001f42] text-white shadow-md hover:shadow-lg"
+                      : "bg-[#213576]/5 hover:bg-[#213576] text-[#213576] hover:text-white"
+                  }`}
                 >
-                  <Download size={16} />
-                  Κατέβασε το Διαγώνισμα
-                </a>
+                  {exam.isInteractive ? (
+                    <>
+                      <Sparkles size={16} className="text-amber-300" />
+                      {exam.actionText || "Έναρξη Διαδραστικού Μαθήματος"}
+                    </>
+                  ) : (
+                    <>
+                      <Download size={16} />
+                      {exam.actionText || "Κατέβασε το Διαγώνισμα"}
+                    </>
+                  )}
+                </Link>
               </motion.div>
             );
           })}
