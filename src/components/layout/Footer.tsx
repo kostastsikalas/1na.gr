@@ -247,10 +247,24 @@ export default function Footer() {
 
         {/* ──── Bottom Bar ──── */}
         <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[13px] text-gray-500">
-            © {new Date().getFullYear()} Φροντιστηριακός Όμιλος ΕΝΑ. Με
-            επιφύλαξη παντός δικαιώματος.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center md:text-left text-[13px] text-gray-500">
+            <p>
+              © {new Date().getFullYear()} Φροντιστηριακός Όμιλος ΕΝΑ. Με
+              επιφύλαξη παντός δικαιώματος.
+            </p>
+            <span className="hidden sm:inline text-gray-600">•</span>
+            <p>
+              Powered by{" "}
+              <a
+                href="https://ktdigital.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                KTdigital
+              </a>
+            </p>
+          </div>
 
           {/* Social Icons */}
           <div className="flex items-center gap-3">
