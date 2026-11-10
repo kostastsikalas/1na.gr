@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Το Νοικοκυριό - Πολιτική Οικονομία</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 850px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        color: #cbd5e1;
+        margin-bottom: 25px;
+        font-size: 17px;
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 8px;
+        background: #334155;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        width: 10%;
+        background: #38bdf8;
+        transition: width 0.3s ease;
+    }
+
+    .counter {
+        color: #cbd5e1;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        perspective: 1200px;
+        width: 100%;
+        height: 440px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        cursor: pointer;
+    }
+
+    .card.no-flip {
+        cursor: default;
+    }
+
+    .card.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 35px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        overflow-y: auto;
+    }
+
+    .front {
+        background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    }
+
+    .back {
+        background: linear-gradient(145deg, #0f766e, #115e59);
+        transform: rotateY(180deg);
+    }
+
+    .end-card-style {
+        background: linear-gradient(145deg, #0284c7, #0369a1) !important;
+    }
+
+    .label {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        font-size: 26px;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+
+    .answer {
+        font-size: 20px;
+        line-height: 1.55;
+        text-align: left;
+        width: 100%;
+    }
+
+    .answer-center {
+        text-align: center;
+    }
+
+    .hint {
+        position: absolute;
+        bottom: 18px;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button {
+        border: none;
+        border-radius: 12px;
+        padding: 13px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+    }
+
+    .prev {
+        background: #475569;
+        color: white;
+    }
+
+    .next {
+        background: #38bdf8;
+        color: #082f49;
+    }
+
+    .reset {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    .tip {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        .card-container {
+            height: 410px;
+        }
+
+        .question {
+            font-size: 21px;
+        }
+
+        .answer {
+            font-size: 17px;
+        }
+
+        .card-side {
+            padding: 20px;
+        }
+
+        button {
+            padding: 11px 17px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>🏡 Το Νοικοκυριό (Η Οικογένεια)</h1>
+
+    <div class="subtitle">
+        Flash Cards – Πολιτική Οικονομία Γ΄ Λυκείου
+    </div>
+
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="counter" id="counter">
+        Κάρτα 1 από 10
+    </div>
+
+    <div class="card-container">
+
+        <div class="card" id="card" onclick="flipCard()">
+
+            <!-- ΜΠΡΟΣΤΑ -->
+            <div class="card-side front" id="frontSide">
+
+                <div class="label" id="frontLabel">
+                    Ερώτηση
+                </div>
+
+                <div class="question" id="question">
+                    Φόρτωση...
+                </div>
+
+                <div class="hint" id="hint">
+                    👆 Κάνε κλικ για να δεις την απάντηση
+                </div>
+
+            </div>
+
+            <!-- ΠΙΣΩ -->
+            <div class="card-side back">
+
+                <div class="label" id="backLabel">
+                    Απάντηση
+                </div>
+
+                <div class="answer" id="answer">
+                    Φόρτωση...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button class="prev" onclick="previousCard(event)">
+            ← Προηγούμενη
+        </button>
+
+        <button class="reset" onclick="resetCard(event)">
+            ↻ Επανάληψη
+        </button>
+
+        <button class="next" onclick="nextCard(event)">
+            Επόμενη →
+        </button>
+
+    </div>
+
+    <div class="tip" id="tipMessage">
+        💡 Προσπάθησε να απαντήσεις πριν γυρίσεις την κάρτα.
+    </div>
+
+</div>
+
+<script>
+
+const cards = [
+    {
+        question: "Πώς ορίζεται το Νοικοκυριό και ποιο είναι το κύριο χαρακτηριστικό του;",
+        answer: "Το νοικοκυριό μπορεί να αποτελείται από <strong>ένα άτομο</strong> που ζει μόνο του ή από <strong>μια οικογένεια</strong> (μαζί με την οποία μπορεί να ζουν και άλλα άτομα).<br><br><strong>Κύριο χαρακτηριστικό:</strong> Αποτελείται από άτομα που <u>αποφασίζουν από κοινού για τα οικονομικά θέματα</u>."
+    },
+    {
+        question: "Από πού προέρχονται τα εισοδήματα του νοικοκυριού και πώς θεωρείται το συνολικό εισόδημα βραχυπρόθεσμα;",
+        answer: "Τα εισοδήματα προέρχονται από:<br>1️⃣ Την <strong>περιουσία</strong> του (π.χ. ενοίκια).<br>2️⃣ Την <strong>εργασία</strong> των μελών του (π.χ. μισθός, σύνταξη).<br><br>👉 Βραχυπρόθεσμα το εισόδημα δεν μεταβάλλεται σημαντικά και μπορεί να θεωρηθεί <strong>σταθερό</strong>."
+    },
+    {
+        question: "Ποιες είναι οι 3 βασικές οικονομικές αποφάσεις του νοικοκυριού για τη χρησιμοποίηση του εισοδήματός του;",
+        answer: "<strong>(α)</strong> Πόσο μέρος θα <u>καταναλωθεί</u> (αγορά αγαθών) και πόσο θα <u>αποταμιευθεί</u> (για το μέλλον).<br><br><strong>(β)</strong> Το μέρος που θα καταναλωθεί, <u>σε ποια προϊόντα</u> και σε ποιες αναλογίες θα δαπανηθεί.<br><br><strong>(γ)</strong> Το μέρος που θα αποταμιευθεί, <u>πότε</u> θα χρησιμοποιηθεί και για <u>ποιο σκοπό</u>."
+    },
+    {
+        question: "Ποιοι παράγοντες επηρεάζουν τις οικονομικές αποφάσεις του νοικοκυριού;",
+        answer: "1️⃣ <strong>Το μέγεθος του εισοδήματος.</strong><br>2️⃣ <strong>Το μέγεθος του νοικοκυριού & η ηλικία των μελών</strong> (μεγαλύτερο νοικοκυριό = μεγαλύτερη κατανάλωση, διαφορετικές ανάγκες παιδιών vs ηλικιωμένων).<br>3️⃣ <strong>Η γεωγραφική θέση</strong> εγκατάστασης.<br>4️⃣ <strong>Το κοινωνικό περιβάλλον</strong> μέσα στο οποίο ζουν."
+    },
+    {
+        question: "Τι είναι το πρόβλημα της προσφοράς εργασίας του νοικοκυριού;",
+        answer: "Είναι η απόφαση σχετικά με το <strong>ποια μέλη της οικογένειας θα δουλεύουν</strong> για την απόκτηση εισοδήματος (π.χ. αν και πόσο θα εργαστεί η γυναίκα, αν τα παιδιά θα εργαστούν ή θα σπουδάσουν)."
+    },
+    {
+        question: "Ποια είναι η βασική επιδίωξη (και κριτήριο λήψης αποφάσεων) του νοικοκυριού;",
+        answer: "Η <strong>όσο το δυνατόν πληρέστερη ικανοποίηση των αναγκών του</strong> με βάση το δεδομένο εισόδημα που έχει στη διάθεσή του."
+    },
+    {
+        question: "1η Παρατήρηση: Πώς λαμβάνονται οι αποφάσεις του νοικοκυριού;",
+        answer: "Οι αποφάσεις <strong>ΔΕΝ παίρνονται χωριστά</strong> η καθεμιά, αλλά <strong>σε συνδυασμό</strong> μεταξύ τους (π.χ. η απόφαση για το ποια μέλη θα εργαστούν συνδέεται με την απόφαση αγοράς διαμερίσματος)."
+    },
+    {
+        question: "2η Παρατήρηση: Ποια ιδιαιτερότητα έχουν ορισμένα νοικοκυριά (π.χ. αγροτικά);",
+        answer: "Ορισμένα νοικοκυριά αποτελούν ταυτόχρονα και <strong>επιχείρηση</strong> (π.χ. αγροτικό νοικοκυριό).<br><br>Στην περίπτωση αυτή παίρνουν αποφάσεις <u>τόσο ως καταναλωτικές όσο και ως επιχειρηματικές μονάδες</u>."
+    },
+    {
+        question: "🧠 SOS Σύνοψη: Τα 4 κομβικά σημεία για το Νοικοκυριό",
+        answer: "🔹 <strong>Χαρακτηριστικό:</strong> Κοινές οικονομικές αποφάσεις.<br>🔹 <strong>3 Αποφάσεις:</strong> Κατανάλωση/Αποταμίευση, Επιλογή προϊόντων, Σκοπός αποταμίευσης.<br>🔹 <strong>Στόχος:</strong> Μέγιστη ικανοποίηση αναγκών με το δεδομένο εισόδημα.<br>🔹 <strong>Προσφορά εργασίας:</strong> Ποια μέλη θα εργαστούν."
+    },
+    {
+        isEndCard: true,
+        question: "🎉 Ευχαριστώ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας<br><strong>Οικονομολόγος</strong></span>",
+        answer: "🎉 Ευχαριστώ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας<br><strong>Οικονομολόγος</strong></span>"
+    }
+];
+
+let currentCard = 0;
+
+const card = document.getElementById("card");
+const frontSide = document.getElementById("frontSide");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const frontLabel = document.getElementById("frontLabel");
+const hint = document.getElementById("hint");
+const tipMessage = document.getElementById("tipMessage");
+
+function updateCard() {
+    card.classList.remove("flipped");
+
+    const currentData = cards[currentCard];
+
+    question.innerHTML = currentData.question;
+    answer.innerHTML = currentData.answer;
+
+    if (currentData.isEndCard) {
+        answer.classList.add("answer-center");
+    } else {
+        answer.classList.remove("answer-center");
+    }
+
+    counter.innerHTML = "Κάρτα " + (currentCard + 1) + " από " + cards.length;
+
+    const percentage = ((currentCard + 1) / cards.length) * 100;
+    progress.style.width = percentage + "%";
+
+    if (currentData.isEndCard) {
+        frontLabel.style.display = "none";
+        hint.style.display = "none";
+        tipMessage.style.visibility = "hidden";
+        card.classList.add("no-flip");
+        frontSide.classList.add("end-card-style");
+    } else {
+        frontLabel.style.display = "block";
+        hint.style.display = "block";
+        tipMessage.style.visibility = "visible";
+        card.classList.remove("no-flip");
+        frontSide.classList.remove("end-card-style");
+    }
+}
+
+function flipCard() {
+    if (!cards[currentCard].isEndCard) {
+        card.classList.toggle("flipped");
+    }
+}
+
+function nextCard(event) {
+    if (event) event.stopPropagation();
+    currentCard++;
+    if (currentCard >= cards.length) {
+        currentCard = 0;
+    }
+    updateCard();
+}
+
+function previousCard(event) {
+    if (event) event.stopPropagation();
+    currentCard--;
+    if (currentCard < 0) {
+        currentCard = cards.length - 1;
+    }
+    updateCard();
+}
+
+function resetCard(event) {
+    if (event) event.stopPropagation();
+    currentCard = 0;
+    updateCard();
+}
+
+updateCard();
+
+</script>
+
+</body>
+</html>
+
+

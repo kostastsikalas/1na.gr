@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Η Συνάρτηση Παραγωγής - Πολιτική Οικονομία</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 850px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    .subtitle {
+        color: #cbd5e1;
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 8px;
+        background: #334155;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        width: 10%;
+        background: #38bdf8;
+        transition: width 0.3s ease;
+    }
+
+    .counter {
+        color: #cbd5e1;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        perspective: 1200px;
+        width: 100%;
+        height: 480px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        cursor: pointer;
+    }
+
+    .card.no-flip {
+        cursor: default;
+    }
+
+    .card.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        overflow-y: auto;
+    }
+
+    .front {
+        background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    }
+
+    .back {
+        background: linear-gradient(145deg, #0f766e, #115e59);
+        transform: rotateY(180deg);
+    }
+
+    .end-card-style {
+        background: linear-gradient(145deg, #0284c7, #0369a1) !important;
+    }
+
+    .label {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        margin-bottom: 15px;
+    }
+
+    .question {
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+
+    .answer {
+        font-size: 18px;
+        line-height: 1.55;
+        text-align: left;
+        width: 100%;
+    }
+
+    .answer-center {
+        text-align: center;
+    }
+
+    .hint {
+        position: absolute;
+        bottom: 15px;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    /* QUIZ STYLES */
+    .quiz-container {
+        text-align: left;
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .quiz-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #fde68a;
+    }
+
+    .quiz-question {
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    .quiz-options {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .quiz-option {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: 0.2s;
+    }
+
+    .quiz-option:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    .quiz-option.correct {
+        background: #10b981 !important;
+        border-color: #059669;
+    }
+
+    .quiz-option.wrong {
+        background: #ef4444 !important;
+        border-color: #dc2626;
+    }
+
+    .quiz-score {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 5px;
+        color: #38bdf8;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button {
+        border: none;
+        border-radius: 12px;
+        padding: 13px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+    }
+
+    .prev {
+        background: #475569;
+        color: white;
+    }
+
+    .next {
+        background: #38bdf8;
+        color: #082f49;
+    }
+
+    .reset {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    .tip {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 22px;
+        }
+
+        .card-container {
+            height: 450px;
+        }
+
+        .question {
+            font-size: 18px;
+        }
+
+        .card-side {
+            padding: 15px;
+        }
+
+        button {
+            padding: 11px 17px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>3. Η συνάρτηση παραγωγής</h1>
+
+    <div class="subtitle">
+        Flash Cards – Πολιτική Οικονομία
+    </div>
+
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="counter" id="counter">
+        Κάρτα 1 από 8
+    </div>
+
+    <div class="card-container">
+
+        <div class="card" id="card" onclick="flipCard()">
+
+            <!-- ΜΠΡΟΣΤΑ -->
+            <div class="card-side front" id="frontSide">
+
+                <div class="label" id="frontLabel">
+                    Ερώτηση
+                </div>
+
+                <div class="question" id="question">
+                    Φόρτωση...
+                </div>
+
+                <div class="hint" id="hint">
+                    👆 Κάνε κλικ για να δεις την απάντηση
+                </div>
+
+            </div>
+
+            <!-- ΠΙΣΩ -->
+            <div class="card-side back" id="backSide">
+
+                <div class="label" id="backLabel">
+                    Απάντηση
+                </div>
+
+                <div class="answer" id="answer">
+                    Φόρτωση...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button class="prev" onclick="previousCard(event)">
+            ← Προηγούμενη
+        </button>
+
+        <button class="reset" onclick="resetCard(event)">
+            ↻ Επανάληψη
+        </button>
+
+        <button class="next" onclick="nextCard(event)">
+            Επόμενη →
+        </button>
+
+    </div>
+
+    <div class="tip" id="tipMessage">
+        💡 Προσπάθησε να απαντήσεις πριν γυρίσεις την κάρτα. (Χρησιμοποίησε τα βέλη ← → στο πληκτρολόγιο)
+    </div>
+
+</div>
+
+<script>
+
+const cards = [
+    {
+        question: "Τι εκφράζει η συνάρτηση παραγωγής;",
+        answer: "Εκφράζει τη σχέση που συνδέει τη <strong>μέγιστη ποσότητα προϊόντος</strong> που μπορεί να παραχθεί σε ορισμένο χρόνο, με συγκεκριμένες ποσότητες συντελεστών και με δεδομένη την τεχνολογία παραγωγής."
+    },
+    {
+        question: "Τι διακρίνουμε στη συνάρτηση παραγωγής σύμφωνα με το κείμενο;",
+        answer: "1️⃣ Την <strong>τεχνολογική σχέση</strong> ανάμεσα στις ποσότητες των συντελεστών που χρησιμοποιούνται και στην ποσότητα του προϊόντος που παράγεται.<br><br>2️⃣ Την <strong>παραγωγική αποτελεσματικότητα</strong>, δηλαδή την καλύτερη δυνατή, αφού επιδίωξη των επιχειρήσεων είναι η παραγωγή όσο το δυνατόν μεγαλύτερων ποσοτήτων προϊόντος με σκοπό το μεγαλύτερο κέρδος."
+    },
+    {
+        question: "Ποια είναι η γενική μαθηματική μορφή της συνάρτησης παραγωγής ενός αγαθού;",
+        answer: "• <strong>Τύπος:</strong> Q = f(x₁, x₂, ... xᵥ)<br><br>Όπου:<br>• <strong>Q:</strong> η ποσότητα του παραγόμενου προϊόντος.<br>• <strong>f:</strong> η συγκεκριμένη «συνάρτηση παραγωγής», δηλαδή ο τρόπος μετασχηματισμού των συντελεστών σε προϊόν.<br>• <strong>x:</strong> η ποσότητα του χρησιμοποιούμενου συντελεστή παραγωγής (για i = 1, 2, ... v)."
+    },
+    {
+        question: "Τι υποθέτουμε συνήθως για λόγους ευκολίας στη βραχυχρόνια περίοδο;",
+        answer: "Υποθέτουμε ότι υπάρχει <strong>ένας μεταβλητός συντελεστής</strong>, η εργασία (L), και <strong>ένας τουλάχιστον σταθερός συντελεστής</strong>, για παράδειγμα το κεφάλαιο (K̄)."
+    },
+    {
+        question: "Πώς γράφεται η συνάρτηση παραγωγής στη βραχυχρόνια περίοδο με βάση την παραπάνω υπόθεση;",
+        answer: "Γράφεται ως εξής:<br><br>👉 <strong>Q = f(L, K̄)</strong><br><br><i>(Όπου L η μεταβλητή εργασία και K̄ ο σταθερός συντελεστής κεφαλαίου)</i>."
+    },
+    {
+        question: "Σύνοψη: Η Συνάρτηση Παραγωγής",
+        answer: "🔹 <strong>Έννοια:</strong> Σχέση μέγιστης ποσότητας προϊόντος με συντελεστές και τεχνολογία.<br>🔹 <strong>Βασικά στοιχεία:</strong> Τεχνολογική σχέση & Παραγωγική αποτελεσματικότητα (μέγιστο κέρδος).<br>🔹 <strong>Γενικός τύπος:</strong> Q = f(x₁, x₂, ... xᵥ).<br>🔹 <strong>Βραχυχρόνια μορφή:</strong> Q = f(L, K̄)."
+    },
+    {
+        isQuiz: true,
+        question: `
+            <div class="quiz-container">
+                <div class="quiz-title">🧠 Mini Κουιζ Κατανόησης</div>
+                
+                <div class="quiz-question">1. Η συνάρτηση παραγωγής συνδέει τη μέγιστη ποσότητα προϊόντος με:</div>
+                <div class="quiz-options" id="q1-opts">
+                    <div class="quiz-option" onclick="checkAnswer(event, 1, 0, false)">Α) Μόνο με την εργασία</div>
+                    <div class="quiz-option" onclick="checkAnswer(event, 1, 1, true)">Β) Συγκεκριμένες ποσότητες συντελεστών και τεχνολογία</div>
+                    <div class="quiz-option" onclick="checkAnswer(event, 1, 2, false)">Γ) Μόνο με τα κέρδη της επιχείρησης</div>
+                </div>
+
+                <div class="quiz-question">2. Στη βραχυχρόνια περίοδο, ποιος συντελεστής θεωρείται συνήθως μεταβλητός;</div>
+                <div class="quiz-options" id="q2-opts">
+                    <div class="quiz-option" onclick="checkAnswer(event, 2, 0, true)">Α) Η εργασία (L)</div>
+                    <div class="quiz-option" onclick="checkAnswer(event, 2, 1, false)">Β) Το κεφάλαιο (K)</div>
+                    <div class="quiz-option" onclick="checkAnswer(event, 2, 2, false)">Γ) Όλοι οι συντελεστές</div>
+                </div>
+
+                <div class="quiz-question">3. Ποιος είναι ο γενικός τύπος της συνάρτησης παραγωγής;</div>
+                <div class="quiz-options" id="q3-opts">
+                    <div class="quiz-option" onclick="checkAnswer(event, 3, 0, false)">Α) Q = P · L</div>
+                    <div class="quiz-option" onclick="checkAnswer(event, 3, 1, false)">Β) Q = K̄ + L</div>
+                    <div class="quiz-option" onclick="checkAnswer(event, 3, 2, true)">Γ) Q = f(x₁, x₂, ... xᵥ)</div>
+                </div>
+
+                <div class="quiz-score" id="quizScore">Σκορ: 0 / 3</div>
+            </div>
+        `,
+        answer: ""
+    },
+    {
+        isEndCard: true,
+        question: "🎉 Ευχαριστώ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας<br><strong>Οικονομολόγος</strong></span>",
+        answer: "🎉 Ευχαριστώ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας<br><strong>Οικονομολόγος</strong></span>"
+    }
+];
+
+let currentCard = 0;
+let quizScoreCount = 0;
+let answeredQuestions = {};
+
+const card = document.getElementById("card");
+const frontSide = document.getElementById("frontSide");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const frontLabel = document.getElementById("frontLabel");
+const hint = document.getElementById("hint");
+const tipMessage = document.getElementById("tipMessage");
+
+function updateCard() {
+    card.classList.remove("flipped");
+
+    const currentData = cards[currentCard];
+
+    question.innerHTML = currentData.question;
+    answer.innerHTML = currentData.answer;
+
+    if (currentData.isEndCard || currentData.isQuiz) {
+        answer.classList.add("answer-center");
+    } else {
+        answer.classList.remove("answer-center");
+    }
+
+    counter.innerHTML = "Κάρτα " + (currentCard + 1) + " από " + cards.length;
+
+    const percentage = ((currentCard + 1) / cards.length) * 100;
+    progress.style.width = percentage + "%";
+
+    if (currentData.isEndCard || currentData.isQuiz) {
+        frontLabel.style.display = "none";
+        hint.style.display = "none";
+        tipMessage.style.visibility = "hidden";
+        card.classList.add("no-flip");
+        
+        if (currentData.isQuiz) {
+            frontSide.style.background = "linear-gradient(145deg, #1e3a8a, #1e40af)";
+        } else {
+            frontSide.classList.add("end-card-style");
+        }
+    } else {
+        frontLabel.style.display = "block";
+        hint.style.display = "block";
+        tipMessage.style.visibility = "visible";
+        card.classList.remove("no-flip");
+        frontSide.classList.remove("end-card-style");
+        frontSide.style.background = "linear-gradient(145deg, #2563eb, #1d4ed8)";
+    }
+}
+
+function checkAnswer(event, qNum, optIndex, isCorrect) {
+    if (event) event.stopPropagation(); // Σημαντικό για να μην γυρίζει η κάρτα
+    if (answeredQuestions[qNum]) return;
+    answeredQuestions[qNum] = true;
+
+    const containerId = "q" + qNum + "-opts";
+    const options = document.getElementById(containerId).children;
+
+    for (let i = 0; i < options.length; i++) {
+        if (i === optIndex) {
+            options[i].classList.add(isCorrect ? "correct" : "wrong");
+        } else if (options[i].getAttribute("onclick").includes("true")) {
+            options[i].classList.add("correct");
+        }
+        options[i].style.pointerEvents = "none";
+    }
+
+    if (isCorrect) {
+        quizScoreCount++;
+    }
+    document.getElementById("quizScore").innerHTML = "Σκορ: " + quizScoreCount + " / 3";
+}
+
+function flipCard() {
+    if (!cards[currentCard].isEndCard && !cards[currentCard].isQuiz) {
+        card.classList.toggle("flipped");
+    }
+}
+
+function nextCard(event) {
+    if (event) event.stopPropagation();
+    currentCard++;
+    if (currentCard >= cards.length) {
+        currentCard = 0;
+    }
+    updateCard();
+}
+
+function previousCard(event) {
+    if (event) event.stopPropagation();
+    currentCard--;
+    if (currentCard < 0) {
+        currentCard = cards.length - 1;
+    }
+    updateCard();
+}
+
+function resetCard(event) {
+    if (event) event.stopPropagation();
+    currentCard = 0;
+    quizScoreCount = 0;
+    answeredQuestions = {};
+    updateCard();
+}
+
+// Keyboard Navigation
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        nextCard();
+    } else if (event.key === "ArrowLeft") {
+        previousCard();
+    } else if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        flipCard();
+    }
+});
+
+updateCard();
+
+</script>
+
+</body>
+</html>

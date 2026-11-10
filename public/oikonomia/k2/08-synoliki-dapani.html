@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ελαστικότητα Ζήτησης & Συνολική Δαπάνη</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5f8;
+  color: #1f2937;
+}
+
+.flashcard-app {
+  max-width: 760px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #475569;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #dbe2ea;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+
+/* CARD */
+
+.card-container {
+  perspective: 1200px;
+  height: 420px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 35px;
+  border-radius: 22px;
+  backface-visibility: hidden;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-front {
+  background: white;
+  border-top: 7px solid #2563eb;
+}
+
+.card-back {
+  background: #172554;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-number {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #64748b;
+}
+
+.card-back .card-number {
+  color: #bfdbfe;
+}
+
+.icon {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.question {
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 700;
+  text-align: center;
+}
+
+.answer {
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.answer strong {
+  color: #fde68a;
+}
+
+.example {
+  margin-top: 15px;
+  background: rgba(255,255,255,0.12);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.flip-hint {
+  position: absolute;
+  bottom: 18px;
+  width: calc(100% - 70px);
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+
+/* ΤΕΛΙΚΗ ΚΑΡΤΑ */
+
+.final-card {
+  cursor: default;
+}
+
+.final-card .card-front {
+  background: #172554;
+  color: white;
+  border-top: 7px solid #38bdf8;
+}
+
+.final-card .card-number {
+  color: #bfdbfe;
+}
+
+.final-card .icon {
+  font-size: 65px;
+}
+
+.final-card .question {
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.final-card .flip-hint {
+  display: none;
+}
+
+
+/* BUTTONS */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+button {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.prev-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.flip-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.next-btn {
+  background: #0f172a;
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.memory-box {
+  margin-top: 25px;
+  background: #fff7ed;
+  border-left: 5px solid #f97316;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+
+@media(max-width: 600px) {
+
+  .card-container {
+    height: 470px;
+  }
+
+  .question {
+    font-size: 21px;
+  }
+
+  .answer {
+    font-size: 15px;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  button {
+    flex: 1;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="flashcard-app">
+
+  <div class="title">
+    💰 Ελαστικότητα Ζήτησης & Συνολική Δαπάνη
+  </div>
+
+  <div class="subtitle">
+    Πάτησε πάνω στην κάρτα για να εμφανιστεί η απάντηση
+  </div>
+
+  <div class="progress-text" id="progressText"></div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+
+  <div class="card-container">
+
+    <div class="card" id="flashcard">
+
+      <div class="card-side card-front">
+
+        <div class="card-number" id="frontNumber"></div>
+
+        <div class="icon" id="cardIcon"></div>
+
+        <div class="question" id="question"></div>
+
+        <div class="flip-hint">
+          👆 Πάτησε για να δεις την απάντηση
+        </div>
+
+      </div>
+
+
+      <div class="card-side card-back">
+
+        <div class="card-number" id="backNumber"></div>
+
+        <div class="answer" id="answer"></div>
+
+        <div class="flip-hint">
+          👆 Πάτησε ξανά για επιστροφή
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="controls">
+
+    <button class="prev-btn" onclick="previousCard()">
+      ← Προηγούμενη
+    </button>
+
+    <button class="flip-btn" id="flipButton" onclick="flipCard(event)">
+      🔄 Απάντηση
+    </button>
+
+    <button class="next-btn" onclick="nextCard()">
+      Επόμενη →
+    </button>
+
+  </div>
+
+
+  <div class="memory-box" id="memoryBox">
+    💡 <strong>Μνημονικό:</strong>
+    Η Συνολική Δαπάνη ακολουθεί πάντα τη <strong>μεγαλύτερη ποσοστιαία μεταβολή</strong> (της Q αν |E<sub>D</sub>| &gt; 1, της P αν |E<sub>D</sub>| &lt; 1)!
+  </div>
+
+</div>
+
+
+<script>
+
+const cards = [
+
+{
+  icon: "💵",
+  question: "Πώς ορίζεται η Συνολική Δαπάνη (ΣΔ) των καταναλωτών, με τι ισούται και πώς αναπαρίσταται διαγραμματικά;",
+  answer: `
+  Η συνολική δαπάνη ισούται με το γινόμενο της τιμής επί την ποσότητα: <strong>ΣΔ = P · Q</strong>.
+  <br><br>
+  • Είναι ίση με τα <strong>συνολικά έσοδα (συνολική πρόσοδο)</strong> των παραγωγών.<br>
+  • Διαγραμματικά ισούται με το <strong>εμβαδόν του ορθογωνίου (OP<sub>1</sub>AQ<sub>1</sub>)</strong>.<br>
+  • Εξαρτάται άμεσα από την <strong>ελαστικότητα ζήτησης</strong>, η οποία καθορίζει ποια μεταβολή θα υπερισχύσει.
+  `
+},
+
+{
+  icon: "📈",
+  question: "Πώς επηρεάζεται η Συνολική Δαπάνη όταν η ζήτηση είναι Ελαστική (|E<sub>D</sub>| &gt; 1);",
+  answer: `
+  Υπερισχύει η μεταβολή της <strong>ποσοτήτας (Q)</strong> διότι |%ΔQ| &gt; |%ΔP|.
+  <br><br>
+  • Αν η τιμή <strong>μειωθεί</strong>, η ΣΔ <strong>αυξάνεται</strong>.<br>
+  • Αν η τιμή <strong>αυξηθεί</strong>, η ΣΔ <strong>μειώνεται</strong>.
+  <div class="example">
+  Η ΣΔ κινείται προς την ίδια κατεύθυνση με τη ζητούμενη ποσότητα.
+  </div>
+  `
+},
+
+{
+  icon: "📉",
+  question: "Πώς επηρεάζεται η Συνολική Δαπάνη όταν η ζήτηση είναι Ανελαστική (|E<sub>D</sub>| &lt; 1);",
+  answer: `
+  Υπερισχύει η μεταβολή της <strong>τιμής (P)</strong> διότι |%ΔP| &gt; |%ΔQ|.
+  <br><br>
+  • Αν η τιμή <strong>αυξηθεί</strong>, η ΣΔ <strong>αυξάνεται</strong>.<br>
+  • Αν η τιμή <strong>μειωθεί</strong>, η ΣΔ <strong>μειώνεται</strong>.
+  <div class="example">
+  Η ΣΔ κινείται προς την ίδια κατεύθυνση με την τιμή.
+  </div>
+  `
+},
+
+{
+  icon: "⚖️",
+  question: "Τι συμβαίνει στη Συνολική Δαπάνη όταν η ελαστικότητα είναι ίση με τη μονάδα (|E<sub>D</sub>| = 1);",
+  answer: `
+  Η ποσοστιαία μεταβολή της ποσότητας είναι <strong>ίση</strong> με την ποσοστιαία μεταβολή της τιμής (|%ΔQ| = |%ΔP|).
+  <br><br>
+  Επομένως, η Συνολική Δαπάνη παραμένει <strong>σταθερή</strong>.
+  `
+},
+
+{
+  icon: "🏛️️",
+  question: "Ποια είναι η χρησιμότητα της Ελαστικότητας Ζήτησης για τις Επιχειρήσεις και το Κράτος;",
+  answer: `
+  • <strong>Επιχειρήσεις:</strong> Γνωρίζουν αν μια αύξηση της τιμής θα αυξήσει ή θα μειώσει τα συνολικά τους έσοδα.<br><br>
+  • <strong>Κράτος:</strong> Γνωρίζει αν μπορεί να επιβάλει φόρους (π.χ. στη βενζίνη) χωρίς να μειωθούν τα έσοδά του ή πώς θα επηρεαστεί η ζητούμενη ποσότητα.
+  `
+},
+
+/* ΤΕΛΙΚΗ ΚΑΡΤΑ */
+
+{
+  icon: "🎓",
+  question: "Ευχαριστώ για την παρακολούθηση!",
+  answer: "",
+  final: true
+}
+
+];
+
+
+let currentCard = 0;
+
+const flashcard = document.getElementById("flashcard");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+const cardIcon = document.getElementById("cardIcon");
+const flipButton = document.getElementById("flipButton");
+const memoryBox = document.getElementById("memoryBox");
+
+
+flashcard.addEventListener("click", function() {
+  if (cards[currentCard].final) return;
+  flashcard.classList.toggle("flipped");
+});
+
+
+function showCard() {
+
+  flashcard.classList.remove("flipped");
+
+  const current = cards[currentCard];
+
+  question.innerHTML = current.question;
+  answer.innerHTML = current.answer;
+  cardIcon.innerHTML = current.icon;
+
+  const number = currentCard + 1;
+
+  document.getElementById("frontNumber").innerHTML = "Κάρτα " + number + " / " + cards.length;
+  document.getElementById("backNumber").innerHTML = "Κάρτα " + number + " / " + cards.length;
+  document.getElementById("progressText").innerHTML = "Πρόοδος: " + number + " από " + cards.length;
+
+  const progress = (number / cards.length) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
+
+
+  /* ΚΑΝΟΝΙΚΕΣ ΚΑΡΤΕΣ */
+
+  if (!current.final) {
+
+    flashcard.classList.remove("final-card");
+
+    document.querySelector(".card-front").style.background = "white";
+    document.querySelector(".card-front").style.color = "#1f2937";
+    document.querySelector(".card-front").style.borderTop = "7px solid #2563eb";
+    document.querySelector(".card-front .card-number").style.color = "#64748b";
+
+    document.querySelector(".flip-hint").style.display = "block";
+    flipButton.style.display = "block";
+    memoryBox.style.display = "block";
+
+  }
+
+  /* ΤΕΛΙΚΗ ΚΑΡΤΑ */
+
+  else {
+
+    flashcard.classList.add("final-card");
+
+    document.querySelector(".card-front").style.background = "#172554";
+    document.querySelector(".card-front").style.color = "white";
+    document.querySelector(".card-front").style.borderTop = "7px solid #38bdf8";
+    document.querySelector(".card-front .card-number").style.color = "#bfdbfe";
+
+    document.querySelector(".flip-hint").style.display = "none";
+    flipButton.style.display = "none";
+    memoryBox.style.display = "none";
+
+    question.innerHTML = `
+      <div>
+        <div style="font-size:30px; margin-bottom:30px;">
+          Ευχαριστώ για την παρακολούθηση!
+        </div>
+
+        <div style="font-size:23px; font-weight:normal;">
+          Ερωτοκριτάκης Κώστας - Οικονομολόγος
+        </div>
+      </div>
+    `;
+
+  }
+
+}
+
+
+function nextCard() {
+  currentCard++;
+  if (currentCard >= cards.length) {
+    currentCard = 0;
+  }
+  showCard();
+}
+
+
+function previousCard() {
+  currentCard--;
+  if (currentCard < 0) {
+    currentCard = cards.length - 1;
+  }
+  showCard();
+}
+
+
+function flipCard(event) {
+  event.stopPropagation();
+  if (cards[currentCard].final) return;
+  flashcard.classList.toggle("flipped");
+}
+
+
+showCard();
+
+</script>
+
+</body>
+</html>

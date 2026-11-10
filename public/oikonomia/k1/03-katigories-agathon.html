@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Κατηγορίες Αγαθών - Πολιτική Οικονομία</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 850px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        color: #cbd5e1;
+        margin-bottom: 25px;
+        font-size: 17px;
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 8px;
+        background: #334155;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        width: 10%;
+        background: #38bdf8;
+        transition: width 0.3s ease;
+    }
+
+    .counter {
+        color: #cbd5e1;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        perspective: 1200px;
+        width: 100%;
+        height: 450px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        cursor: pointer;
+    }
+
+    .card.no-flip {
+        cursor: default;
+    }
+
+    .card.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 35px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        overflow-y: auto;
+    }
+
+    .front {
+        background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    }
+
+    .back {
+        background: linear-gradient(145deg, #0f766e, #115e59);
+        transform: rotateY(180deg);
+    }
+
+    .end-card-style {
+        background: linear-gradient(145deg, #0284c7, #0369a1) !important;
+    }
+
+    .label {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        font-size: 26px;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+
+    .answer {
+        font-size: 19px;
+        line-height: 1.55;
+        text-align: left;
+        width: 100%;
+    }
+
+    .answer-center {
+        text-align: center;
+    }
+
+    .hint {
+        position: absolute;
+        bottom: 18px;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button {
+        border: none;
+        border-radius: 12px;
+        padding: 13px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+    }
+
+    .prev {
+        background: #475569;
+        color: white;
+    }
+
+    .next {
+        background: #38bdf8;
+        color: #082f49;
+    }
+
+    .reset {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    .tip {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        .card-container {
+            height: 420px;
+        }
+
+        .question {
+            font-size: 21px;
+        }
+
+        .answer {
+            font-size: 16px;
+        }
+
+        .card-side {
+            padding: 20px;
+        }
+
+        button {
+            padding: 11px 17px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>🛒 Κατηγορίες Αγαθών</h1>
+
+    <div class="subtitle">
+        Flash Cards – Πολιτική Οικονομία
+    </div>
+
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="counter" id="counter">
+        Κάρτα 1 από 9
+    </div>
+
+    <div class="card-container">
+
+        <div class="card" id="card" onclick="flipCard()">
+
+            <!-- ΜΠΡΟΣΤΑ -->
+            <div class="card-side front" id="frontSide">
+
+                <div class="label" id="frontLabel">
+                    Ερώτηση
+                </div>
+
+                <div class="question" id="question">
+                    Φόρτωση...
+                </div>
+
+                <div class="hint" id="hint">
+                    👆 Κάνε κλικ για να δεις την απάντηση
+                </div>
+
+            </div>
+
+            <!-- ΠΙΣΩ -->
+            <div class="card-side back">
+
+                <div class="label" id="backLabel">
+                    Απάντηση
+                </div>
+
+                <div class="answer" id="answer">
+                    Φόρτωση...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button class="prev" onclick="previousCard(event)">
+            ← Προηγούμενη
+        </button>
+
+        <button class="reset" onclick="resetCard(event)">
+            ↻ Επανάληψη
+        </button>
+
+        <button class="next" onclick="nextCard(event)">
+            Επόμενη →
+        </button>
+
+    </div>
+
+    <div class="tip" id="tipMessage">
+        💡 Προσπάθησε να απαντήσεις πριν γυρίσεις την κάρτα.
+    </div>
+
+</div>
+
+<script>
+
+const cards = [
+    {
+        question: "Τι είναι τα ελεύθερα αγαθά και τι τα οικονομικά αγαθά;",
+        answer: "• <strong>Ελεύθερα αγαθά:</strong> Βρίσκονται ελεύθερα στη φύση (π.χ. φως, θερμότητα ήλιου) και <u>δεν</u> αποτελούν αντικείμενο μελέτης της Οικονομικής.<br><br>• <strong>Οικονομικά αγαθά (ή προϊόντα/εμπορεύματα):</strong> Είναι αποτέλεσμα της παραγωγικής προσπάθειας των ανθρώπων. Κύριο χαρακτηριστικό τους είναι ότι βρίσκονται σε <strong>περιορισμένες ποσότητες</strong> σε σχέση με τις ανάγκες που ικανοποιούν."
+    },
+    {
+        question: "(i) Ποια είναι η διάκριση σε Υλικά και Άυλα αγαθά (Υπηρεσίες);",
+        answer: "• <strong>Υλικά αγαθά:</strong> Έχουν υλική υπόσταση (π.χ. τρόφιμα, ρούχα).<br><br>• <strong>Άυλα αγαθά / Υπηρεσίες:</strong> Δεν έχουν υλική υπόσταση (π.χ. ένα μουσικό κομμάτι, μια διάλεξη). Περιλαμβάνουν επίσης καταστάσεις ή μορφές ενέργειας (π.χ. θερμότητα το χειμώνα, φως το βράδυ)."
+    },
+    {
+        question: "(ii) Ποια είναι η διάκριση σε Διαρκή και Καταναλωτά αγαθά;",
+        answer: "• <strong>Διαρκή αγαθά:</strong> Μπορούν να χρησιμοποιηθούν <u>πολλές φορές</u> για τον ίδιο σκοπό, χωρίς να μεταβληθεί η φυσική τους υπόσταση (π.χ. έπιπλα, ρούχα, αυτοκίνητα).<br><br>• <strong>Καταναλωτά αγαθά:</strong> Μπορούν να χρησιμοποιηθούν <u>μόνο μία φορά</u> για το σκοπό που έχουν παραχθεί (π.χ. τρόφιμα, καυσόξυλα, βενζίνη, τσιγάρα)."
+    },
+    {
+        question: "(iii) Τι είναι τα Κεφαλαιουχικά (επενδυτικά) και τι τα Καταναλωτικά αγαθά;",
+        answer: "• <strong>Κεφαλαιουχικά αγαθά:</strong> Χρησιμοποιούνται στην παραγωγική διαδικασία για την παραγωγή άλλων αγαθών (π.χ. τρακτέρ, αργαλειός, μηχανήματα, κτίρια εργοστασίων, δρόμοι, πλοία).<br><br>• <strong>Καταναλωτικά αγαθά:</strong> Χρησιμοποιούνται για την <u>άμεση ικανοποίηση</u> των αναγκών των ανθρώπων (π.χ. πορτοκάλια, γραβάτα, στερεοφωνικό)."
+    },
+    {
+        question: "Μπορεί ένα αγαθό να ανήκει σε περισσότερες από μία κατηγορίες; Δώστε παραδείγματα.",
+        answer: "<strong>Ναι, ασφαλώς!</strong><br>• <strong>Σοκολάτα:</strong> Υλικό, καταναλωτό και καταναλωτικό αγαθό.<br>• <strong>Ψυγείο:</strong> Υλικό, διαρκές και καταναλωτικό αγαθό.<br>• <strong>Πιεστήριο τυπογραφείου:</strong> Υλικό, διαρκές και κεφαλαιουχικό αγαθό."
+    },
+    {
+        question: "Πώς μπορεί το ΙΔΙΟ αγαθό να αλλάζει κατηγορία ανάλογα με το σκοπό της χρήσης του;",
+        answer: "• <strong>Βιβλίο:</strong> Στο σπίτι μας είναι <u>καταναλωτικό</u> αγαθό. Στη βιβλιοθήκη πανεπιστημίου είναι <u>κεφαλαιουχικό</u> αγαθό.<br><br>• <strong>Αυτοκίνητο:</strong> Ιδιωτικό οικογένειας είναι <u>καταναλωτικό</u> αγαθό. Αν ανήκει σε εταιρεία είναι <u>κεφαλαιουχικό</u> αγαθό."
+    },
+    {
+        question: "🧠 SOS Σύνοψη: Τα 3 βασικά κριτήρια ταξινόμησης αγαθών",
+        answer: "1️⃣ <strong>Μορφή:</strong> Υλικά vs Άυλα (Υπηρεσίες)<br>2️⃣ <strong>Συχνότητα Χρήσης:</strong> Διαρκή vs Καταναλωτά<br>3️⃣ <strong>Σκοπός Χρήσης:</strong> Κεφαλαιουχικά vs Καταναλωτικά"
+    },
+    {
+        isEndCard: true,
+        question: "🎉 Ευχαριστώ πολύ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας - <strong>Οικονομολόγος</strong></span>",
+        answer: "🎉 Ευχαριστώ πολύ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας - <strong>Οικονομολόγος</strong></span>"
+    }
+];
+
+let currentCard = 0;
+
+const card = document.getElementById("card");
+const frontSide = document.getElementById("frontSide");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const frontLabel = document.getElementById("frontLabel");
+const hint = document.getElementById("hint");
+const tipMessage = document.getElementById("tipMessage");
+
+function updateCard() {
+    card.classList.remove("flipped");
+
+    const currentData = cards[currentCard];
+
+    question.innerHTML = currentData.question;
+    answer.innerHTML = currentData.answer;
+
+    if (currentData.isEndCard) {
+        answer.classList.add("answer-center");
+    } else {
+        answer.classList.remove("answer-center");
+    }
+
+    counter.innerHTML = "Κάρτα " + (currentCard + 1) + " από " + cards.length;
+
+    const percentage = ((currentCard + 1) / cards.length) * 100;
+    progress.style.width = percentage + "%";
+
+    if (currentData.isEndCard) {
+        frontLabel.style.display = "none";
+        hint.style.display = "none";
+        tipMessage.style.visibility = "hidden";
+        card.classList.add("no-flip");
+        frontSide.classList.add("end-card-style");
+    } else {
+        frontLabel.style.display = "block";
+        hint.style.display = "block";
+        tipMessage.style.visibility = "visible";
+        card.classList.remove("no-flip");
+        frontSide.classList.remove("end-card-style");
+    }
+}
+
+function flipCard() {
+    if (!cards[currentCard].isEndCard) {
+        card.classList.toggle("flipped");
+    }
+}
+
+function nextCard(event) {
+    if (event) event.stopPropagation();
+    currentCard++;
+    if (currentCard >= cards.length) {
+        currentCard = 0;
+    }
+    updateCard();
+}
+
+function previousCard(event) {
+    if (event) event.stopPropagation();
+    currentCard--;
+    if (currentCard < 0) {
+        currentCard = cards.length - 1;
+    }
+    updateCard();
+}
+
+function resetCard(event) {
+    if (event) event.stopPropagation();
+    currentCard = 0;
+    updateCard();
+}
+
+updateCard();
+
+</script>
+
+</body>
+</html>

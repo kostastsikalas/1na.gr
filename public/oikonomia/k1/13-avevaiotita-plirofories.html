@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Αβεβαιότητα & Πληροφορίες - Πολιτική Οικονομία</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 850px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        color: #cbd5e1;
+        margin-bottom: 25px;
+        font-size: 17px;
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 8px;
+        background: #334155;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        width: 10%;
+        background: #38bdf8;
+        transition: width 0.3s ease;
+    }
+
+    .counter {
+        color: #cbd5e1;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        perspective: 1200px;
+        width: 100%;
+        height: 450px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        cursor: pointer;
+    }
+
+    .card.no-flip {
+        cursor: default;
+    }
+
+    .card.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 35px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        overflow-y: auto;
+    }
+
+    .front {
+        background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    }
+
+    .back {
+        background: linear-gradient(145deg, #0f766e, #115e59);
+        transform: rotateY(180deg);
+    }
+
+    .end-card-style {
+        background: linear-gradient(145deg, #0284c7, #0369a1) !important;
+    }
+
+    .label {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        font-size: 26px;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+
+    .answer {
+        font-size: 19px;
+        line-height: 1.55;
+        text-align: left;
+        width: 100%;
+    }
+
+    .answer-center {
+        text-align: center;
+    }
+
+    .hint {
+        position: absolute;
+        bottom: 18px;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button {
+        border: none;
+        border-radius: 12px;
+        padding: 13px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+    }
+
+    .prev {
+        background: #475569;
+        color: white;
+    }
+
+    .next {
+        background: #38bdf8;
+        color: #082f49;
+    }
+
+    .reset {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    .tip {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        .card-container {
+            height: 420px;
+        }
+
+        .question {
+            font-size: 21px;
+        }
+
+        .answer {
+            font-size: 16px;
+        }
+
+        .card-side {
+            padding: 20px;
+        }
+
+        button {
+            padding: 11px 17px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>🎲 Αβεβαιότητα & Πληροφορίες</h1>
+
+    <div class="subtitle">
+        Flash Cards – Επιμέλεια: Ερωτοκριτάκης Κώστας (Οικονομολόγος)
+    </div>
+
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="counter" id="counter">
+        Κάρτα 1 από 7
+    </div>
+
+    <div class="card-container">
+
+        <div class="card" id="card" onclick="flipCard()">
+
+            <!-- ΜΠΡΟΣΤΑ -->
+            <div class="card-side front" id="frontSide">
+
+                <div class="label" id="frontLabel">
+                    Ερώτηση
+                </div>
+
+                <div class="question" id="question">
+                    Φόρτωση...
+                </div>
+
+                <div class="hint" id="hint">
+                    👆 Κάνε κλικ για να δεις την απάντηση
+                </div>
+
+            </div>
+
+            <!-- ΠΙΣΩ -->
+            <div class="card-side back">
+
+                <div class="label" id="backLabel">
+                    Απάντηση
+                </div>
+
+                <div class="answer" id="answer">
+                    Φόρτωση...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button class="prev" onclick="previousCard(event)">
+            ← Προηγούμενη
+        </button>
+
+        <button class="reset" onclick="resetCard(event)">
+            ↻ Επανάληψη
+        </button>
+
+        <button class="next" onclick="nextCard(event)">
+            Επόμενη →
+        </button>
+
+    </div>
+
+    <div class="tip" id="tipMessage">
+        💡 Προσπάθησε να απαντήσεις πριν γυρίσεις την κάρτα.
+    </div>
+
+</div>
+
+<script>
+
+const cards = [
+    {
+        question: "Πώς επηρεάζει η αβεβαιότητα την οικονομική ζωή των ανθρώπων;",
+        answer: "Υπάρχει ένα <strong>σημαντικό στοιχείο αβεβαιότητας</strong> σχετικά με τα αποτελέσματα των ενεργειών όλων των οικονομούντων ατόμων, με αποτέλεσμα η λήψη των αποφάσεών τους να μη βασίζεται στη βεβαιότητα του αποτελέσματος, αλλά στις <strong>προσδοκίες</strong> που διαμορφώνουν γι' αυτό."
+    },
+    {
+        question: "Δώστε παραδείγματα αβεβαιότητας για τον αγρότη, τον εργαζόμενο και τον επιχειρηματία.",
+        answer: "• <strong>Αγρότης:</strong> Δεκτικός σε καιρικές συνθήκες, ζιζάνια κ.ά.<br><br>• <strong>Εργαζόμενος:</strong> Αβεβαιότητα για συνέχιση απασχόλησης, απόλυση ή εργατικό ατύχημα.<br><br>• <strong>Επιχειρηματίας:</strong> Αβεβαιότητα για το αν η δραστηριότητά του θα αποδώσει κέρδη ή ζημίες."
+    },
+    {
+        question: "Ποιος οικονομικός κλάδος αναπτύχθηκε λόγω της αβεβαιότητας στην οικονομική ζωή;",
+        answer: "Ο <strong>κλάδος των ασφαλίσεων</strong>, ο οποίος στηρίζεται στην προσπάθεια των ατόμων να αναπτύξουν μεθόδους για την ολική ή μερική εξασφάλισή τους από τους κινδύνους της αβεβαιότητας."
+    },
+    {
+        question: "Ποια βασική υπόθεση γίνεται στην οικονομική ανάλυση σχετικά με τις πληροφορίες;",
+        answer: "Γίνεται η υπόθεση ότι τα οικονομούντα άτομα (νοικοκυριά και επιχειρήσεις) έχουν <strong>πλήρη γνώση (πληροφορία)</strong> των δεδομένων που επικρατούν στην αγορά."
+    },
+    {
+        question: "Τι υποθέτουμε ότι γνωρίζουν οι εργαζόμενοι και οι καταναλωτές όσον αφορά τις πληροφορίες;",
+        answer: "• <strong>Εργαζόμενοι:</strong> Γνωρίζουν τους μισθούς που προσφέρουν όλοι οι εργοδότες καθώς και τις διαθέσιμες θέσεις εργασίας.<br><br>• <strong>Καταναλωτές:</strong> Γνωρίζουν τις τιμές όλων των προϊόντων που προσφέρονται στην αγορά."
+    },
+    {
+        question: "Τι υποθέτουμε ότι γνωρίζουν οι επιχειρηματίες σχετικά με τις πληροφορίες στην αγορά;",
+        answer: "Υποθέτουμε ότι οι επιχειρηματίες γνωρίζουν τις <strong>τιμές των παραγωγικών συντελεστών</strong> καθώς και τη συνολική <strong>κατάσταση των αγορών</strong>."
+    },
+    {
+        isEndCard: true,
+        question: "🎉 Ευχαριστώ πολύ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας - <strong>Οικονομολόγος</strong></span>",
+        answer: "🎉 Ευχαριστώ πολύ για την παρακολούθηση!<br><br><span style='font-size:22px; font-weight:normal;'>Ερωτοκριτάκης Κώστας - <strong>Οικονομολόγος</strong></span>"
+    }
+];
+
+let currentCard = 0;
+
+const card = document.getElementById("card");
+const frontSide = document.getElementById("frontSide");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const frontLabel = document.getElementById("frontLabel");
+const hint = document.getElementById("hint");
+const tipMessage = document.getElementById("tipMessage");
+
+function updateCard() {
+    card.classList.remove("flipped");
+
+    const currentData = cards[currentCard];
+
+    question.innerHTML = currentData.question;
+    answer.innerHTML = currentData.answer;
+
+    if (currentData.isEndCard) {
+        answer.classList.add("answer-center");
+    } else {
+        answer.classList.remove("answer-center");
+    }
+
+    counter.innerHTML = "Κάρτα " + (currentCard + 1) + " από " + cards.length;
+
+    const percentage = ((currentCard + 1) / cards.length) * 100;
+    progress.style.width = percentage + "%";
+
+    if (currentData.isEndCard) {
+        frontLabel.style.display = "none";
+        hint.style.display = "none";
+        tipMessage.style.visibility = "hidden";
+        card.classList.add("no-flip");
+        frontSide.classList.add("end-card-style");
+    } else {
+        frontLabel.style.display = "block";
+        hint.style.display = "block";
+        tipMessage.style.visibility = "visible";
+        card.classList.remove("no-flip");
+        frontSide.classList.remove("end-card-style");
+    }
+}
+
+function flipCard() {
+    if (!cards[currentCard].isEndCard) {
+        card.classList.toggle("flipped");
+    }
+}
+
+function nextCard(event) {
+    if (event) event.stopPropagation();
+    currentCard++;
+    if (currentCard >= cards.length) {
+        currentCard = 0;
+    }
+    updateCard();
+}
+
+function previousCard(event) {
+    if (event) event.stopPropagation();
+    currentCard--;
+    if (currentCard < 0) {
+        currentCard = cards.length - 1;
+    }
+    updateCard();
+}
+
+function resetCard(event) {
+    if (event) event.stopPropagation();
+    currentCard = 0;
+    updateCard();
+}
+
+updateCard();
+
+</script>
+
+</body>
+</html>
