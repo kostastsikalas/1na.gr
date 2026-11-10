@@ -49,3 +49,4 @@ __pycache__/
 # Public PDFs must ship with the build (served from /public)
 !public/themata/**/*.pdf
 !public/epitixontes/**/*.pdf
+!public/oikonomia/*.pdf
