@@ -21,6 +21,7 @@ import {
   BarChart3,
   Sparkles,
   Laptop,
+  Sigma,
 } from "lucide-react";
 
 /* ─── Animation ─── */
@@ -154,6 +155,38 @@ const mockExams: MockExam[] = [
     description: "Reading Comprehension, Grammar, Vocabulary, Writing.",
     topics: ["Reading", "Grammar", "Vocabulary", "Writing"],
     downloadUrl: "#",
+  },
+  {
+    id: "math-interactive-quiz",
+    subject: "Μαθηματικά Προσανατολισμού — Διαδραστικό Quiz",
+    icon: Sigma,
+    color: "text-blue-600",
+    bg: "bg-blue-50",
+    field: "Θετικών Σπουδών",
+    duration: "Διαδραστικό",
+    difficulty: "Μέτριο",
+    description:
+      "Διαδραστικό quiz επανάληψης για τη Γ΄ Λυκείου με ερωτήσεις Θεωρίας, Σωστό/Λάθος, Πολλαπλής Επιλογής και Αντιστοίχισης.",
+    topics: ["Όριο - Συνέχεια", "Διαφορικός Λογισμός", "Ολοκληρωτικός Λογισμός"],
+    downloadUrl: "/mathimatika",
+    isInteractive: true,
+    actionText: "Έναρξη Quiz",
+  },
+  {
+    id: "econ-interactive-lessons",
+    subject: "Οικονομία (ΑΟΘ) — Διαδραστικά Μαθήματα",
+    icon: TrendingUp,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+    field: "Σπουδών Οικονομίας & Πληροφορικής",
+    duration: "Διαδραστικό",
+    difficulty: "Βασικό",
+    description:
+      "31 διαδραστικά μαθήματα με κάρτες θεωρίας και ερωτήσεις αυτοαξιολόγησης για τα Κεφάλαια 1–3, μαζί με τα τυπολόγια. Επιμέλεια: Ερωτοκριτάκης Κώστας — Οικονομολόγος.",
+    topics: ["Βασικά Προβλήματα", "Ζήτηση & Ελαστικότητα", "Παραγωγή & Κόστος", "Τυπολόγια"],
+    downloadUrl: "/oikonomia",
+    isInteractive: true,
+    actionText: "Δες τα Μαθήματα",
   },
   {
     id: "econ-interactive-1",
