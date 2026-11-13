@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="el" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μαθηματικά Γ' Λυκείου - Interactive Quiz</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            purple: '#a855f7',
+                            pink: '#ec4899',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax for rendering TeX -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady();
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-attachment: fixed;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(56, 189, 248, 0.6);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.4);
+        }
+
+        .glow-success {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.5);
+        }
+
+        .glow-error {
+            box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.5);
+        }
+
+        /* Keyframes for streak animation */
+        @keyframes pulse-flame {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        .animate-flame {
+            animation: pulse-flame 0.8s infinite ease-in-out;
+        }
+
+        .math-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Option cards animation */
+        .option-btn {
+            transition: all 0.2s ease-in-out;
+        }
+        .option-btn:hover {
+            transform: translateY(-2px);
+        }
+        .option-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="w-full border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="app.showScreen('welcome')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-purple flex items-center justify-center text-white shadow-lg shadow-brand-500/20 font-bold text-xl">
+                    <i class="fa-solid fa-square-root-variable"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight bg-gradient-to-r from-white via-slate-200 to-brand-400 bg-clip-text text-transparent">
+                        MathMaster <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-400 font-normal border border-brand-500/30">Γ' Λυκείου</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Μαθηματικά Προσανατολισμού</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <!-- Sound Toggle -->
+                <button id="soundToggleBtn" onclick="app.toggleSound()" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700/50 text-slate-300 hover:text-white transition" title="Ήχος">
+                    <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
+                <!-- Theme Toggle -->
+                <button id="themeToggleBtn" onclick="app.toggleTheme()" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700/50 text-slate-300 hover:text-white transition" title="Θέμα Εμφάνισης">
+                    <i class="fa-solid fa-moon text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-5xl w-full mx-auto p-4 md:p-6 flex flex-col justify-center">
+
+        <!-- 1. WELCOME / SETUP SCREEN -->
+        <section id="welcomeScreen" class="space-y-8 py-4 animate-fade-in">
+            <div class="text-center space-y-3 max-w-2xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 text-sm font-medium mb-2">
+                    <i class="fa-solid fa-sparkles text-xs"></i> Διαδραστική Πλατφόρμα Εξάσκησης
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                    Προετοιμασία για τις <span class="bg-gradient-to-r from-brand-400 via-accent-purple to-accent-pink bg-clip-text text-transparent">Πανελλαδικές</span>
+                </h2>
+                <p class="text-slate-400 text-sm md:text-base">
+                    Επαναληπτικές ερωτήσεις Θεωρίας, Σωστό/Λάθος, Πολλαπλής Επιλογής & Αντιστοίχισης βασισμένες στη διδακτέα ύλη.
+                </p>
+            </div>
+
+            <!-- Setup Form Card -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 max-w-2xl mx-auto space-y-6 shadow-2xl">
+                <!-- Chapter Selection -->
+                <div class="space-y-3">
+                    <label class="block text-sm font-semibold text-slate-300">
+                        <i class="fa-solid fa-layer-group text-brand-400 mr-2"></i>Επιλογή Ενότητας
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="chapterOptions">
+                        <button type="button" data-value="all" class="chapter-btn p-3.5 rounded-xl border text-left transition flex items-center justify-between border-brand-500 bg-brand-500/10 text-white font-medium">
+                            <span><i class="fa-solid fa-globe mr-2 text-brand-400"></i>Όλα τα Κεφάλαια</span>
+                            <i class="fa-solid fa-circle-check text-brand-400 check-icon"></i>
+                        </button>
+                        <button type="button" data-value="limits" class="chapter-btn p-3.5 rounded-xl border border-slate-700 bg-slate-800/40 text-slate-300 hover:border-slate-600 text-left transition flex items-center justify-between font-medium">
+                            <span><i class="fa-solid fa-infinity mr-2 text-accent-purple"></i>1. Όριο - Συνέχεια</span>
+                            <i class="fa-solid fa-circle-check text-brand-400 check-icon hidden"></i>
+                        </button>
+                        <button type="button" data-value="derivatives" class="chapter-btn p-3.5 rounded-xl border border-slate-700 bg-slate-800/40 text-slate-300 hover:border-slate-600 text-left transition flex items-center justify-between font-medium">
+                            <span><i class="fa-solid fa-chart-line mr-2 text-accent-pink"></i>2. Διαφορικός Λογισμός</span>
+                            <i class="fa-solid fa-circle-check text-brand-400 check-icon hidden"></i>
+                        </button>
+                        <button type="button" data-value="integrals" class="chapter-btn p-3.5 rounded-xl border border-slate-700 bg-slate-800/40 text-slate-300 hover:border-slate-600 text-left transition flex items-center justify-between font-medium">
+                            <span><i class="fa-solid fa-vector-square mr-2 text-accent-emerald"></i>3. Ολοκληρωτικός</span>
+                            <i class="fa-solid fa-circle-check text-brand-400 check-icon hidden"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Questions Count -->
+                    <div class="space-y-3">
+                        <label class="block text-sm font-semibold text-slate-300">
+                            <i class="fa-solid fa-list-ol text-brand-400 mr-2"></i>Αριθμός Ερωτήσεων
+                        </label>
+                        <div class="flex gap-2">
+                            <button type="button" data-count="10" class="count-btn flex-1 py-2.5 rounded-xl border border-slate-700 bg-slate-800/40 text-slate-300 hover:border-slate-600 font-semibold text-sm transition">10</button>
+                            <button type="button" data-count="20" class="count-btn flex-1 py-2.5 rounded-xl border border-brand-500 bg-brand-500/10 text-white font-semibold text-sm transition">20</button>
+                            <button type="button" data-count="all" class="count-btn flex-1 py-2.5 rounded-xl border border-slate-700 bg-slate-800/40 text-slate-300 hover:border-slate-600 font-semibold text-sm transition">Όλες</button>
+                        </div>
+                    </div>
+
+                    <!-- Mode Selection -->
+                    <div class="space-y-3">
+                        <label class="block text-sm font-semibold text-slate-300">
+                            <i class="fa-solid fa-gamepad text-brand-400 mr-2"></i>Τρόπος Παιχνιδιού
+                        </label>
+                        <div class="flex gap-2">
+                            <button type="button" data-mode="quiz" class="mode-btn flex-1 py-2.5 rounded-xl border border-brand-500 bg-brand-500/10 text-white font-semibold text-sm transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-stopwatch text-xs"></i> Quiz Mode
+                            </button>
+                            <button type="button" data-mode="practice" class="mode-btn flex-1 py-2.5 rounded-xl border border-slate-700 bg-slate-800/40 text-slate-300 hover:border-slate-600 font-semibold text-sm transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-graduation-cap text-xs"></i> Practice
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timer Toggle Option (Only for Quiz Mode) -->
+                <div id="timerToggleContainer" class="flex items-center justify-between pt-2 border-t border-slate-800">
+                    <span class="text-sm font-medium text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-amber-400"></i> Χρονόμετρο ερώτησης (45s)
+                    </span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="timerToggle" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-500"></div>
+                    </label>
+                </div>
+
+                <!-- Start Button -->
+                <button type="button" onclick="app.startQuiz()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-500 to-accent-purple hover:from-brand-600 hover:to-accent-purple/90 text-white font-bold text-lg shadow-lg shadow-brand-500/25 transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-play text-sm"></i> Έναρξη Quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. QUIZ INTERACTIVE SCREEN -->
+        <section id="quizScreen" class="hidden space-y-6 py-2">
+            <!-- Top Status Bar -->
+            <div class="glass-card rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4 shadow-lg">
+                <!-- Progress & Q-Number -->
+                <div class="flex items-center space-x-3 min-w-[140px]">
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-brand-400" id="qProgressText">
+                        01 / 20
+                    </span>
+                    <span class="text-xs font-medium text-slate-400" id="chapterBadge">
+                        Όριο - Συνέχεια
+                    </span>
+                </div>
+
+                <!-- Live Score & Streak -->
+                <div class="flex items-center space-x-6">
+                    <!-- Streak Flame -->
+                    <div class="flex items-center space-x-1.5 text-amber-400 font-bold text-sm bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                        <i class="fa-solid fa-fire text-amber-500 animate-flame"></i>
+                        <span>Streak: <span id="streakCount">0</span></span>
+                    </div>
+                    <!-- Score -->
+                    <div class="flex items-center space-x-1.5 text-emerald-400 font-bold text-sm bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                        <i class="fa-solid fa-trophy text-emerald-500"></i>
+                        <span><span id="scoreCount">0</span> Pts</span>
+                    </div>
+                </div>
+
+                <!-- Timer Indicator -->
+                <div id="timerBox" class="flex items-center space-x-2 text-slate-300 text-sm font-semibold min-w-[70px] justify-end">
+                    <i class="fa-solid fa-stopwatch text-brand-400"></i>
+                    <span id="timerText">45s</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-800/80 rounded-full h-2 overflow-hidden border border-slate-700/50">
+                <div id="progressBar" class="bg-gradient-to-r from-brand-500 to-accent-purple h-2 rounded-full transition-all duration-300 w-0"></div>
+            </div>
+
+            <!-- Question Box Container -->
+            <div id="questionCard" class="glass-card rounded-2xl p-6 md:p-8 space-y-6 shadow-2xl relative transition-all duration-300">
+                
+                <!-- Question Type Tag -->
+                <div class="flex justify-between items-center border-b border-slate-800/80 pb-3">
+                    <span id="questionTypeBadge" class="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">
+                        Σωστο / Λαθος
+                    </span>
+                    <span class="text-xs text-slate-500" id="questionHintTag">
+                        Επιλέξτε την ορθή απάντηση
+                    </span>
+                </div>
+
+                <!-- Question Text -->
+                <div class="py-2">
+                    <div id="questionText" class="text-lg md:text-xl font-medium text-slate-100 math-content text-justify leading-relaxed">
+                        <!-- LaTeX question loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Dynamic Options Area -->
+                <div id="optionsContainer" class="space-y-3 pt-2">
+                    <!-- Rendered by JS according to question type -->
+                </div>
+
+                <!-- Practice Mode Explanation Card (Hidden by default) -->
+                <div id="explanationCard" class="hidden rounded-xl p-4 bg-slate-900/90 border border-slate-700 space-y-2 animate-fade-in">
+                    <div class="flex items-center gap-2 font-semibold text-sm" id="explanationHeader">
+                        <i class="fa-solid fa-lightbulb text-amber-400"></i>
+                        <span>Επεξήγηση / Αιτιολόγηση</span>
+                    </div>
+                    <p id="explanationText" class="text-sm text-slate-300 math-content">
+                        <!-- Explanation content -->
+                    </p>
+                </div>
+
+                <!-- Next Question Action Button -->
+                <div class="flex justify-end pt-2">
+                    <button id="nextBtn" onclick="app.nextQuestion()" class="hidden px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm shadow-lg shadow-brand-500/20 transition flex items-center gap-2">
+                        <span>Επόμενη Ερώτηση</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. RESULTS / SUMMARY SCREEN -->
+        <section id="resultsScreen" class="hidden space-y-8 py-4 animate-fade-in">
+            <!-- Results Header Card -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 text-center space-y-6 shadow-2xl max-w-2xl mx-auto">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-500 to-accent-purple mx-auto flex items-center justify-center text-3xl text-white shadow-xl shadow-brand-500/30">
+                    <i class="fa-solid fa-award" id="resultIcon"></i>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-extrabold text-white" id="resultTitle">Εξαιρετική Προσπάθεια!</h2>
+                    <p class="text-slate-400 text-sm" id="resultSubtitle">Ολοκλήρωσες το Quiz Μαθηματικών</p>
+                </div>
+
+                <!-- Score Grid Statistics -->
+                <div class="grid grid-cols-3 gap-3 pt-2">
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/60">
+                        <div class="text-xs text-slate-400 font-medium mb-1">Ποσοστό</div>
+                        <div class="text-2xl font-black text-brand-400" id="resultPercent">0%</div>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/60">
+                        <div class="text-xs text-slate-400 font-medium mb-1">Σωστά</div>
+                        <div class="text-2xl font-black text-emerald-400" id="resultCorrect">0/0</div>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/60">
+                        <div class="text-xs text-slate-400 font-medium mb-1">Max Streak</div>
+                        <div class="text-2xl font-black text-amber-400" id="resultMaxStreak">🔥 0</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                    <button onclick="app.restartQuiz()" class="flex-1 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm transition shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i> Νέο Quiz
+                    </button>
+                    <button id="retryErrorsBtn" onclick="app.retryErrors()" class="hidden flex-1 py-3.5 rounded-xl bg-accent-purple/20 hover:bg-accent-purple/30 border border-accent-purple/50 text-accent-purple font-bold text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Επανάληψη Λαθών
+                    </button>
+                </div>
+            </div>
+
+            <!-- Detailed Answers Review -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 space-y-4 shadow-xl">
+                <h3 class="text-lg font-bold text-slate-200 border-b border-slate-800 pb-3 flex items-center justify-between">
+                    <span><i class="fa-solid fa-list-check text-brand-400 mr-2"></i>Αναλυτική Επισκόπηση Απαντήσεων</span>
+                </h3>
+                
+                <div id="reviewList" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                    <!-- Dynamic review items generated here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-800/60 py-4 text-center text-xs text-slate-500 mt-auto">
+        <p>MathMaster Γ' Λυκείου • Προετοιμασία Πανελλαδικών Εξετάσεων</p>
+    </footer>
+
+    <!-- AUDIO SYNTHESIZER (Web Audio API for UI SFX) -->
+    <script>
+        class SoundFX {
+            constructor() {
+                this.ctx = null;
+                this.enabled = true;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+
+            playCorrect() {
+                if (!this.enabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now); // C5
+                osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.1); // E5
+                osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.2); // G5
+
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.35);
+            }
+
+            playWrong() {
+                if (!this.enabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(220, now); // A3
+                osc.frequency.exponentialRampToValueAtTime(130.81, now + 0.2); // C3
+
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            }
+
+            playClick() {
+                if (!this.enabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(400, now);
+                gain.gain.setValueAtTime(0.05, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            }
+        }
+        const sfx = new SoundFX();
+    </script>
+
+    <!-- QUESTION BANK & APP LOGIC -->
+    <script>
+        // --- DATA BANK (Derived directly from LaTeX Document) ---
+        const questionBank = [
+            // ================= 1. ΟΡΙΟ - ΣΥΝΕΧΕΙΑ =================
+            {
+                id: 1,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Κάθε συνάρτηση, που είναι $1-1$ στο πεδίο ορισμού της, είναι γνησίως μονότονη.",
+                correct: "Λάθος",
+                explanation: "Υπάρχουν συναρτήσεις που είναι $1-1$ χωρίς να είναι γνησίως μονότονες (π.χ. κλαδωτές συναρτήσεις)."
+            },
+            {
+                id: 2,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Υπάρχουν συναρτήσεις που είναι $1-1$, αλλά δεν είναι γνησίως μονότονες.",
+                correct: "Σωστό",
+                explanation: "Ισχύει. Η ιδότητα $1-1$ δεν συνεπάγεται υποχρεωτικά μονοτονία στο πεδίο ορισμού."
+            },
+            {
+                id: 3,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν μια συνάρτηση $f$ είναι γνησίως μονότονη σε ένα διάστημα $\\Delta$, τότε είναι και $1-1$ στο διάστημα αυτό.",
+                correct: "Σωστό",
+                explanation: "Κάθε γνησίως μονότονη συνάρτηση σε διάστημα είναι πάντοτε $1-1$."
+            },
+            {
+                id: 4,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν η συνάρτηση $f$ είναι ορισμένη στο $[\\alpha,\\beta]$ και συνεχής στο $(\\alpha,\\beta]$, τότε η $f$ παίρνει πάντοτε στο $[\\alpha,\\beta]$ μια μέγιστη τιμή.",
+                correct: "Λάθος",
+                explanation: "Απαιτείται η συνάρτηση να είναι συνεχής σε ΚΛΕΙΣΤΟ διάστημα $[\\alpha,\\beta]$ (Θεώρημα Μέγιστης & Ελάχιστης Τιμής)."
+            },
+            {
+                id: 5,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Μία συνάρτηση $f$ με πεδίο ορισμού $A$ παρουσιάζει στο $x_0 \\in A$ ολικό μέγιστο το $f(x_0)$, όταν $f(x) \\le f(x_0)$ για κάθε $x \\in A$.",
+                correct: "Σωστό",
+                explanation: "Ορισμός ολικού μεγίστου συνάρτησης."
+            },
+            {
+                id: 6,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν υπάρχει το όριο της συνάρτησης $f$ στο $x_0$ και $\\lim_{x \\rightarrow x_0}|f(x)|=0$, τότε $\\lim_{x \\rightarrow x_0}f(x)=0$.",
+                correct: "Σωστό",
+                explanation: "Ισχύει ότι $\\lim_{x \\rightarrow x_0}f(x)=0 \\iff \\lim_{x \\rightarrow x_0}|f(x)|=0$."
+            },
+            {
+                id: 7,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν υπάρχει το $\\lim_{x \\rightarrow x_0}f(x) > 0$, τότε $f(x) > 0$ κοντά στο $x_0$.",
+                correct: "Σωστό",
+                explanation: "Αν το όριο είναι θετικό, η συνάρτηση διατηρεί το ίδιο πρόσημο κοντά στο $x_0$."
+            },
+            {
+                id: 8,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν $f, g$ είναι συναρτήσεις με πεδίο ορισμού το $\\mathbb{R}$ και ορίζονται οι $f \\circ g$ και $g \\circ f$, τότε αυτές είναι υποχρεωτικά ίσες.",
+                correct: "Λάθος",
+                explanation: "Γενικά η σύνθεση συναρτήσεων δεν είναι αντιμεταθετική ($f \\circ g \\neq g \\circ f$)."
+            },
+            {
+                id: 9,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Οι γραφικές παραστάσεις $C$ και $C'$ των $f$ και $f^{-1}$ είναι συμμετρικές ως προς την ευθεία $y=x$.",
+                correct: "Σωστό",
+                explanation: "Βασική ιδιότητα των αντιστρόφων συναρτήσεων."
+            },
+            {
+                id: 10,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν η $f$ είναι συνεχής στο $[\\alpha,\\beta]$ με $f(\\alpha)<0$ και υπάρχει $\\xi \\in (\\alpha,\\beta)$ ώστε $f(\\xi)=0$, τότε κατ' ανάγκη $f(\\beta)>0$.",
+                correct: "Λάθος",
+                explanation: "Το $f(\\beta)$ μπορεί να είναι αρνητικό ή μηδέν (π.χ. η συνάρτηση να αλλάζει πρόσημο περισσότερες φορές)."
+            },
+            {
+                id: 11,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν η συνάρτηση $f$ είναι συνεχής σε ένα διάστημα $\\Delta$ και δε μηδενίζεται σε αυτό, τότε διατηρεί σταθερό πρόσημο στο $\\Delta$.",
+                correct: "Σωστό",
+                explanation: "Θεώρημα διατήρησης προσήμου συνεχούς συνάρτησης."
+            },
+            {
+                id: 12,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Ισχύει ότι $\\lim_{x \\rightarrow +\\infty}\\frac{\\sin x}{x} = 1$.",
+                correct: "Λάθος",
+                explanation: "Ισχύει $\\lim_{x \\rightarrow +\\infty}\\frac{\\sin x}{x} = 0$ (με κριτήριο παρεμβολής). Το 1 ισχύει για $x \\to 0$."
+            },
+            {
+                id: 13,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Αν $0 < \\alpha < 1$, τότε $\\lim_{x \\rightarrow +\\infty}\\alpha^x = +\\infty$.",
+                correct: "Λάθος",
+                explanation: "Για $0 < \\alpha < 1$ ισχύει $\\lim_{x \\rightarrow +\\infty}\\alpha^x = 0$."
+            },
+            {
+                id: 14,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "tf",
+                text: "Η εικόνα $f(\\Delta)$ ενός ανοιχτού διαστήματος $\\Delta$ μέσω μιας συνεχούς και μη σταθερής συνάρτησης είναι πάντα ανοιχτό διάστημα.",
+                correct: "Λάθος",
+                explanation: "Μπορεί να είναι κλειστό ή ημιανοιχτό διάστημα (π.χ. $f(x)=x^2$ στο $(-1,1)$ δίνει σύνολο τιμών $[0,1)$)."
+            },
+            {
+                id: 15,
+                chapter: "limits",
+                chapterTitle: "Όριο - Συνέχεια",
+                type: "mc",
+                text: "Για κάθε συνεχή συνάρτηση $f:[\\alpha,\\beta] \\to \\mathbb{R}$, αν ισχύει $f(\\alpha)\\cdot f(\\beta) > 0$, τότε:",
+                options: [
+                    "Η εξίσωση $f(x)=0$ δεν έχει λύση στο $(\\alpha,\\beta)$.",
+                    "Η εξίσωση $f(x)=0$ έχει ακριβώς μία λύση στο $(\\alpha,\\beta)$.",
+                    "Η εξίσωση $f(x)=0$ έχει τουλάχιστον δύο λύσεις στο $(\\alpha,\\beta)$.",
+                    "Δεν μπορούμε να έχουμε ασφαλές συμπέρασμα για το πλήθος των λύσεων."
+                ],
+                correct: "Δεν μπορούμε να έχουμε ασφαλές συμπέρασμα για το πλήθος των λύσεων.",
+                explanation: "Το $f(\\alpha)f(\\beta)>0$ δεν εγγυάται ούτε την ύπαρξη ούτε την απουσία ριζών στο $(\\alpha,\\beta)$."
+            },
+
+            // ================= 2. ΔΙΑΦΟΡΙΚΟΣ ΛΟΓΙΣΜΟΣ =================
+            {
+                id: 16,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Αν η $f$ είναι παραγωγίσιμη στο $x_0$ και $f'(x_0)=0$, τότε η $f$ παρουσιάζει υποχρεωτικά τοπικό ακρότατο στο $x_0$.",
+                correct: "Λάθος",
+                explanation: "Αντίπαράδειγμα: Η $f(x)=x^3$ στο $x_0=0$ έχει $f'(0)=0$, αλλά δεν παρουσιάζει ακρότατο."
+            },
+            {
+                id: 17,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Αν μια συνάρτηση $f$ είναι συνεχής στο $x_0$, τότε είναι υποχρεωτικά και παραγωγίσιμη στο σημείο αυτό.",
+                correct: "Λάθος",
+                explanation: "Αντιπαράδειγμα: Η $f(x)=|x|$ είναι συνεχής στο $x_0=0$ αλλά όχι παραγωγίσιμη."
+            },
+            {
+                id: 18,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Τα εσωτερικά σημεία του διαστήματος $\\Delta$, στα οποία η $f$ δεν παραγωγίζεται ή η παράγωγός της είναι ίση με μηδέν, λέγονται κρίσιμα σημεία της $f$.",
+                correct: "Σωστό",
+                explanation: "Ορισμός κρίσιμων σημείων συνάρτησης."
+            },
+            {
+                id: 19,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Για κάθε $x \\neq 0$ ισχύει $(\\ln|x|)' = \\frac{1}{x}$.",
+                correct: "Σωστό",
+                explanation: "Πράγματι, για $x>0$: $(\\ln x)'=1/x$ και για $x<0$: $(\\ln(-x))' = (-1)/(-x) = 1/x$."
+            },
+            {
+                id: 20,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Ισχύει ο τύπος $(3^x)' = x \\cdot 3^{x-1}$ για κάθε $x \\in \\mathbb{R}$.",
+                correct: "Λάθος",
+                explanation: "Το σωστό είναι $(3^x)' = 3^x \\cdot \\ln 3$."
+            },
+            {
+                id: 21,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Αν η συνάρτηση $f$ ικανοποιεί τις προϋποθέσεις του Θεωρήματος Rolle στο $[\\alpha,\\beta]$, τότε η $f$ δεν είναι $1-1$.",
+                correct: "Σωστό",
+                explanation: "Αφού $f(\\alpha)=f(\\beta)$ με $\\alpha \\neq \\beta$, η συνάρτηση δεν είναι $1-1$."
+            },
+            {
+                id: 22,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Αν για μια συνάρτηση $f$ ισχύει $f'(x)=0$ σε όλα τα σημεία ενός συνόλου $A$, τότε η $f$ είναι υποχρεωτικά σταθερή στο $A$.",
+                correct: "Λάθος",
+                explanation: "Απαιτείται το σύνολο $A$ να είναι ΔΙΑΣΤΗΜΑ. Αν είναι ένωση διαστημάτων, μπορεί να έχει διαφορετικές σταθερές."
+            },
+            {
+                id: 23,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Ισχύει $(\\cos x)' = \\sin x$ για κάθε $x \\in \\mathbb{R}$.",
+                correct: "Λάθος",
+                explanation: "Το σωστό παράγωγο είναι $(\\cos x)' = -\\sin x$."
+            },
+            {
+                id: 24,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "tf",
+                text: "Υπάρχει πολυωνυμική συνάρτηση βαθμού $\\nu \\ge 2$ η οποία έχει ασύμπτωτη.",
+                correct: "Λάθος",
+                explanation: "Οι πολυωνυμικές συναρτήσεις βαθμού $\\ge 2$ δεν έχουν οριζόντιες, κατακόρυφες ή πλάγιες ασύμπτωτες."
+            },
+            {
+                id: 25,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "matching",
+                text: "Αντιστοιχίστε κάθε συνάρτηση της Στήλης Α με την αντίστοιχη Ασύμπτωτη της γραφικής της παράστασης στη Στήλη Β:",
+                pairs: [
+                    { left: "1. $f(x)=\\frac{x^3-8}{x^2-4}$", right: "$x=-2$" },
+                    { left: "2. $f(x)=x e^x$", right: "$y=0$" },
+                    { left: "3. $f(x)=\\sqrt{4x^2+x}$", right: "$y=2x+\\frac{1}{4}$" },
+                    { left: "4. $f(x)=2x+1+e^x$ (καθώς $x \\to -\\infty$)", right: "$y=2x+1$" }
+                ],
+                explanation: "1$\\to x=-2$ (κατακόρυφη), 2$\\to y=0$ στο $-\\infty$, 3$\\to y=2x+1/4$ στο $+\\infty$, 4$\\to y=2x+1$ στο $-\\infty$."
+            },
+            {
+                id: 26,
+                chapter: "derivatives",
+                chapterTitle: "Διαφορικός Λογισμός",
+                type: "mc",
+                text: "Ποια είναι η αντίστροφη συνάρτηση $f^{-1}$ της $f(x) = 2^x$;",
+                options: [
+                    "$f^{-1}(x) = \\frac{\\ln x}{\\ln 2}, x > 0$",
+                    "$f^{-1}(x) = x^2, x \\in \\mathbb{R}$",
+                    "$f^{-1}(x) = \\log_2(x), x \\in \\mathbb{R}$",
+                    "$f^{-1}(x) = 2^{-x}, x > 0$"
+                ],
+                correct: "$f^{-1}(x) = \\frac{\\ln x}{\\ln 2}, x > 0$",
+                explanation: "Από $y = 2^x \\iff \\ln y = x \\ln 2 \\iff x = \\frac{\\ln y}{\\ln 2}$."
+            },
+
+            // ================= 3. ΟΛΟΚΛΗΡΩΤΙΚΟΣ ΛΟΓΙΣΜΟΣ =================
+            {
+                id: 27,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Αν η $f$ είναι συνεχής στο $[\\alpha,\\beta]$ και $G$ είναι μια παράγουσα της $f$, τότε $\\int_{\\alpha}^{\\beta} f(t)dt = G(\\beta) - G(\\alpha)$.",
+                correct: "Σωστό",
+                explanation: "Θεμελιώδες Θεώρημα του Ολοκληρωτικού Λογισμού."
+            },
+            {
+                id: 28,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Για κάθε συνεχή συνάρτηση $f$ σε διάστημα $\\Delta$ και $\\alpha, \\beta, \\gamma \\in \\Delta$, ισχύει $\\int_{\\alpha}^{\\beta} f(x)dx = \\int_{\\alpha}^{\\gamma} f(x)dx + \\int_{\\gamma}^{\\beta} f(x)dx$.",
+                correct: "Σωστό",
+                explanation: "Βασική προσθετική ιδιότητα ορισμένου ολοκληρώματος."
+            },
+            {
+                id: 29,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Αν η $f$ είναι συνεχής στο $[\\alpha,\\beta]$ και $f(x) \\ge 0$ για κάθε $x \\in [\\alpha,\\beta]$, τότε υποχρεωτικά $\\int_{\\alpha}^{\\beta} f(x)dx > 0$.",
+                correct: "Λάθος",
+                explanation: "Αν η $f(x)=0$ για όλα τα $x \\in [\\alpha,\\beta]$, τότε το ολοκλήρωμα είναι ίσο με 0."
+            },
+            {
+                id: 30,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Αν η $f$ είναι συνεχής στο $[\\alpha,\\beta]$ και $f(x) \\ge 0$ χωρίς να είναι παντού μηδέν, τότε $\\int_{\\alpha}^{\\beta} f(x)dx > 0$.",
+                correct: "Σωστό",
+                explanation: "Αφού η $f$ δεν είναι μηδενική παντού και είναι μη αρνητική, το εμβαδόν/ολοκλήρωμα είναι αυστηρά θετικό."
+            },
+            {
+                id: 31,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Για κάθε συνεχή συνάρτηση $f$ στο $[\\alpha,\\beta]$ ισχύει $\\left| \\int_{\\alpha}^{\\beta} f(x)dx \\right| = \\int_{\\alpha}^{\\beta} |f(x)|dx$.",
+                correct: "Λάθος",
+                explanation: "Η σωστή σχέση είναι $\\left| \\int_{\\alpha}^{\\beta} f(x)dx \\right| \\le \\int_{\\alpha}^{\\beta} |f(x)|dx$."
+            },
+            {
+                id: 32,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Κάθε συνεχής συνάρτηση σε ένα διάστημα $\\Delta$ έχει παράγουσα στο διάστημα αυτό.",
+                correct: "Σωστό",
+                explanation: "Η συνάρτηση $F(x) = \\int_{\\alpha}^x f(t)dt$ είναι μια παράγουσα της $f$ στο $\\Delta$."
+            },
+            {
+                id: 33,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Αν για μια συνεχή συνάρτηση $f$ στο $[\\alpha,\\beta]$ ισχύει $\\int_{\\alpha}^{\\beta} f(x)dx = 0$, τότε $f(x)=0$ για κάθε $x \\in [\\alpha,\\beta]$.",
+                correct: "Λάθος",
+                explanation: "Το ολοκλήρωμα μπορεί να είναι 0 αν τα θετικά και αρνητικά εμβαδά εξουδετερώνονται (π.χ. $f(x)=\\sin x$ στο $[-\\pi, \\pi]$)."
+            },
+            {
+                id: 34,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Ισχύει $\\left( \\int_{\\alpha}^{g(x)} f(t)dt \\right)' = f(g(x)) \\cdot g'(x)$ εφόσον οι συναρτήσεις είναι παραγωγίσιμες/συνεχείς.",
+                correct: "Σωστό",
+                explanation: "Κανόνας αλυσίδας για παράγωγο ολοκληρώματος με μεταβλητό άνω όριο."
+            },
+            {
+                id: 35,
+                chapter: "integrals",
+                chapterTitle: "Ολοκληρωτικός Λογισμός",
+                type: "tf",
+                text: "Αν η $f$ είναι συνεχής στο $[\\alpha,\\beta]$ και $\\int_{\\alpha}^{\\beta} f(x)dx > 0$, τότε υπάρχει $x_0 \\in [\\alpha,\\beta]$ ώστε $f(x_0) > 0$.",
+                correct: "Σωστό",
+                explanation: "Αν ήταν $f(x) \\le 0$ παντού, τότε και το ολοκλήρωμα θα ήταν $\\le 0$ (άτοπο)."
+            }
+        ];
+
+        // --- APP CONTROLLER ---
+        class QuizApp {
+            constructor() {
+                // State variables
+                this.selectedChapter = 'all';
+                this.selectedCount = '20';
+                this.mode = 'quiz'; // 'quiz' or 'practice'
+                this.timerEnabled = true;
+
+                this.activeQuestions = [];
+                this.currentIndex = 0;
+                this.score = 0;
+                this.streak = 0;
+                this.maxStreak = 0;
+
+                this.userAnswers = []; // Records { question, userAns, isCorrect }
+                this.timer = null;
+                this.timeLeft = 45;
+
+                this.initUI();
+            }
+
+            initUI() {
+                // Chapter Selector Logic
+                document.querySelectorAll('.chapter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        sfx.playClick();
+                        document.querySelectorAll('.chapter-btn').forEach(b => {
+                            b.classList.remove('border-brand-500', 'bg-brand-500/10', 'text-white');
+                            b.classList.add('border-slate-700', 'bg-slate-800/40', 'text-slate-300');
+                            b.querySelector('.check-icon').classList.add('hidden');
+                        });
+                        const target = e.currentTarget;
+                        target.classList.remove('border-slate-700', 'bg-slate-800/40', 'text-slate-300');
+                        target.classList.add('border-brand-500', 'bg-brand-500/10', 'text-white');
+                        target.querySelector('.check-icon').classList.remove('hidden');
+                        this.selectedChapter = target.dataset.value;
+                    });
+                });
+
+                // Count Selector Logic
+                document.querySelectorAll('.count-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        sfx.playClick();
+                        document.querySelectorAll('.count-btn').forEach(b => {
+                            b.classList.remove('border-brand-500', 'bg-brand-500/10', 'text-white');
+                            b.classList.add('border-slate-700', 'bg-slate-800/40', 'text-slate-300');
+                        });
+                        e.currentTarget.classList.remove('border-slate-700', 'bg-slate-800/40', 'text-slate-300');
+                        e.currentTarget.classList.add('border-brand-500', 'bg-brand-500/10', 'text-white');
+                        this.selectedCount = e.currentTarget.dataset.count;
+                    });
+                });
+
+                // Mode Selector Logic
+                document.querySelectorAll('.mode-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        sfx.playClick();
+                        document.querySelectorAll('.mode-btn').forEach(b => {
+                            b.classList.remove('border-brand-500', 'bg-brand-500/10', 'text-white');
+                            b.classList.add('border-slate-700', 'bg-slate-800/40', 'text-slate-300');
+                        });
+                        e.currentTarget.classList.remove('border-slate-700', 'bg-slate-800/40', 'text-slate-300');
+                        e.currentTarget.classList.add('border-brand-500', 'bg-brand-500/10', 'text-white');
+                        this.mode = e.currentTarget.dataset.mode;
+                        
+                        // Toggle timer container visibility based on mode
+                        const timerBox = document.getElementById('timerToggleContainer');
+                        if (this.mode === 'practice') {
+                            timerBox.classList.add('opacity-50', 'pointer-events-none');
+                        } else {
+                            timerBox.classList.remove('opacity-50', 'pointer-events-none');
+                        }
+                    });
+                });
+            }
+
+            showScreen(screenId) {
+                document.getElementById('welcomeScreen').classList.add('hidden');
+                document.getElementById('quizScreen').classList.add('hidden');
+                document.getElementById('resultsScreen').classList.add('hidden');
+
+                if (screenId === 'welcome') document.getElementById('welcomeScreen').classList.remove('hidden');
+                if (screenId === 'quiz') document.getElementById('quizScreen').classList.remove('hidden');
+                if (screenId === 'results') document.getElementById('resultsScreen').classList.remove('hidden');
+            }
+
+            toggleSound() {
+                sfx.enabled = !sfx.enabled;
+                const btn = document.getElementById('soundToggleBtn');
+                btn.innerHTML = sfx.enabled 
+                    ? '<i class="fa-solid fa-volume-high text-sm"></i>' 
+                    : '<i class="fa-solid fa-volume-xmark text-sm text-rose-400"></i>';
+            }
+
+            toggleTheme() {
+                document.documentElement.classList.toggle('dark');
+                document.documentElement.classList.toggle('light');
+                const btn = document.getElementById('themeToggleBtn');
+                const isDark = document.documentElement.classList.contains('dark');
+                btn.innerHTML = isDark 
+                    ? '<i class="fa-solid fa-moon text-sm"></i>' 
+                    : '<i class="fa-solid fa-sun text-sm text-amber-400"></i>';
+            }
+
+            startQuiz(questionsToUse = null) {
+                sfx.playClick();
+                this.timerEnabled = document.getElementById('timerToggle').checked && this.mode === 'quiz';
+
+                if (questionsToUse) {
+                    this.activeQuestions = [...questionsToUse];
+                } else {
+                    // Filter questions by chapter
+                    let list = this.selectedChapter === 'all' 
+                        ? [...questionBank] 
+                        : questionBank.filter(q => q.chapter === this.selectedChapter);
+
+                    // Shuffle array
+                    list.sort(() => Math.random() - 0.5);
+
+                    // Limit count
+                    if (this.selectedCount !== 'all') {
+                        const count = parseInt(this.selectedCount, 10);
+                        list = list.slice(0, count);
+                    }
+                    this.activeQuestions = list;
+                }
+
+                if (this.activeQuestions.length === 0) {
+                    alert("Δεν βρέθηκαν ερωτήσεις για την επιλεγμένη κατηγορία!");
+                    return;
+                }
+
+                this.currentIndex = 0;
+                this.score = 0;
+                this.streak = 0;
+                this.maxStreak = 0;
+                this.userAnswers = [];
+
+                this.updateHeaderStats();
+                this.showScreen('quiz');
+                this.loadQuestion();
+            }
+
+            updateHeaderStats() {
+                document.getElementById('scoreCount').innerText = this.score;
+                document.getElementById('streakCount').innerText = this.streak;
+            }
+
+            loadQuestion() {
+                clearInterval(this.timer);
+                const q = this.activeQuestions[this.currentIndex];
+
+                // Progress UI
+                const currentNum = (this.currentIndex + 1).toString().padStart(2, '0');
+                const totalNum = this.activeQuestions.length.toString().padStart(2, '0');
+                document.getElementById('qProgressText').innerText = `${currentNum} / ${totalNum}`;
+                document.getElementById('chapterBadge').innerText = q.chapterTitle;
+
+                const progressPercent = ((this.currentIndex) / this.activeQuestions.length) * 100;
+                document.getElementById('progressBar').style.width = `${progressPercent}%`;
+
+                // Question Text & Type
+                document.getElementById('questionText').innerHTML = q.text;
+                
+                const typeBadge = document.getElementById('questionTypeBadge');
+                if (q.type === 'tf') typeBadge.innerText = 'Σωστο / Λαθος';
+                if (q.type === 'mc') typeBadge.innerText = 'Πολλαπλης Επιλογης';
+                if (q.type === 'matching') typeBadge.innerText = 'Αντιστοιχιση';
+
+                // Reset Cards & Buttons
+                document.getElementById('explanationCard').classList.add('hidden');
+                document.getElementById('nextBtn').classList.add('hidden');
+                document.getElementById('questionCard').className = "glass-card rounded-2xl p-6 md:p-8 space-y-6 shadow-2xl relative transition-all duration-300";
+
+                // Render Options
+                const container = document.getElementById('optionsContainer');
+                container.innerHTML = '';
+
+                if (q.type === 'tf') {
+                    container.innerHTML = `
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <button onclick="app.submitAnswer('Σωστό')" class="option-btn py-4 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold text-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-check"></i> Σωστό
+                            </button>
+                            <button onclick="app.submitAnswer('Λάθος')" class="option-btn py-4 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-400 font-bold text-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-xmark"></i> Λάθος
+                            </button>
+                        </div>
+                    `;
+                } else if (q.type === 'mc') {
+                    q.options.forEach((opt, idx) => {
+                        const btn = document.createElement('button');
+                        btn.className = "option-btn w-full p-4 rounded-xl bg-slate-800/60 hover:bg-slate-700/80 border border-slate-700 text-left font-medium text-slate-200 transition flex items-center gap-3 math-content";
+                        btn.onclick = () => this.submitAnswer(opt);
+                        btn.innerHTML = `<span class="w-7 h-7 rounded-lg bg-slate-700 flex items-center justify-center text-xs font-bold text-brand-400">${String.fromCharCode(65 + idx)}</span> <span>${opt}</span>`;
+                        container.appendChild(btn);
+                    });
+                } else if (q.type === 'matching') {
+                    this.renderMatchingQuestion(q, container);
+                }
+
+                // Trigger MathJax re-render
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                }
+
+                // Timer Logic
+                if (this.timerEnabled) {
+                    document.getElementById('timerBox').classList.remove('hidden');
+                    this.timeLeft = 45;
+                    document.getElementById('timerText').innerText = `${this.timeLeft}s`;
+                    this.timer = setInterval(() => {
+                        this.timeLeft--;
+                        document.getElementById('timerText').innerText = `${this.timeLeft}s`;
+                        if (this.timeLeft <= 0) {
+                            clearInterval(this.timer);
+                            this.submitAnswer(null); // Timeout
+                        }
+                    }, 1000);
+                } else {
+                    document.getElementById('timerBox').classList.add('hidden');
+                }
+            }
+
+            renderMatchingQuestion(q, container) {
+                // Render interactive dropdown matching
+                const rightOptionsShuffled = [...q.pairs.map(p => p.right)].sort(() => Math.random() - 0.5);
+
+                let html = `<div class="space-y-3">`;
+                q.pairs.forEach((pair, idx) => {
+                    html += `
+                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <div class="math-content text-sm text-slate-200">${pair.left}</div>
+                            <select id="matchSelect_${idx}" class="match-select bg-slate-900 border border-slate-700 text-brand-400 text-sm rounded-lg p-2.5 focus:border-brand-500 outline-none w-full sm:w-auto">
+                                <option value="">Επιλέξτε ασύμπτωτη...</option>
+                                ${rightOptionsShuffled.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                });
+                html += `
+                    <button onclick="app.submitMatchingAnswer()" class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-brand-500 to-accent-purple text-white font-bold text-sm shadow-md hover:opacity-90 transition">
+                        Υποβολή Αντιστοίχισης
+                    </button>
+                </div>`;
+                container.innerHTML = html;
+            }
+
+            submitMatchingAnswer() {
+                const q = this.activeQuestions[this.currentIndex];
+                let isCorrect = true;
+                let userPairs = [];
+
+                q.pairs.forEach((pair, idx) => {
+                    const sel = document.getElementById(`matchSelect_${idx}`);
+                    const val = sel ? sel.value : "";
+                    userPairs.push(val);
+                    if (val !== pair.right) {
+                        isCorrect = false;
+                    }
+                });
+
+                this.processAnswer(isCorrect, userPairs.join(', '), q.explanation);
+            }
+
+            submitAnswer(userAns) {
+                clearInterval(this.timer);
+                const q = this.activeQuestions[this.currentIndex];
+                let isCorrect = false;
+
+                if (q.type === 'tf' || q.type === 'mc') {
+                    isCorrect = (userAns === q.correct);
+                }
+
+                this.processAnswer(isCorrect, userAns, q.explanation);
+            }
+
+            processAnswer(isCorrect, userAns, explanation) {
+                const q = this.activeQuestions[this.currentIndex];
+
+                // Record user result
+                this.userAnswers.push({
+                    question: q,
+                    userAns: userAns || "Λήξη Χρόνου",
+                    isCorrect: isCorrect
+                });
+
+                // Disable options
+                const container = document.getElementById('optionsContainer');
+                const buttons = container.querySelectorAll('button, select');
+                buttons.forEach(b => b.disabled = true);
+
+                const qCard = document.getElementById('questionCard');
+
+                if (isCorrect) {
+                    sfx.playCorrect();
+                    this.score += 10 + (this.streak * 2);
+                    this.streak++;
+                    if (this.streak > this.maxStreak) this.maxStreak = this.streak;
+                    qCard.classList.add('glow-success');
+                } else {
+                    sfx.playWrong();
+                    this.streak = 0;
+                    qCard.classList.add('glow-error');
+                }
+
+                this.updateHeaderStats();
+
+                // Show Explanation in Practice mode OR if wrongly answered
+                if (this.mode === 'practice' || !isCorrect) {
+                    const expCard = document.getElementById('explanationCard');
+                    const expHeader = document.getElementById('explanationHeader');
+                    const expText = document.getElementById('explanationText');
+
+                    expHeader.className = isCorrect ? "flex items-center gap-2 font-semibold text-sm text-emerald-400" : "flex items-center gap-2 font-semibold text-sm text-rose-400";
+                    expHeader.innerHTML = isCorrect 
+                        ? `<i class="fa-solid fa-circle-check"></i> Σωστή Απάντηση!` 
+                        : `<i class="fa-solid fa-circle-xmark"></i> Λανθασμένη Απάντηση (Ορθό: ${q.correct || 'Δείτε επεξήγηση'})`;
+
+                    expText.innerHTML = explanation || "Δεν διατίθεται επιπλέον επεξήγηση.";
+                    expCard.classList.remove('hidden');
+
+                    if (window.MathJax) MathJax.typesetPromise();
+                }
+
+                // Show Next Button
+                const nextBtn = document.getElementById('nextBtn');
+                nextBtn.classList.remove('hidden');
+            }
+
+            nextQuestion() {
+                sfx.playClick();
+                this.currentIndex++;
+                if (this.currentIndex < this.activeQuestions.length) {
+                    this.loadQuestion();
+                } else {
+                    this.finishQuiz();
+                }
+            }
+
+            finishQuiz() {
+                clearInterval(this.timer);
+                this.showScreen('results');
+
+                const total = this.activeQuestions.length;
+                const correctCount = this.userAnswers.filter(a => a.isCorrect).length;
+                const percent = Math.round((correctCount / total) * 100);
+
+                document.getElementById('resultPercent').innerText = `${percent}%`;
+                document.getElementById('resultCorrect').innerText = `${correctCount}/${total}`;
+                document.getElementById('resultMaxStreak').innerText = `🔥 ${this.maxStreak}`;
+
+                // Dynamic title based on score
+                const title = document.getElementById('resultTitle');
+                const sub = document.getElementById('resultSubtitle');
+                const icon = document.getElementById('resultIcon');
+
+                if (percent >= 90) {
+                    title.innerText = "Άριστα! Είσαι Έτοιμος!";
+                    sub.innerText = "Εξαιρετική γνώση της θεωρίας και των εννοιών.";
+                    icon.className = "fa-solid fa-trophy";
+                } else if (percent >= 70) {
+                    title.innerText = "Πολύ Καλή Προσπάθεια!";
+                    sub.innerText = "Έχεις καλό επίπεδο, χρειάζεται λίγη προσοχή στις λεπτομέρειες.";
+                    icon.className = "fa-solid fa-medal";
+                } else {
+                    title.innerText = "Χρειάζεται Επανάληψη";
+                    sub.innerText = "Μελέτησε ξανά τις λανθασμένες απαντήσεις για βελτίωση.";
+                    icon.className = "fa-solid fa-book-open";
+                }
+
+                // Enable/Disable Retry Errors button
+                const wrongAnswers = this.userAnswers.filter(a => !a.isCorrect);
+                const retryBtn = document.getElementById('retryErrorsBtn');
+                if (wrongAnswers.length > 0) {
+                    retryBtn.classList.remove('hidden');
+                } else {
+                    retryBtn.classList.add('hidden');
+                }
+
+                // Render Review List
+                const reviewList = document.getElementById('reviewList');
+                reviewList.innerHTML = '';
+
+                this.userAnswers.forEach((ans, idx) => {
+                    const item = document.createElement('div');
+                    item.className = `p-4 rounded-xl border ${ans.isCorrect ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-rose-500/5 border-rose-500/20'} space-y-2`;
+                    
+                    item.innerHTML = `
+                        <div class="flex items-start justify-between gap-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded ${ans.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}">
+                                Ερώτηση ${idx + 1} • ${ans.isCorrect ? 'Σωστό' : 'Λάθος'}
+                            </span>
+                            <span class="text-xs text-slate-500">${ans.question.chapterTitle}</span>
+                        </div>
+                        <div class="text-sm font-medium text-slate-200 math-content py-1">${ans.question.text}</div>
+                        <div class="text-xs text-slate-400 space-y-1 pt-1 border-t border-slate-800">
+                            <div><strong class="text-slate-300">Η Απάντησή σας:</strong> ${ans.userAns}</div>
+                            ${!ans.isCorrect ? `<div class="text-emerald-400"><strong>Ορθή Απάντηση:</strong> ${ans.question.correct || 'Δείτε επεξήγηση'}</div>` : ''}
+                            ${ans.question.explanation ? `<div class="text-slate-400 italic pt-1">💡 ${ans.question.explanation}</div>` : ''}
+                        </div>
+                    `;
+                    reviewList.appendChild(item);
+                });
+
+                if (window.MathJax) MathJax.typesetPromise();
+            }
+
+            retryErrors() {
+                const wrongQuestions = this.userAnswers.filter(a => !a.isCorrect).map(a => a.question);
+                if (wrongQuestions.length > 0) {
+                    this.startQuiz(wrongQuestions);
+                }
+            }
+
+            restartQuiz() {
+                this.showScreen('welcome');
+            }
+        }
+
+        // Initialize App on Window Load
+        let app;
+        window.onload = () => {
+            app = new QuizApp();
+        };
+    </script>
+</body>
+</html>
